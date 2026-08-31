@@ -1,0 +1,20 @@
+{
+  "schema": "authority-summary-v1",
+  "selection_rule": "Only exact hash-bound files named by approved_authorities were exported.",
+  "manifests": [
+    {
+      "gender": "female",
+      "schema": "female_component_library_single_authority",
+      "status": "ACTIVE_SINGLE_VERSION_MANAGER",
+      "effective_date": "2026-09-01T04:49:53+08:00",
+      "sha256": "e78e429b3baf4c8e50400bce6daf5b2124b96d840594689a355ee0747fcea679"
+    },
+    {
+      "gender": "male",
+      "schema": "male_component_library_single_authority",
+      "status": "ACTIVE_SINGLE_VERSION_MANAGER",
+      "effective_date": "2026-09-01T04:49:53+08:00",
+      "sha256": "0df43834582bbbcbb2ef09d420fbb340824f6e9a535200eea40145cf00c71ad2"
+    }
+  ]
+}

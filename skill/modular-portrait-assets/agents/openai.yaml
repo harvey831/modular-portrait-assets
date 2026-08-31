@@ -1,0 +1,4 @@
+interface:
+  display_name: "模組化大頭相素材"
+  short_description: "生成、混編、QC 與發布同座標 CC0 大頭相模組"
+  default_prompt: "Use $modular-portrait-assets to assemble or QC a same-coordinate modular portrait from the CC0 release manifest."
