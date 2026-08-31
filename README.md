@@ -10,6 +10,29 @@ eye+brow modules (`E`), mouth modules (`M`), hair (`H`), clothing (`C`),
 human/elf ears, blush, and sweat layers. Exact available cells are listed in
 [`provenance/asset-manifest.json`](provenance/asset-manifest.json).
 
+## Examples
+
+The repository includes two reproducible previews assembled from the released
+modules. They are derivative QC/showcase images, not source modules or an
+alternative asset authority.
+
+### 48-character mixed QC
+
+Every cell is a different deterministic combination. The board contains 24
+female and 24 male portraits and mixes face, skin, eyes, mouth, hair, clothing,
+ear type, hair colour, and expression.
+
+![48-character mixed QC](examples/mixed-character-qc-48.webp)
+
+### Expression showcase
+
+Identity stays fixed within each gender while the expression lane changes.
+
+![Expression showcase](examples/expression-showcase.png)
+
+See [`examples/README.md`](examples/README.md) for exact coverage, reproduction
+instructions, and the evidence manifest.
+
 ## License
 
 Unless a file is specifically identified in
@@ -27,6 +50,7 @@ tool author endorses a derivative work.
 ```powershell
 python -m pip install -r requirements.txt
 python skill/modular-portrait-assets/scripts/validate_release.py .
+python tools/render_examples.py . examples
 ```
 
 The validator checks every asset hash, rejects unexpected files, and prevents
