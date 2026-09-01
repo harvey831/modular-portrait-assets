@@ -18,6 +18,23 @@ API. It downloads only the selected public layers and composes them locally in
 the browser. The same hash-bound catalog and layer-ownership rules used by the
 offline validator are enforced during the Pages build.
 
+### itch.io wrapper
+
+itch.io accepts HTML5 ZIP uploads but rejects archives containing more than
+1,000 files. The complete release contains 1,184 assets, so the itch.io build
+is a deterministic three-file wrapper that embeds the canonical GitHub Pages
+mixer without dropping any modules:
+
+```powershell
+python tools/build_itch_wrapper.py . .itch-upload/modular-portrait-mixer-itch.zip
+```
+
+The wrapper contains `index.html`, `LICENSE`, and a build summary recording the
+public catalog hash at packaging time. It follows the latest GitHub Pages
+deployment rather than pinning the remote app forever. Portrait composition
+and export still happen in the browser; the public layers are served by this
+repository's GitHub Pages deployment.
+
 Available component axes include face/body bases (`F`), skin tones (`S`),
 eye+brow modules (`E`), mouth modules (`M`), hair (`H`), clothing (`C`),
 human/elf ears, blush, and sweat layers. Exact available cells are listed in
