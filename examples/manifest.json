@@ -11,7 +11,7 @@
   ],
   "source_manifest": {
     "path": "provenance/asset-manifest.json",
-    "sha256": "31aa9a678280cf35bb1f4155eac94ee91d468c09f62c7beeb45aa502f11dff01"
+    "sha256": "a9727ba98ca19d3cc60e259bb01e7d4bb18cc3c3cc61208cb62e9521b810d21c"
   },
   "tool": {
     "path": "tools/render_examples.py",
@@ -57,7 +57,7 @@
   },
   "outputs": {
     "mixed-character-qc-48.webp": {
-      "sha256": "d2d4c5d162c5e940c6433ca3d07d2f1c32dc0d0a8dbb046d5c2babda1218e3f0",
+      "sha256": "0319c6c74e216d993be15e34b310c04ff49588dbaf465766d828e6350bcd6860",
       "format": "lossless-webp",
       "mode": "RGB",
       "size": [
@@ -6889,7 +6889,7 @@
           {
             "role": "mouth",
             "path": "assets/female/M/M01/S03/X03/mouth.png",
-            "sha256": "c556e0fafde0246422cc48ff1babbb7a73055153c9adce78de188ab5d402c8d1"
+            "sha256": "388c1f36a583b4af7ff767d8d788344ea1c1bfbd8c1ddd9cab546ac90645743d"
           },
           {
             "role": "hair_front",
@@ -7372,7 +7372,7 @@
           {
             "role": "mouth",
             "path": "assets/female/M/M01/S03/X03/mouth.png",
-            "sha256": "c556e0fafde0246422cc48ff1babbb7a73055153c9adce78de188ab5d402c8d1"
+            "sha256": "388c1f36a583b4af7ff767d8d788344ea1c1bfbd8c1ddd9cab546ac90645743d"
           },
           {
             "role": "hair_front",

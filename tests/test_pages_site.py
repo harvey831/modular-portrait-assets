@@ -108,7 +108,7 @@ class PagesCatalogTests(unittest.TestCase):
         self.assertEqual(len(catalog["assets"]), 1184)
         self.assertEqual(catalog["canvas"], [1254, 1254, "RGBA"])
         self.assertEqual(catalog["asset_count"], 1184)
-        self.assertEqual(catalog["total_bytes"], 183498531)
+        self.assertEqual(catalog["total_bytes"], 183516516)
         self.assertRegex(catalog["catalog_sha256"], r"^[0-9a-f]{64}$")
         self.assertNotEqual(
             catalog["catalog_sha256"], catalog["source_manifest_sha256"]

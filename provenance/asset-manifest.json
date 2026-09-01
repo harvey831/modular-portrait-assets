@@ -3,14 +3,14 @@
   "license": "CC0-1.0",
   "source_project": "MODULAR_PORTRAIT_LIBRARY_V5",
   "asset_count": 1184,
-  "total_bytes": 183498531,
+  "total_bytes": 183516516,
   "authority_manifests": [
     {
       "gender": "female",
       "schema": "female_component_library_single_authority",
       "status": "ACTIVE_SINGLE_VERSION_MANAGER",
       "effective_date": "2026-09-01T04:49:53+08:00",
-      "sha256": "cd4ff24d3076014104a1eeb5f2bb265e89157f426ecd27b265e32f9773987597"
+      "sha256": "020dd82659086ad1dc03069d7853218aea7a2eb31e0dd23a529c067a6a2fd3f8"
     },
     {
       "gender": "male",
@@ -1370,224 +1370,224 @@
       "sha256": "e26b853996a64f66601170e9ef6814c170d0643f441afa8e04b545fc64fe56bb",
       "bytes": 25309,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S01/G01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S01/G01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S01/G02/mouth.png",
       "sha256": "b338122f5f6cdc8c114ee433f22eb7988e95ca348721865fedf71f778692cc06",
       "bytes": 24906,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S01/G02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S01/G02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S01/G03/mouth.png",
       "sha256": "f1492437fabd04c085a3e590be63ff14ca7824b63f6be7d11ab0a224085b783f",
       "bytes": 26823,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S01/G03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S01/G03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S01/G04/mouth.png",
       "sha256": "1376da2d5358a3ef967430bda42f68d180f586f74c9b184d58557b8a8d363981",
       "bytes": 26724,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S01/G04/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S01/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S01/N00/mouth.png",
       "sha256": "c06ecda3a8fa672ce23daa93b38c99fbb114156f84c764336aec757c6ae78f44",
       "bytes": 24112,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S01/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S01/N00/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S01/X01/mouth.png",
       "sha256": "d66a8b563d648279b8047f57022668c89c1ddc8dca2e073bcd370e4aea240cbb",
       "bytes": 52835,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S01/X01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S01/X01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S01/X02/mouth.png",
       "sha256": "1dc432631a3d99c60701b7ab3411f85cda04f8bbab4bf1493d023fabeee6f6b8",
       "bytes": 49488,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S01/X02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S01/X02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S01/X03/mouth.png",
       "sha256": "f8c0f24998e72a0c8b7a9dd173354fdcaddf98099ac1db4bc73e540d1cd82424",
       "bytes": 52693,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S01/X03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S01/X03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S02/G01/mouth.png",
       "sha256": "51c08ebc559f3270677db8bcf9600182316ebf482fd2675f6f0a6e43a9c817f5",
       "bytes": 24834,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S02/G01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S02/G01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S02/G02/mouth.png",
       "sha256": "c06a05d97cf5d88123047dc26ccd95f259cf82d85a5caba46ec1cdf43b8c3622",
       "bytes": 24996,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S02/G02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S02/G02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S02/G03/mouth.png",
       "sha256": "09851962cd75ce57c5bf7d13c78fa7a0e6f329d1b1caa1637e3d496fdf4a6509",
       "bytes": 24661,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S02/G03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S02/G03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S02/G04/mouth.png",
       "sha256": "3c9e4e4bb6efe1dc3f4daf1dbe96e18c705426dba47126bff0e0c37ca3355a09",
       "bytes": 26406,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S02/G04/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S02/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S02/N00/mouth.png",
       "sha256": "0148d15b16d0f860373d8d0d8c9588d53c3e5b4c51b526d485ef2e79f62a1337",
       "bytes": 24510,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S02/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S02/N00/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S02/X01/mouth.png",
       "sha256": "85b21814dce4a53082b9336fa42f05421c2428a4c0f654661a01d4c2a2c71304",
       "bytes": 54985,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S02/X01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S02/X01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S02/X02/mouth.png",
       "sha256": "8fc49e6b4a4f08c75da888744202165fa9f20e06761a0b0f83f02d0ce341abdd",
       "bytes": 47979,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S02/X02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S02/X02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S02/X03/mouth.png",
-      "sha256": "ccce0ecb2fffbdc83f1ad40139ec8b214487b77337419d5f054971b18a7f9e4f",
-      "bytes": 49126,
+      "sha256": "29fe61b5100af5ba4d9ae6f48214c38175235cfa8cd5de04815890c470ef48db",
+      "bytes": 55012,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S02/X03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S02/X03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S03/G01/mouth.png",
       "sha256": "cb1854ba7e591fb04258422811fdff918591b4eb17c8422c2e84761c5a8acaf7",
       "bytes": 25652,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S03/G01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S03/G01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S03/G02/mouth.png",
       "sha256": "ee417826109d6f2bace005133d7f52bd06d600e130e60d0f29ee23a98d5e62fe",
       "bytes": 24907,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S03/G02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S03/G02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S03/G03/mouth.png",
       "sha256": "c651f693f3ecf570595c60e1584ba53cbe142574f2613bc96de06a12b6a661e3",
       "bytes": 24865,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S03/G03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S03/G03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S03/G04/mouth.png",
       "sha256": "d9b8e55500edbd3fd7dbc43ba49b2592a90cfae6c6adeb718523b2e9b3a20042",
       "bytes": 25612,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S03/G04/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S03/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S03/N00/mouth.png",
       "sha256": "c0340ac41c58c05bc47362de59e2b4689205552e39487c8ce780ab064f0af456",
       "bytes": 24001,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S03/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S03/N00/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S03/X01/mouth.png",
       "sha256": "0b138e4292ea8733095edabb8f1c9acde495a02dadfa39eb300cf4622fcad90d",
       "bytes": 53052,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S03/X01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S03/X01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S03/X02/mouth.png",
       "sha256": "81f49a00dc79847994202b934bdb76aa4406411050fdeb45b3b2af1b93d8d3dd",
       "bytes": 47793,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S03/X02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S03/X02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S03/X03/mouth.png",
-      "sha256": "c556e0fafde0246422cc48ff1babbb7a73055153c9adce78de188ab5d402c8d1",
-      "bytes": 51269,
+      "sha256": "388c1f36a583b4af7ff767d8d788344ea1c1bfbd8c1ddd9cab546ac90645743d",
+      "bytes": 56482,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S03/X03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S03/X03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S04/G01/mouth.png",
       "sha256": "fdf804085fd4721f877ade411ad779b1e1691f3c5e141c3962ffe7d6587d4c13",
       "bytes": 22732,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S04/G01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S04/G01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S04/G02/mouth.png",
       "sha256": "b284b909538f52dfa1b769d5bd229e9c6a094360134d3172acc0298148eb9fbf",
       "bytes": 22167,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S04/G02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S04/G02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S04/G03/mouth.png",
       "sha256": "49b42de8593adf344ce87052f89aa62f4f2efac06b4728d5fb33764a50a21558",
       "bytes": 25917,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S04/G03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S04/G03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S04/G04/mouth.png",
       "sha256": "b890c0a227727c2b4b0a59e63ed2181c5642a1f55d343f4b468ea4871b214d89",
       "bytes": 25733,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S04/G04/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S04/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S04/N00/mouth.png",
       "sha256": "affc348713ad27393e050d924740b616a81c062819373593a0a1c4a872e054e7",
       "bytes": 22905,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S04/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S04/N00/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S04/X01/mouth.png",
       "sha256": "af2476bf6686a9731fa27d29ad19ceb303225bced557d287dea0f83b236de295",
       "bytes": 54926,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S04/X01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S04/X01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S04/X02/mouth.png",
       "sha256": "c1d30099e1e67c64c8ffa30334bee45437274c33aa9ca1ec71c8cdc887c429f9",
       "bytes": 47352,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S04/X02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S04/X02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M01/S04/X03/mouth.png",
-      "sha256": "dc50bab151f195d4d667313626fc696d9ae8fcd3f84d14bb940d738f927cb0c5",
-      "bytes": 49003,
+      "sha256": "ba598851f5fd7883dc0e2e0ec8978dc9baffe6bbf9fef72fa228ccf5f21f05a7",
+      "bytes": 55889,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260831_commercial_inspyrenet_rebuild_v03/S04/X03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M01/current/approved/r20260902_m01_x03_tongue_continuity_candidate_v02/S04/X03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M02/S01/G01/mouth.png",
