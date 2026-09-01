@@ -42,9 +42,9 @@
           </canvas>
           <div class="canvas-grid" aria-hidden="true"></div>
         </div>
-        <div id="status" class="status" role="status" aria-live="polite">
+        <div id="status" class="status" role="status" aria-live="polite" data-tone="working">
           <span class="status-light" aria-hidden="true"></span>
-          <span data-i18n="status.loadingCatalog">Loading the public catalog…</span>
+          <span id="status-text" data-i18n="status.loadingCatalog">Loading the public catalog…</span>
         </div>
         <article class="recipe-card" aria-labelledby="recipe-heading">
           <div>
@@ -58,7 +58,12 @@
         <textarea id="recipe-fallback" class="recipe-fallback" readonly hidden></textarea>
       </section>
 
-      <form id="controls" class="control-panel" aria-label="Portrait module controls">
+      <form
+        id="controls"
+        class="control-panel"
+        aria-label="Portrait module controls"
+        data-i18n-aria-label="a11y.controls"
+      >
         <fieldset>
           <legend data-i18n="section.identity">Identity</legend>
           <div class="control-grid">

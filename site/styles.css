@@ -221,6 +221,20 @@ legend {
   box-shadow: 0 0 16px rgb(217 173 103 / 75%);
 }
 
+.status[data-tone="ready"] .status-light {
+  background: var(--cyan);
+  box-shadow: 0 0 16px rgb(111 198 207 / 70%);
+}
+
+.status[data-tone="error"] {
+  color: var(--danger);
+}
+
+.status[data-tone="error"] .status-light {
+  background: var(--danger);
+  box-shadow: 0 0 16px rgb(236 138 137 / 70%);
+}
+
 .recipe-card {
   display: flex;
   justify-content: space-between;
