@@ -35,6 +35,14 @@ deployment rather than pinning the remote app forever. Portrait composition
 and export still happen in the browser; the public layers are served by this
 repository's GitHub Pages deployment.
 
+In itch.io's **Embed options → Frame options**, leave **SharedArrayBuffer
+support** unchecked. The mixer does not use shared memory; that option adds
+cross-origin isolation headers that prevent the GitHub Pages iframe from
+loading ([itch.io's explanation](https://itch.io/t/2025776/experimental-sharedarraybuffer-support)).
+After saving an upload or changing embed settings, verify the public itch.io
+page itself: launch the mixer, change modules, and download a PNG. A local
+wrapper preview alone does not verify itch.io's embedding configuration.
+
 Available component axes include face/body bases (`F`), skin tones (`S`),
 eye+brow modules (`E`), mouth modules (`M`), hair (`H`), clothing (`C`),
 human/elf ears, blush, and sweat layers. Exact available cells are listed in
