@@ -28,6 +28,13 @@ transaction ledger. It never selects components, promotes a revision, or
 updates `_metadata/current/authority_manifest.json`; do not treat it as the
 component version manager.
 
+For female cross-skin E/M generation or repair, including a mouth that looks
+shifted, shortened, cut, or contaminated by face-profile alpha, also read
+[`references/female-expression-repair.md`](references/female-expression-repair.md).
+It defines the flat-field donor, literal-coordinate, native-mask, and visual
+gates that must pass before a complete candidate revision can be shown for
+acceptance.
+
 ## Assembly contract
 
 All production layers use the original 1254×1254 canvas. Do not crop, shift,
