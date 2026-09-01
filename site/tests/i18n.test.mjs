@@ -21,6 +21,21 @@ test('translator returns both languages and rejects missing keys', () => {
 });
 
 
+test('G-series expression labels match the approved emotion meanings', () => {
+  const english = createTranslator('en');
+  const traditionalChinese = createTranslator('zh-Hant');
+
+  assert.deepEqual(
+    ['G01', 'G02', 'G03', 'G04'].map((id) => english(`expression.${id}`)),
+    ['G01 · Smile', 'G02 · Hit / Angry', 'G03 · Terrified', 'G04 · Dazed'],
+  );
+  assert.deepEqual(
+    ['G01', 'G02', 'G03', 'G04'].map((id) => traditionalChinese(`expression.${id}`)),
+    ['G01 · 笑', 'G02 · 受擊生氣', 'G03 · 驚恐', 'G04 · 失神'],
+  );
+});
+
+
 test('supported language metadata is stable and user-facing', () => {
   assert.deepEqual(supportedLanguages(), [
     { id: 'en', label: 'English' },
