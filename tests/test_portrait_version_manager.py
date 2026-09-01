@@ -772,6 +772,286 @@ class RecoveryPlanTests(unittest.TestCase):
         )
 
 
+class ExistingCandidatePromotionPlanTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp_dir.cleanup)
+        self.root = Path(self.temp_dir.name)
+        self.v5_root = self.root / "V5"
+        self.profile = {
+            "gender": "female",
+            "identities": ["M01"],
+            "skins": ["S01", "S02"],
+            "groups": ["N00", "G01"],
+            "filenames": {"M": "mouth.png"},
+        }
+        self.component_root = (
+            self.v5_root / "female" / "component_library_v1"
+        )
+        self.revision = "r2-user-accepted"
+        self.plan_id = "existing-candidate-promotion"
+        self.current_files: dict[str, bytes] = {}
+        self.candidate_files: dict[str, bytes] = {}
+        for relative in sorted(pvm.expected_em_paths(self.profile, "M01")):
+            current = f"current:{relative}".encode()
+            candidate = (
+                b"accepted-replacement"
+                if relative == "S02/G01/mouth.png"
+                else current
+            )
+            self.current_files[relative] = current
+            self.candidate_files[relative] = candidate
+            current_path = (
+                self.component_root
+                / "M"
+                / "M01"
+                / "current"
+                / "approved"
+                / "r1"
+                / Path(relative)
+            )
+            candidate_path = (
+                self.component_root
+                / "M"
+                / "M01"
+                / "current"
+                / "candidates"
+                / self.revision
+                / Path(relative)
+            )
+            self.evidence_root = (
+                self.component_root
+                / "_work_history"
+                / "current"
+                / self.plan_id
+                / "candidate_evidence"
+                / "M01"
+                / self.revision
+            )
+            evidence_path = self.evidence_root / Path(relative)
+            for path, payload in (
+                (current_path, current),
+                (candidate_path, candidate),
+                (evidence_path, candidate),
+            ):
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(payload)
+
+        manifest_path = (
+            self.component_root
+            / "_metadata"
+            / "current"
+            / "authority_manifest.json"
+        )
+        manifest_path.parent.mkdir(parents=True, exist_ok=True)
+        manifest_path.write_text(
+            json.dumps(
+                {
+                    "approved_authorities": {
+                        "E": {},
+                        "M": {
+                            "M01": {
+                                "path": "M/M01/current/approved/r1",
+                                "tree_sha256": tree_sha256(self.current_files),
+                                "files_sha256": {
+                                    relative: sha256(payload)
+                                    for relative, payload in self.current_files.items()
+                                },
+                            }
+                        }
+                    }
+                }
+            ),
+            encoding="utf-8",
+        )
+        self.acceptance_evidence = (
+            self.component_root
+            / "_work_history"
+            / "current"
+            / self.plan_id
+            / "candidate_manifest.json"
+        )
+        self.acceptance_evidence.parent.mkdir(parents=True, exist_ok=True)
+        self.acceptance_evidence.write_text(
+            json.dumps(
+                {
+                    "candidate_tree_sha256": tree_sha256(self.candidate_files),
+                    "qc_sha256": "a" * 64,
+                    "promotion_allowed": False,
+                }
+            ),
+            encoding="utf-8",
+        )
+
+    def build_plan(self) -> dict:
+        return pvm.plan_existing_candidate_promotion(
+            v5_root=self.v5_root,
+            profile=self.profile,
+            identity="M01",
+            revision=self.revision,
+            plan_id=self.plan_id,
+            evidence_root=self.evidence_root,
+            acceptance_evidence_path=self.acceptance_evidence,
+        )
+
+    def write_acceptance_record(self, plan: dict) -> Path:
+        path = self.acceptance_evidence.with_name("acceptance_record.json")
+        path.write_text(
+            json.dumps(
+                {
+                    "schema": "portrait-recovery-acceptance-v1",
+                    "record_id": "user-accepted-r2",
+                    "decision": "accepted",
+                    "accepted_by": "user",
+                    "accepted_at": "2026-09-02T12:00:00+08:00",
+                    "plan_sha256": plan["plan_sha256"],
+                }
+            ),
+            encoding="utf-8",
+        )
+        return path
+
+    def test_builds_plan_for_existing_complete_candidate_and_binds_qc_evidence(self) -> None:
+        plan = self.build_plan()
+
+        self.assertEqual(plan["plan_kind"], "existing_complete_candidate_promotion")
+        self.assertEqual(plan["summary"]["retained_count"], 3)
+        self.assertEqual(plan["summary"]["recovered_count"], 1)
+        self.assertEqual(
+            plan["existing_candidate"]["tree_sha256"],
+            tree_sha256(self.candidate_files),
+        )
+        self.assertEqual(
+            plan["acceptance_evidence"]["sha256"],
+            pvm.file_sha256(self.acceptance_evidence),
+        )
+        self.assertEqual(
+            pvm.verify_adoption_plan(plan, allow_existing_destinations=True)["status"],
+            "PASS",
+        )
+
+    def test_existing_candidate_plan_fails_closed_after_qc_or_candidate_tampering(self) -> None:
+        plan = self.build_plan()
+        original_evidence = self.acceptance_evidence.read_text(encoding="utf-8")
+        self.acceptance_evidence.write_text("tampered", encoding="utf-8")
+        with self.assertRaises(pvm.VersionManagerError):
+            pvm.verify_adoption_plan(plan, allow_existing_destinations=True)
+
+        self.acceptance_evidence.write_text(original_evidence, encoding="utf-8")
+        candidate = (
+            self.component_root
+            / "M"
+            / "M01"
+            / "current"
+            / "candidates"
+            / self.revision
+            / "S02"
+            / "G01"
+            / "mouth.png"
+        )
+        candidate.write_bytes(b"tampered-candidate")
+        with self.assertRaises(pvm.VersionManagerError):
+            pvm.verify_adoption_plan(plan, allow_existing_destinations=True)
+
+    def test_existing_candidate_plan_binds_complete_evidence_and_changed_list(self) -> None:
+        plan = self.build_plan()
+        unchanged_evidence = self.evidence_root / "S01" / "N00" / "mouth.png"
+        unchanged_evidence.write_bytes(b"tampered-unchanged-evidence")
+        with self.assertRaises(pvm.VersionManagerError):
+            pvm.verify_adoption_plan(plan, allow_existing_destinations=True)
+
+        unchanged_evidence.write_bytes(self.candidate_files["S01/N00/mouth.png"])
+        plan["changed_relative_paths"] = []
+        plan["plan_sha256"] = pvm._canonical_sha256(plan, "plan_sha256")
+        with self.assertRaises(pvm.VersionManagerError):
+            pvm.verify_adoption_plan(plan, allow_existing_destinations=True)
+
+    def test_promotes_existing_candidate_without_an_apply_transaction(self) -> None:
+        plan = self.build_plan()
+        acceptance = self.write_acceptance_record(plan)
+
+        result = pvm.promote_recovery_plan(
+            plan, acceptance_record_path=acceptance
+        )
+
+        self.assertEqual(result["status"], "PROMOTED")
+        self.assertTrue(
+            (
+                self.component_root
+                / "M"
+                / "M01"
+                / "current"
+                / "approved"
+                / self.revision
+            ).is_dir()
+        )
+        self.assertTrue(
+            (
+                self.component_root
+                / "M"
+                / "M01"
+                / "old_versions"
+                / "superseded"
+                / "r1"
+            ).is_dir()
+        )
+        self.assertEqual(
+            pvm.audit_authority(self.v5_root, "female", self.profile)["status"],
+            "PASS",
+        )
+
+    def test_cli_builds_existing_candidate_plan_without_mutating_the_candidate(self) -> None:
+        profiles_path = self.root / "profiles.json"
+        profiles_path.write_text(
+            json.dumps({"profiles": {"female_test": self.profile}}),
+            encoding="utf-8",
+        )
+        plan_path = self.root / "existing-candidate-plan.json"
+        candidate_tree_before = pvm.tree_sha256(
+            self.component_root
+            / "M"
+            / "M01"
+            / "current"
+            / "candidates"
+            / self.revision
+        )
+
+        with redirect_stdout(io.StringIO()):
+            result = pvm.main(
+                [
+                    "--profiles",
+                    str(profiles_path),
+                    "plan-candidate",
+                    str(self.v5_root),
+                    str(self.evidence_root),
+                    self.revision,
+                    self.plan_id,
+                    "female_test",
+                    "M01",
+                    str(self.acceptance_evidence),
+                    "--output",
+                    str(plan_path),
+                ]
+            )
+
+        self.assertEqual(result, 0)
+        self.assertEqual(
+            json.loads(plan_path.read_text(encoding="utf-8"))["plan_kind"],
+            "existing_complete_candidate_promotion",
+        )
+        self.assertEqual(
+            pvm.tree_sha256(
+                self.component_root
+                / "M"
+                / "M01"
+                / "current"
+                / "candidates"
+                / self.revision
+            ),
+            candidate_tree_before,
+        )
+
+
 class CleanupGateTests(unittest.TestCase):
     def setUp(self) -> None:
         self.temp_dir = tempfile.TemporaryDirectory()

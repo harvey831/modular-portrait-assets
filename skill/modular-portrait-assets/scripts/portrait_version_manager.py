@@ -528,6 +528,188 @@ def plan_female_em_recovery(
     return plan
 
 
+def plan_existing_candidate_promotion(
+    *,
+    v5_root: Path | str,
+    profile: dict[str, Any],
+    identity: str,
+    revision: str,
+    plan_id: str,
+    evidence_root: Path | str,
+    acceptance_evidence_path: Path | str,
+) -> dict[str, Any]:
+    if profile.get("gender") != "female":
+        raise VersionManagerError("existing candidate promotion requires a female profile")
+    if identity not in profile.get("identities", []) or identity[:1] not in {"E", "M"}:
+        raise VersionManagerError("identity is outside the coverage profile")
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", revision):
+        raise VersionManagerError("revision is not a safe directory name")
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", plan_id):
+        raise VersionManagerError("plan id is not a safe identifier")
+
+    v5_root = Path(v5_root).resolve()
+    component_root = v5_root / "female" / "component_library_v1"
+    category = identity[0]
+    candidate_root = (
+        component_root
+        / category
+        / identity
+        / "current"
+        / "candidates"
+        / revision
+    ).resolve()
+    if not candidate_root.is_dir():
+        raise VersionManagerError(f"complete candidate revision is missing: {identity}/{revision}")
+
+    evidence_root = _inside(Path(evidence_root).resolve(), component_root)
+    evidence_relative = evidence_root.relative_to(component_root)
+    if not evidence_relative.parts or evidence_relative.parts[0] != "_work_history":
+        raise VersionManagerError("candidate evidence root must be under _work_history")
+    if evidence_root == candidate_root or not evidence_root.is_dir():
+        raise VersionManagerError("candidate evidence must be a distinct complete directory")
+
+    acceptance_evidence_path = _inside(
+        Path(acceptance_evidence_path).resolve(), component_root
+    )
+    acceptance_relative = acceptance_evidence_path.relative_to(component_root)
+    if (
+        not acceptance_relative.parts
+        or acceptance_relative.parts[0] != "_work_history"
+        or not acceptance_evidence_path.is_file()
+    ):
+        raise VersionManagerError("acceptance evidence must be a file under _work_history")
+
+    manifest_path = (
+        component_root / "_metadata" / "current" / "authority_manifest.json"
+    ).resolve()
+    manifest = _load_json_object(manifest_path, "female authority manifest")
+    approved = manifest.get("approved_authorities")
+    record = (
+        approved.get(category, {}).get(identity)
+        if isinstance(approved, dict) and isinstance(approved.get(category), dict)
+        else None
+    )
+    if not isinstance(record, dict):
+        raise VersionManagerError(f"missing approved authority for {identity}")
+    raw_approved_path = record.get("path")
+    approved_hashes = record.get("files_sha256")
+    if (
+        not isinstance(raw_approved_path, str)
+        or Path(raw_approved_path).is_absolute()
+        or not isinstance(approved_hashes, dict)
+    ):
+        raise VersionManagerError(f"malformed approved authority for {identity}")
+    approved_root = _inside(component_root / Path(raw_approved_path), component_root)
+
+    expected = expected_em_paths(profile, identity)
+    candidate_physical = {
+        path.relative_to(candidate_root).as_posix()
+        for path in candidate_root.rglob("*")
+        if path.is_file()
+    }
+    evidence_physical = {
+        path.relative_to(evidence_root).as_posix()
+        for path in evidence_root.rglob("*")
+        if path.is_file()
+    }
+    if candidate_physical != expected:
+        raise VersionManagerError(f"candidate coverage mismatch: {identity}")
+    if evidence_physical != expected:
+        raise VersionManagerError(f"candidate evidence coverage mismatch: {identity}")
+    if set(approved_hashes) != expected:
+        raise VersionManagerError(f"approved authority coverage mismatch: {identity}")
+
+    files: list[dict[str, str]] = []
+    candidate_hashes: dict[str, str] = {}
+    changed: list[str] = []
+    retained_count = 0
+    recovered_count = 0
+    for relative in sorted(expected):
+        approved_hash = approved_hashes.get(relative)
+        if not isinstance(approved_hash, str):
+            raise VersionManagerError(f"invalid approved hash: {identity}/{relative}")
+        approved_source = _inside(approved_root / Path(relative), approved_root)
+        candidate_source = _inside(candidate_root / Path(relative), candidate_root)
+        evidence_source = _inside(evidence_root / Path(relative), evidence_root)
+        if (
+            not approved_source.is_file()
+            or file_sha256(approved_source) != approved_hash.casefold()
+        ):
+            raise VersionManagerError(f"approved authority hash mismatch: {identity}/{relative}")
+        candidate_hash = file_sha256(candidate_source)
+        if file_sha256(evidence_source) != candidate_hash:
+            raise VersionManagerError(f"candidate evidence hash mismatch: {identity}/{relative}")
+        candidate_hashes[relative] = candidate_hash
+        is_changed = candidate_hash != approved_hash.casefold()
+        source = evidence_source if is_changed else approved_source
+        source_role = "recovered_exact" if is_changed else "retained_approved"
+        if is_changed:
+            changed.append(relative)
+            recovered_count += 1
+        else:
+            retained_count += 1
+        files.append(
+            {
+                "identity": identity,
+                "category": category,
+                "relative_path": relative,
+                "source_path": str(source),
+                "source_sha256": candidate_hash,
+                "source_role": source_role,
+                "destination_relative": (
+                    f"female/component_library_v1/{category}/{identity}/current/"
+                    f"candidates/{revision}/{relative}"
+                ),
+            }
+        )
+    if not changed:
+        raise VersionManagerError("candidate is byte-identical to the current approved revision")
+
+    candidate_tree = _tree_hash_from_records(candidate_hashes)
+    if tree_sha256(candidate_root) != candidate_tree or tree_sha256(evidence_root) != candidate_tree:
+        raise VersionManagerError("candidate and evidence tree hashes are not identical")
+
+    plan: dict[str, Any] = {
+        "schema": "portrait-recovery-adoption-plan-v1",
+        "status": "READY",
+        "plan_kind": "existing_complete_candidate_promotion",
+        "plan_id": plan_id,
+        "gender": "female",
+        "profile": profile,
+        "v5_root": str(v5_root),
+        "recovery_root": str(evidence_root),
+        "recovery_evidence_mode": "exact_existing_candidate_evidence_copy",
+        "authority_manifest": {
+            "path": str(manifest_path),
+            "sha256": file_sha256(manifest_path),
+        },
+        "revision": revision,
+        "target_identities": [identity],
+        "identity_tree_sha256": {identity: candidate_tree},
+        "existing_candidate": {
+            "path": str(candidate_root),
+            "tree_sha256": candidate_tree,
+            "evidence_path": str(evidence_root),
+            "evidence_tree_sha256": candidate_tree,
+        },
+        "acceptance_evidence": {
+            "path": str(acceptance_evidence_path),
+            "sha256": file_sha256(acceptance_evidence_path),
+        },
+        "changed_relative_paths": changed,
+        "summary": {
+            "identity_count": 1,
+            "file_count": len(files),
+            "retained_count": retained_count,
+            "recovered_count": recovered_count,
+        },
+        "files": files,
+    }
+    plan["plan_sha256"] = _canonical_sha256(plan, "plan_sha256")
+    verify_adoption_plan(plan, allow_existing_destinations=True)
+    return plan
+
+
 def verify_adoption_plan(
     plan: dict[str, Any], *, allow_existing_destinations: bool = False
 ) -> dict[str, Any]:
@@ -702,6 +884,72 @@ def verify_adoption_plan(
     for identity, identity_files in identities.items():
         if _tree_hash_from_records(identity_files) != planned_trees.get(identity):
             raise VersionManagerError(f"planned identity tree hash mismatch: {identity}")
+    plan_kind = plan.get("plan_kind")
+    if plan_kind not in {None, "existing_complete_candidate_promotion"}:
+        raise VersionManagerError("unsupported adoption plan kind")
+    if plan_kind == "existing_complete_candidate_promotion":
+        if len(targets) != 1:
+            raise VersionManagerError("existing candidate promotion supports one identity")
+        identity = targets[0]
+        category = identity[0]
+        candidate_binding = plan.get("existing_candidate")
+        evidence_binding = plan.get("acceptance_evidence")
+        if not isinstance(candidate_binding, dict) or not isinstance(evidence_binding, dict):
+            raise VersionManagerError("existing candidate plan lacks evidence bindings")
+        expected_candidate = (
+            component_root
+            / category
+            / identity
+            / "current"
+            / "candidates"
+            / revision
+        ).resolve()
+        candidate_text = candidate_binding.get("path")
+        candidate_tree = candidate_binding.get("tree_sha256")
+        candidate_evidence_text = candidate_binding.get("evidence_path")
+        candidate_evidence_tree = candidate_binding.get("evidence_tree_sha256")
+        candidate_evidence_root = _inside(recovery_root, component_root)
+        candidate_evidence_relative = candidate_evidence_root.relative_to(component_root)
+        if (
+            not isinstance(candidate_text, str)
+            or Path(candidate_text).resolve() != expected_candidate
+            or not isinstance(candidate_tree, str)
+            or candidate_tree != planned_trees[identity]
+            or not expected_candidate.is_dir()
+            or tree_sha256(expected_candidate) != candidate_tree
+        ):
+            raise VersionManagerError("existing candidate binding is invalid")
+        if (
+            not isinstance(candidate_evidence_text, str)
+            or Path(candidate_evidence_text).resolve() != candidate_evidence_root
+            or not isinstance(candidate_evidence_tree, str)
+            or candidate_evidence_tree != candidate_tree
+            or not candidate_evidence_relative.parts
+            or candidate_evidence_relative.parts[0] != "_work_history"
+            or not candidate_evidence_root.is_dir()
+            or tree_sha256(candidate_evidence_root) != candidate_evidence_tree
+        ):
+            raise VersionManagerError("complete candidate evidence binding is invalid")
+        expected_changed = sorted(
+            item["relative_path"]
+            for item in files
+            if item["source_role"] == "recovered_exact"
+        )
+        if plan.get("changed_relative_paths") != expected_changed:
+            raise VersionManagerError("existing candidate changed-file list is invalid")
+        evidence_text = evidence_binding.get("path")
+        evidence_hash = evidence_binding.get("sha256")
+        if not isinstance(evidence_text, str) or not isinstance(evidence_hash, str):
+            raise VersionManagerError("acceptance evidence binding is incomplete")
+        evidence_path = _inside(Path(evidence_text).resolve(), component_root)
+        evidence_relative = evidence_path.relative_to(component_root)
+        if (
+            not evidence_relative.parts
+            or evidence_relative.parts[0] != "_work_history"
+            or not evidence_path.is_file()
+            or file_sha256(evidence_path) != evidence_hash.casefold()
+        ):
+            raise VersionManagerError("acceptance evidence binding is invalid")
     return {"status": "PASS", "verified_files": len(files)}
 
 
@@ -1424,6 +1672,19 @@ def _build_parser() -> argparse.ArgumentParser:
     plan.add_argument("--frozen-inventory", type=Path)
     plan.add_argument("--output", type=Path, required=True)
 
+    plan_candidate = subparsers.add_parser(
+        "plan-candidate",
+        help="bind an existing complete candidate and its QC evidence for promotion",
+    )
+    plan_candidate.add_argument("v5_root", type=Path)
+    plan_candidate.add_argument("evidence_root", type=Path)
+    plan_candidate.add_argument("revision")
+    plan_candidate.add_argument("plan_id")
+    plan_candidate.add_argument("profile")
+    plan_candidate.add_argument("identity")
+    plan_candidate.add_argument("acceptance_evidence", type=Path)
+    plan_candidate.add_argument("--output", type=Path, required=True)
+
     apply = subparsers.add_parser(
         "apply-recovery", help="create complete candidates from a verified plan"
     )
@@ -1487,6 +1748,19 @@ def main(argv: list[str] | None = None) -> int:
                 target_identities=args.targets,
                 revision=args.revision,
                 plan_id=args.plan_id,
+            )
+        elif args.command == "plan-candidate":
+            profiles = load_profiles(args.profiles)
+            if args.profile not in profiles:
+                raise VersionManagerError(f"unknown coverage profile: {args.profile}")
+            result = plan_existing_candidate_promotion(
+                v5_root=args.v5_root,
+                profile=profiles[args.profile],
+                identity=args.identity,
+                revision=args.revision,
+                plan_id=args.plan_id,
+                evidence_root=args.evidence_root,
+                acceptance_evidence_path=args.acceptance_evidence,
             )
         elif args.command == "apply-recovery":
             result = apply_recovery_plan(_load_json_object(args.plan, "adoption plan"))

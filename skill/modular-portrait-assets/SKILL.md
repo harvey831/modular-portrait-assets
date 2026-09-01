@@ -28,6 +28,11 @@ transaction ledger. It never selects components, promotes a revision, or
 updates `_metadata/current/authority_manifest.json`; do not treat it as the
 component version manager.
 
+When a complete candidate already exists and the user accepts its exact QC,
+use `plan-candidate` to bind the candidate, its separate `_work_history`
+evidence copy, and the acceptance evidence before `promote`. Do not fabricate
+a recovery plan or manually edit the authority manifest.
+
 For female cross-skin E/M generation or repair, including a mouth that looks
 shifted, shortened, cut, or contaminated by face-profile alpha, also read
 [`references/female-expression-repair.md`](references/female-expression-repair.md).

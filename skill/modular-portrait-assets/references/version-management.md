@@ -81,6 +81,22 @@ python <tool> resume-apply <plan.json> --output <apply-report.json>
 python <tool> promote <plan.json> <acceptance-record.json> --output <promotion-report.json>
 ```
 
+Existing complete candidate lifecycle:
+
+```text
+python <tool> plan-candidate <v5-root> <complete-evidence-copy-root> <revision> <plan-id> female_em_v1 <identity> <candidate-qc-manifest.json> --output <plan.json>
+python <tool> promote <plan.json> <acceptance-record.json> --output <promotion-report.json>
+```
+
+`plan-candidate` is read-only. It accepts exactly one complete canonical female
+E/M candidate at `<category>/<identity>/current/candidates/<revision>`, requires
+a byte-identical complete second copy under `_work_history`, compares it with
+the current approved revision, and binds the changed payload hashes plus the
+candidate/QC manifest hash into the plan. It rejects incomplete candidates,
+evidence outside `_work_history`, byte-identical no-op revisions, and any later
+candidate or QC-evidence tampering. Do not run `apply-recovery` for this plan:
+the candidate already exists and `promote` moves that exact directory.
+
 `plan-recovery` is no-write. `apply-recovery` creates complete candidates only.
 For a legacy lane registry whose paths point to deleted staging, pass
 `--frozen-inventory <inventory.json>`; every selected SHA must match both that
