@@ -105,10 +105,10 @@ class PagesCatalogTests(unittest.TestCase):
 
     def test_actual_catalog_contains_all_hash_bound_assets(self) -> None:
         catalog = build_pages_site.build_catalog(REPO_ROOT)
-        self.assertEqual(len(catalog["assets"]), 974)
+        self.assertEqual(len(catalog["assets"]), 1184)
         self.assertEqual(catalog["canvas"], [1254, 1254, "RGBA"])
-        self.assertEqual(catalog["asset_count"], 974)
-        self.assertEqual(catalog["total_bytes"], 172106675)
+        self.assertEqual(catalog["asset_count"], 1184)
+        self.assertEqual(catalog["total_bytes"], 183498531)
         self.assertRegex(catalog["catalog_sha256"], r"^[0-9a-f]{64}$")
         self.assertNotEqual(
             catalog["catalog_sha256"], catalog["source_manifest_sha256"]

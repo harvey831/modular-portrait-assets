@@ -15,6 +15,19 @@ python skill/modular-portrait-assets/scripts/validate_release.py <repo-root>
 Stop if validation fails. Never select a file by revision number, timestamp,
 `latest`, or visual similarity.
 
+## Private V5 versioning route
+
+For any private V5, E/M, different-S, modular QC, recovery, candidate,
+promotion, old-version, or cleanup task, first read
+[`references/version-management.md`](references/version-management.md) and use
+`scripts/portrait_version_manager.py`. The female and male E/M contracts are
+different: female includes X01-X03; male does not.
+
+`different_s_em_status_version_manager_v01.py` is only a timed-worker
+transaction ledger. It never selects components, promotes a revision, or
+updates `_metadata/current/authority_manifest.json`; do not treat it as the
+component version manager.
+
 ## Assembly contract
 
 All production layers use the original 1254×1254 canvas. Do not crop, shift,

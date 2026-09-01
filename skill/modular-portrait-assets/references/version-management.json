@@ -1,0 +1,31 @@
+{
+  "schema": "portrait-version-management-profiles-v1",
+  "profiles": {
+    "female_em_v1": {
+      "gender": "female",
+      "identities": [
+        "E01", "E02", "E03", "E04", "E05", "E06",
+        "M01", "M02", "M03", "M04", "M05", "M06"
+      ],
+      "skins": ["S01", "S02", "S03", "S04"],
+      "groups": ["N00", "G01", "G02", "G03", "G04", "X01", "X02", "X03"],
+      "filenames": {
+        "E": "eye_brow.png",
+        "M": "mouth.png"
+      }
+    },
+    "male_em_v1": {
+      "gender": "male",
+      "identities": [
+        "E01", "E02", "E03", "E04", "E05", "E06",
+        "M01", "M02", "M03", "M04", "M05", "M06"
+      ],
+      "skins": ["S01", "S02", "S03", "S04"],
+      "groups": ["N00", "G01", "G02", "G03", "G04"],
+      "filenames": {
+        "E": "eye_brow.webp",
+        "M": "mouth.webp"
+      }
+    }
+  }
+}

@@ -2,15 +2,15 @@
   "schema": "modular-portrait-assets-cc0-v1",
   "license": "CC0-1.0",
   "source_project": "MODULAR_PORTRAIT_LIBRARY_V5",
-  "asset_count": 974,
-  "total_bytes": 172106675,
+  "asset_count": 1184,
+  "total_bytes": 183498531,
   "authority_manifests": [
     {
       "gender": "female",
       "schema": "female_component_library_single_authority",
       "status": "ACTIVE_SINGLE_VERSION_MANAGER",
       "effective_date": "2026-09-01T04:49:53+08:00",
-      "sha256": "e78e429b3baf4c8e50400bce6daf5b2124b96d840594689a355ee0747fcea679"
+      "sha256": "cd4ff24d3076014104a1eeb5f2bb265e89157f426ecd27b265e32f9773987597"
     },
     {
       "gender": "male",
@@ -250,385 +250,1120 @@
       "sha256": "718d0abc7f23073a878e3aa68ef13042b1f02b2288230cde9ed94964293a971f",
       "bytes": 58345,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G01/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S01/G01/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E02/S01/G02/eye_brow.png",
       "sha256": "746efe9953362b30ae25e82cbd51cd93e674e9e78acde219c9ce42ea9568d4cc",
       "bytes": 73716,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G02/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S01/G02/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E02/S01/G03/eye_brow.png",
       "sha256": "4ee4e0a278a9234778a0de78528faa83fb77b71f3e9d3887ab5c6f95bccfca24",
       "bytes": 76480,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G03/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S01/G03/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E02/S01/G04/eye_brow.png",
       "sha256": "cfefa52da0aec2087e41adaba57b32c5dcd3f6e660a890d13acf9f7b35b88b51",
       "bytes": 67910,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G04/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S01/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E02/S01/N00/eye_brow.png",
       "sha256": "70842dea1abcef03ede1f76608c7eb17f6b90f86d549f496bea972cea4dbe0f8",
       "bytes": 62864,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S01/N00/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E02/S01/X01/eye_brow.png",
       "sha256": "22983bf4fc497c404a3aee3b9b3fd2e3b78bfea4d24706b0715da32d5f7ca4e2",
       "bytes": 88062,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X01/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S01/X01/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E02/S01/X02/eye_brow.png",
       "sha256": "1f2660ae3b07a14c82202bef6b2f4b79300585efbf3fd2d1ee619f00ce1ea464",
       "bytes": 105001,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X02/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S01/X02/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E02/S01/X03/eye_brow.png",
       "sha256": "2a65b32b905ac2888f815418d536324823130816315c1a1dcb0e6d78e49312bd",
       "bytes": 99850,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X03/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S01/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S02/G01/eye_brow.png",
+      "sha256": "b0e235c7560739379740ce9f4327c4910319a2b896019e1c662545eba21086db",
+      "bytes": 59194,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S02/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S02/G02/eye_brow.png",
+      "sha256": "349a124013d63d8b710fb2bcd0f2decd2aacea27f5e3e424cd48f4a3686a4c43",
+      "bytes": 74501,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S02/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S02/G03/eye_brow.png",
+      "sha256": "1f0f3b344eca1fc7f8a7a7db0f4c08f9054b986fed83a82c55dd9fd7bcf84ba2",
+      "bytes": 78247,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S02/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S02/G04/eye_brow.png",
+      "sha256": "4280cca52c67cb36e428c05de3c88f75655db4e61c1a9d72a91197d45f77a8a4",
+      "bytes": 67166,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S02/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E02/S02/N00/eye_brow.png",
       "sha256": "d06f62db7ff7ce6cb4c3f975f5bf16f4523032f5270c767f699ef2d239c43eb0",
       "bytes": 61736,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S02/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S02/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S02/X01/eye_brow.png",
+      "sha256": "5964783c1fc9d7c64dc71ef0cc38bc49c1469029ce18feabeb8785bf2c441866",
+      "bytes": 91197,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S02/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S02/X02/eye_brow.png",
+      "sha256": "b29d268edc24060bb51a6c200b7c7ba2869fb24aa8f143168cc7caecf4d1a8aa",
+      "bytes": 103421,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S02/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S02/X03/eye_brow.png",
+      "sha256": "37b3338c2a5ae23ceecf0e8ed9dffa50bd94404132d4d4e0968f95d7ffde7f79",
+      "bytes": 104406,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S02/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S03/G01/eye_brow.png",
+      "sha256": "4abedfcafc83304a8ff8e8f6aa9e5429cdb1f94ee6bf371093a47391acee6666",
+      "bytes": 59859,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S03/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S03/G02/eye_brow.png",
+      "sha256": "9b2a3748d45fcb23aa6a9a8df5839a4ee92f12a9e95a0e2ecc1c403b301b8631",
+      "bytes": 76289,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S03/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S03/G03/eye_brow.png",
+      "sha256": "348647a92cba9c61e3e15158d09ffc65a8ef7ad4364ce966f9cc8dff0c7dd44d",
+      "bytes": 78955,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S03/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S03/G04/eye_brow.png",
+      "sha256": "87178cd41d3d0c3592ea7e72d9f2227e893072fdca1b01ec9a009f9c14a4d6fe",
+      "bytes": 68313,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S03/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E02/S03/N00/eye_brow.png",
       "sha256": "986bb386fadd219e56fc2226fab228fab7c91525805c622dca1a8f7f9d3e92d3",
       "bytes": 62061,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S03/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S03/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S03/X01/eye_brow.png",
+      "sha256": "849a17a3c429e1010aba2ad42e4eee1e32545fb27bb96acdef09d7be75b406d7",
+      "bytes": 93359,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S03/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S03/X02/eye_brow.png",
+      "sha256": "72d4b9aea478636b9264d920c25cc88b03229038f984fc5005f7609b4f83455d",
+      "bytes": 109020,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S03/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S03/X03/eye_brow.png",
+      "sha256": "d718fba95ab064b37f1861920db28fa807bad6a7e0a281f44fc6b13da49e107d",
+      "bytes": 109461,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S03/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S04/G01/eye_brow.png",
+      "sha256": "110029d1d16ee02c5c43e628354397e4b24c5f85af07b96dd1c658d2cbe28871",
+      "bytes": 61492,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S04/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S04/G02/eye_brow.png",
+      "sha256": "4ff08e7843135d259130bb92694dbb7cf8f37e6e5a36c6efb6d7897557c90357",
+      "bytes": 72766,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S04/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S04/G03/eye_brow.png",
+      "sha256": "20d6a53bdf7f2ec22928eb55dd848cc4106b40e92a9542a1f2d61697857c4609",
+      "bytes": 73246,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S04/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S04/G04/eye_brow.png",
+      "sha256": "44b7a7d2372ae31e590da07aabd2c696cceb57dbbdf1c764156cc9d959fe6e30",
+      "bytes": 69258,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S04/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E02/S04/N00/eye_brow.png",
       "sha256": "77dc17051af70ac2141cab6652988e51a24c342b846d8332681ec1f4e735d767",
       "bytes": 60124,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S04/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S04/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S04/X01/eye_brow.png",
+      "sha256": "e6628942fb4e3d3afae21bfc5de7011471e5b284693f8745e49ccf7384c93db3",
+      "bytes": 104704,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S04/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S04/X02/eye_brow.png",
+      "sha256": "b7d5bd6c1e0a7dd6de7ee31ec455466dfa44732bded804549be3d064b1646956",
+      "bytes": 112691,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S04/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E02/S04/X03/eye_brow.png",
+      "sha256": "d87cc20c20077c3ce1c1a8eb3aa369c5e7b0f7901b0b3b97eb67005c66234531",
+      "bytes": 107707,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E02/current/approved/r20260902_complete_recovery_v01/S04/X03/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E03/S01/G01/eye_brow.png",
       "sha256": "41b2e60efd20959b81ed560833bda1bb92e04d26e06917a26385e2c082595ae3",
       "bytes": 45480,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G01/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S01/G01/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E03/S01/G02/eye_brow.png",
       "sha256": "0f86ff2e88ca0f0f33ec32518d3e974df547867580f4c57afa690d4ec33b7211",
       "bytes": 52858,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G02/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S01/G02/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E03/S01/G03/eye_brow.png",
       "sha256": "3598d76f9430f948683964c573ae27ad72d5e84d26b704f70dbee5be5ba987cc",
       "bytes": 67446,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G03/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S01/G03/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E03/S01/G04/eye_brow.png",
       "sha256": "8983b1507f74294e65289349ac628e1e5114e4c23e5ac759a2c33c3a831be668",
       "bytes": 47584,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G04/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S01/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E03/S01/N00/eye_brow.png",
       "sha256": "0eef5afeaa5b096b34a9fca48103e6a50714a9004eb06cd0917e691a277e70f7",
       "bytes": 88300,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S01/N00/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E03/S01/X01/eye_brow.png",
       "sha256": "0bd3a2d2851b310b46fc6a87fff6747d4dc69f7009baa86b36ab6f5b20e92773",
       "bytes": 74139,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X01/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S01/X01/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E03/S01/X02/eye_brow.png",
       "sha256": "38976c0d8d83796183e6dc8b87df5d50ff125c5284cd14d2a72265b1da9f471f",
       "bytes": 70189,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X02/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S01/X02/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E03/S01/X03/eye_brow.png",
       "sha256": "94958fb2407e9168e7d322ddfa45a7d748f19b6a64691bc54abf38ce7c5e2ca0",
       "bytes": 69551,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X03/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S01/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S02/G01/eye_brow.png",
+      "sha256": "22d6dc5b89299df1b966cfc9310b6d5701876a8247dffa60640ceb0adec143aa",
+      "bytes": 45775,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S02/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S02/G02/eye_brow.png",
+      "sha256": "79a7d443865beacb426d5a160edd7e68d9d444dc28ed16f74a3c2ff446656a41",
+      "bytes": 50660,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S02/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S02/G03/eye_brow.png",
+      "sha256": "5b0e7812572d3c6e882766c9cc33d4e3bca3feb72517648db5f91727f766d0ff",
+      "bytes": 68157,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S02/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S02/G04/eye_brow.png",
+      "sha256": "901ce102d272bf909b1c4e013bdbfbfc849a5a478cdfc0536b770d031752fba7",
+      "bytes": 47431,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S02/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E03/S02/N00/eye_brow.png",
       "sha256": "5b3360f5203514db48408378a219ffea7e7bc32ed3d8d90864fc8c6234df1e8d",
       "bytes": 1033859,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S02/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S02/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S02/X01/eye_brow.png",
+      "sha256": "7083af637be96e61d5bfe2b74cb853c23a57815dc4966ef97f3d4daaf2f87be7",
+      "bytes": 73354,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S02/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S02/X02/eye_brow.png",
+      "sha256": "1552f79c2f8de407740f287fb961eb24af3c6783a4a6a1804bdd3d2876be8b59",
+      "bytes": 69115,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S02/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S02/X03/eye_brow.png",
+      "sha256": "4f72af0167e92492adfb2522d8879b60281e157a55705db3538363af04d90b27",
+      "bytes": 66485,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S02/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S03/G01/eye_brow.png",
+      "sha256": "687e1639d1adacb5fddb84a86b0a6f846c0e9a5917b7967b4b0f5432b90af894",
+      "bytes": 46274,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S03/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S03/G02/eye_brow.png",
+      "sha256": "c620a4da4d8a4765088cf4401115e0735d1f9031eb7d9fae635a9ace14019426",
+      "bytes": 48893,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S03/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S03/G03/eye_brow.png",
+      "sha256": "abe5067dab88d40cb84fe18ee789c083269ae0237293151ad1b6faef44842a79",
+      "bytes": 67122,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S03/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S03/G04/eye_brow.png",
+      "sha256": "a422f63dfb3fab3e79654e80570c621f2c7328010ca43d29908530bda35570de",
+      "bytes": 46316,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S03/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E03/S03/N00/eye_brow.png",
       "sha256": "aa069231dc3ba1d555ea33e9757ff16f35ae2354b801e52e1eaf22e3e5ae40dd",
       "bytes": 1041973,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S03/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S03/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S03/X01/eye_brow.png",
+      "sha256": "4d1e03aaf5bcddb03af00d661978d63e82e39d4241434582535503fd84e0ed8d",
+      "bytes": 79500,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S03/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S03/X02/eye_brow.png",
+      "sha256": "e0b89027c6584f51aea344ea3f3d32129e00414673dc515b950bdfee63ea7bc8",
+      "bytes": 69403,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S03/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S03/X03/eye_brow.png",
+      "sha256": "7719d49a28881532665eb410499e3184db0009187643748fe0f5640b658e627a",
+      "bytes": 68881,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S03/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S04/G01/eye_brow.png",
+      "sha256": "cf60aae09a336f0100f92d81be54126f54690f793f808d18233af55383ecaa40",
+      "bytes": 43854,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S04/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S04/G02/eye_brow.png",
+      "sha256": "f7204d508c05b781bd66581d5ff7e899eebb6b150b928b65b6caf9c6007cfa4a",
+      "bytes": 53798,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S04/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S04/G03/eye_brow.png",
+      "sha256": "5b07495bb297c9747487bc4e0545087ff6def87547e6ab2ed248b781f6d3f028",
+      "bytes": 67959,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S04/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S04/G04/eye_brow.png",
+      "sha256": "45cc67a3288948a9f11a673e673c5796b1fe689f07b173644fc09035b5c513f0",
+      "bytes": 45614,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S04/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E03/S04/N00/eye_brow.png",
       "sha256": "d89ad87f88550d9bcc8c65c507bdc146173e4285ed85189f879f0f82f68c0c65",
       "bytes": 1069792,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S04/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S04/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S04/X01/eye_brow.png",
+      "sha256": "08b18ba4f9a9379f8f5af6614d41488df99e1c2bf7e53cb9338d4ad5ef5eeb17",
+      "bytes": 74560,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S04/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S04/X02/eye_brow.png",
+      "sha256": "6c50c12f3ae4e2c8e268eb12cb19be347798a15361348e988c9c4c242bc517cf",
+      "bytes": 71486,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S04/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E03/S04/X03/eye_brow.png",
+      "sha256": "ed9dd9ebfee28b13a82ee68e12559fc4af21b9a2185d6a645d63c90a36740ae3",
+      "bytes": 68569,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E03/current/approved/r20260902_complete_recovery_v01/S04/X03/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E04/S01/G01/eye_brow.png",
       "sha256": "29d40d58f795c8893f5faea8dc49eeb9b225247855a416eafe6584113e713d1e",
       "bytes": 58320,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G01/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S01/G01/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E04/S01/G02/eye_brow.png",
       "sha256": "60938ec26d401aaeb20f405c7ee8a7b0c2aa70a426596de82a6672c27c238d5f",
       "bytes": 68892,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G02/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S01/G02/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E04/S01/G03/eye_brow.png",
       "sha256": "78647e86b576f37672702027127bedb453c11341b87472ae84f69ce155a711c7",
       "bytes": 77214,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G03/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S01/G03/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E04/S01/G04/eye_brow.png",
       "sha256": "68bd932368fd5946961f220ff55eb5c5779062846441a0af4da33d1ccde7742b",
       "bytes": 59849,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G04/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S01/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E04/S01/N00/eye_brow.png",
       "sha256": "7d63b68716e560622e81a594296219390e4f93f8c9692213b55691ea0cd03cc6",
       "bytes": 114023,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S01/N00/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E04/S01/X01/eye_brow.png",
       "sha256": "55cbe68e1cc153aa03be4c192b933100eaaad819e31e4b454e3d6420e39d36f4",
       "bytes": 109512,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X01/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S01/X01/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E04/S01/X02/eye_brow.png",
       "sha256": "bddbc1a78b115a9f515abd3436843eeea250a9477f98e6e97c88ec258e463099",
       "bytes": 107403,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X02/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S01/X02/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E04/S01/X03/eye_brow.png",
       "sha256": "b20f2066b4e3f83b9aeb42ac54ae2bc4a5a10bf399246ae8022c8128380610d4",
       "bytes": 118431,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X03/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S01/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S02/G01/eye_brow.png",
+      "sha256": "a810a634d11e31446a8be48d3d8fa754b34aa122fb5a3debe7d56a480000bf38",
+      "bytes": 57023,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S02/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S02/G02/eye_brow.png",
+      "sha256": "cf55e2060688b96fdbafd3fd0332abdb0265cd5146c3924dc085e87b16bb4ee1",
+      "bytes": 66692,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S02/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S02/G03/eye_brow.png",
+      "sha256": "61bbd3ae9519db8b4f7b7ffdd6cf6a58238cabec2373d13bcc67545f2cb2803e",
+      "bytes": 79070,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S02/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S02/G04/eye_brow.png",
+      "sha256": "2f0ae61d866c19cad6ff3fc3bca72a70f4b01758be2412e1f7c35d4347555410",
+      "bytes": 60068,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S02/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E04/S02/N00/eye_brow.png",
       "sha256": "1c0a51aed4a70892bbd3ce70dc86d2679a4d4a9b2b7ab76f46946427c6a20c62",
       "bytes": 1148481,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S02/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S02/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S02/X01/eye_brow.png",
+      "sha256": "4029c3df4aed0ce8fd9af701c6c6ba57f2e674b6873f056cf4808583448723bf",
+      "bytes": 85681,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S02/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S02/X02/eye_brow.png",
+      "sha256": "c78908ce9fda68e80a0723d2d131637e28d113af43bf62c70be4c469081d9abe",
+      "bytes": 87780,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S02/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S02/X03/eye_brow.png",
+      "sha256": "3aa77ec3a117aaa6f20197f4222dbce3b4818e96101b2cbdcf3e98bde184f57c",
+      "bytes": 94590,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S02/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S03/G01/eye_brow.png",
+      "sha256": "8852f1b09c2f2c09ac77d9fb8e23fe12566d473faf0ff3a4a88095950a38d859",
+      "bytes": 55835,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S03/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S03/G02/eye_brow.png",
+      "sha256": "c94faf2ed53cf98765752e3060eb90bdaacac3ebe105f80ee85b1867b57a8311",
+      "bytes": 68714,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S03/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S03/G03/eye_brow.png",
+      "sha256": "875d447c43be430310ff0da64e1aab0a7c8639c363a1b82b987c95ae15b28f81",
+      "bytes": 75504,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S03/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S03/G04/eye_brow.png",
+      "sha256": "8bc5605d3901d9a05f7ea1a131c7888052c97d039709b80c2ddae8c5063216d2",
+      "bytes": 58593,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S03/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E04/S03/N00/eye_brow.png",
       "sha256": "68ed1b301a08107fc5eca0cdb0aeb5d909d7ad3dea6818d21231c7a0e9879bb3",
       "bytes": 1190380,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S03/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S03/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S03/X01/eye_brow.png",
+      "sha256": "64245961372d2b38e856d4d655e0f0484f1d682fd1a22dee39dc68fb8a8b2c2d",
+      "bytes": 81974,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S03/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S03/X02/eye_brow.png",
+      "sha256": "66d6facc55ab6605268a036bc2b76a6486feb12f079f2163e9d8029d97822918",
+      "bytes": 105088,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S03/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S03/X03/eye_brow.png",
+      "sha256": "88240ee2f499f2c5019707de68cd9e48e3c08c70977c150b8e4d5fc50073993a",
+      "bytes": 114208,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S03/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S04/G01/eye_brow.png",
+      "sha256": "0db7fe997fc9a50c5273efdd30e08ac39859c7217b5fa4cc266f1b94ef25d6eb",
+      "bytes": 59252,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S04/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S04/G02/eye_brow.png",
+      "sha256": "3adfae434b57b4694764561f361c301c87174dd6a0135c0a2c2939cd7114d3c3",
+      "bytes": 67285,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S04/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S04/G03/eye_brow.png",
+      "sha256": "464cd695e2775d9b9b66ee2f3b15b4ef941e57b997b8e3ad599466263d4a8adf",
+      "bytes": 76485,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S04/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S04/G04/eye_brow.png",
+      "sha256": "0744120bd35c63fc2d3474597a03c95e2be9f2b8398e53174155bc66a0406792",
+      "bytes": 59419,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S04/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E04/S04/N00/eye_brow.png",
       "sha256": "a520bdb6d69c2048e19da95a7689f025d24a5456ff18ec96e3408173f5caae01",
       "bytes": 1174092,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S04/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S04/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S04/X01/eye_brow.png",
+      "sha256": "849126e41741229a0360b37ea6e9925a4374bdb1ba089fc7cf739b7d131ddfa2",
+      "bytes": 106037,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S04/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S04/X02/eye_brow.png",
+      "sha256": "164cdfe2e33dfcb91386bf95a5feba601b1ac636671302a7cbfadb09b8747658",
+      "bytes": 107417,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S04/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E04/S04/X03/eye_brow.png",
+      "sha256": "d189f009a44cb71868803281e8c775660d2a445df2e7408bf692541fe301124e",
+      "bytes": 103192,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E04/current/approved/r20260902_complete_recovery_v01/S04/X03/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E05/S01/G01/eye_brow.png",
       "sha256": "740882f90681cba390904989946e4f8a5b0e817e8b31c1cb26bff6385c5b5a79",
       "bytes": 61451,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G01/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S01/G01/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E05/S01/G02/eye_brow.png",
       "sha256": "9d01c4642726d2431e95c2c6b7a190f0db59b0352194824460ab97a7dfbb8a0d",
       "bytes": 62047,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G02/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S01/G02/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E05/S01/G03/eye_brow.png",
       "sha256": "667e3b65e219bf4c7b6e6112b8c47ce1b4b256421223024f5c152be04da2896e",
       "bytes": 77308,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G03/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S01/G03/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E05/S01/G04/eye_brow.png",
       "sha256": "37c478b8200000c5d72dc05349f0d8e908217eb9e81d2b3ba845fc09e16cc04c",
       "bytes": 68007,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G04/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S01/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E05/S01/N00/eye_brow.png",
       "sha256": "07f4c49eb567b579600fb4d16eb8dfeeff2afec93bb0453c469cab811ad03a51",
       "bytes": 991019,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S01/N00/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E05/S01/X01/eye_brow.png",
       "sha256": "58d5088df7b5eab5b2c1b2294f008510d295f5c807db5703e0024109314b7202",
       "bytes": 84494,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X01/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S01/X01/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E05/S01/X02/eye_brow.png",
       "sha256": "e1f25b4f62e0f92be1ac84494f287f72bda823cd29cb594505911b22fcfa6c0d",
       "bytes": 84993,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X02/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S01/X02/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E05/S01/X03/eye_brow.png",
       "sha256": "bd69a55fc5fc303ac695f5ecd10bc7b4929d8ad0447bba5695e2f363b92a3ee0",
       "bytes": 89880,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X03/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S01/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S02/G01/eye_brow.png",
+      "sha256": "bbc36e2daa4aa4e412b5ad620158c6d2dde243ab02c25464585a852de6bbad1d",
+      "bytes": 61417,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S02/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S02/G02/eye_brow.png",
+      "sha256": "4e4db86657dd7230852c4ac262a78fe027e3cb5c18f510cec097914838f02039",
+      "bytes": 63478,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S02/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S02/G03/eye_brow.png",
+      "sha256": "5462dc934f6008043567be7e06955db1d562be0d488e0c2f5bf2efd5ed5486d2",
+      "bytes": 77412,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S02/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S02/G04/eye_brow.png",
+      "sha256": "41539ea13503d98026217a6ffb663b5d8a65aa467ce13d6648915420a7f3e629",
+      "bytes": 68509,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S02/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E05/S02/N00/eye_brow.png",
       "sha256": "481b0c1f3c6df9a0794b5aff32bcacaaffec86fa0643486124c6979028d4d10f",
       "bytes": 1044560,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S02/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S02/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S02/X01/eye_brow.png",
+      "sha256": "9143ef16d84932c04d43536e4fff2cd0a3fe269d4c675c6b6a96c165430531ba",
+      "bytes": 80773,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S02/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S02/X02/eye_brow.png",
+      "sha256": "849616938f29ddeaf7e6217ede441e6a6e61d4b70adf08dc9c8d8e0c8473a97c",
+      "bytes": 90281,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S02/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S02/X03/eye_brow.png",
+      "sha256": "c49d452c3ce1189b6ebcd7870a6884780ad3358215d858ae50feed2645d699cf",
+      "bytes": 93444,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S02/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S03/G01/eye_brow.png",
+      "sha256": "1c1280d8ce48de9019a89388322fbdc62a668dea9eb94df27406d4bf7c440b13",
+      "bytes": 59045,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S03/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S03/G02/eye_brow.png",
+      "sha256": "389cdaed170a71d791b37f3b9acd4e4a232243b7df1e847d0788ee7acff5c089",
+      "bytes": 61051,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S03/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S03/G03/eye_brow.png",
+      "sha256": "8163d994a91c53376a59d9e0edccb6cb4e884255569c754b5556474f518b8d80",
+      "bytes": 78425,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S03/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S03/G04/eye_brow.png",
+      "sha256": "f53455a9a70339d35dfaed6ed3e267f13ac885427361a7d39b8b7e04efcc0da4",
+      "bytes": 64805,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S03/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E05/S03/N00/eye_brow.png",
       "sha256": "d96022e6206764f281cc682160766d3aa67d5aa8c437cb503eda740cd0890aa5",
       "bytes": 1054807,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S03/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S03/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S03/X01/eye_brow.png",
+      "sha256": "ba32c50c5cc1e7059e650ab0706736e54a73d4c7accfdbe977aa27729dbc5908",
+      "bytes": 83034,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S03/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S03/X02/eye_brow.png",
+      "sha256": "ef24f466529cdfcdac3489637d460313f0d0d5bfca479d3bc0f8ab50e76bdef3",
+      "bytes": 88826,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S03/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S03/X03/eye_brow.png",
+      "sha256": "e4f750930d2f20dd461fdc4e8c2e27917105cd4a5032a6a9e4ecefe390492ee1",
+      "bytes": 91436,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S03/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S04/G01/eye_brow.png",
+      "sha256": "8e047b044f00b6bbb3f5f79d29ae34b798a6c8eec4db369e85045d21776c3a19",
+      "bytes": 64750,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S04/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S04/G02/eye_brow.png",
+      "sha256": "5811f3bfbd047c335eaa9734d6b48c9c272f493b9fc08087db4caeaceff11a3b",
+      "bytes": 64360,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S04/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S04/G03/eye_brow.png",
+      "sha256": "2a68d42b2efcb170b493d5fe84a6127febe7911c1d5f7fe8c9ab367dae2d5e71",
+      "bytes": 72649,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S04/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S04/G04/eye_brow.png",
+      "sha256": "cd2b65247b7d27458174985ddb9cd47bd425d932e732866bfcfdca802de76859",
+      "bytes": 63289,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S04/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E05/S04/N00/eye_brow.png",
       "sha256": "d588acf295d2e8ff37a73d6f7d04a726bd3a0253e1eb5b5e1ef071a81b0b29c6",
       "bytes": 1054652,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S04/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S04/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S04/X01/eye_brow.png",
+      "sha256": "0c1ffd111701ca1f9a33a3fdfd30f62b2632dc3ebdbbe404f6f5d56d1266bd4d",
+      "bytes": 92474,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S04/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S04/X02/eye_brow.png",
+      "sha256": "b00715d6156b7076b0cb7f523676444a08af72f07ccf7e3b98d87f6a4a76218d",
+      "bytes": 86420,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S04/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E05/S04/X03/eye_brow.png",
+      "sha256": "4e74f61886dc4b64692f1dc834b7187a03e37abf09ed9c12b2cb27b0458947b7",
+      "bytes": 94030,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E05/current/approved/r20260902_complete_recovery_v01/S04/X03/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E06/S01/G01/eye_brow.png",
       "sha256": "5310cccaf446825cb317ca6e7da01acfbc8998fa9ebfb63c6923a753670fc8d1",
       "bytes": 57056,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G01/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S01/G01/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E06/S01/G02/eye_brow.png",
       "sha256": "75c29d121c240b06f67d27345e08dd490f3446efc9337a6117d0e4a4309892d6",
       "bytes": 54690,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G02/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S01/G02/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E06/S01/G03/eye_brow.png",
       "sha256": "35aa639ca8177512343519995da165788d3f03974808adbad16cf20b71ac465d",
       "bytes": 55397,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G03/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S01/G03/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E06/S01/G04/eye_brow.png",
       "sha256": "175177a93c0eadb320ae78128232df3fcd2c066ad0ab393d228afa8ae9a51db5",
       "bytes": 64491,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G04/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S01/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E06/S01/N00/eye_brow.png",
       "sha256": "969e9528ff27a2a4ff3ebf7fe257df2fb35166cd5f541d18c17fe4b125b6f25c",
       "bytes": 90080,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S01/N00/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E06/S01/X01/eye_brow.png",
       "sha256": "77e4afa06771f1a2018ee5ef735b9db0a0f359464fd6f8eca8b3b21abff60728",
       "bytes": 68874,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X01/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S01/X01/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E06/S01/X02/eye_brow.png",
       "sha256": "ab4933f2864f7114c2b65185ea9176f81fcb035adc1e76506f248c8cdb35ae59",
       "bytes": 71290,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X02/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S01/X02/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E06/S01/X03/eye_brow.png",
       "sha256": "60581d2b2f54a69ad288a2689c43a7d068524b90688f53bb909fe44f7a2b1fd8",
       "bytes": 78350,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X03/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S01/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S02/G01/eye_brow.png",
+      "sha256": "7e45b3d54597e128b8e5244f35a2d9e181b5586ecf64238196d625beaa6ef029",
+      "bytes": 59091,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S02/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S02/G02/eye_brow.png",
+      "sha256": "9c3f954420c3cccbe97554cc277440fceac7b5a83c283835d91f4d521221598a",
+      "bytes": 54290,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S02/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S02/G03/eye_brow.png",
+      "sha256": "84aeafb2793719a4520ef6212ad4143fc2822767c370e3dcf601111f76a71510",
+      "bytes": 56325,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S02/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S02/G04/eye_brow.png",
+      "sha256": "6941bad7c91690ce5db3066b7b803ae345886ced0c5131d4decc9c16270371b2",
+      "bytes": 61826,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S02/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E06/S02/N00/eye_brow.png",
       "sha256": "49c115767366cd35b69b0facd23da0791d05d0354bb3daa08621717c7ec77623",
       "bytes": 1022537,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S02/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S02/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S02/X01/eye_brow.png",
+      "sha256": "8f1e1286c4b15540a4abb33837f0bcae0e16b00171fbc3d1750d0708aa39449e",
+      "bytes": 68128,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S02/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S02/X02/eye_brow.png",
+      "sha256": "b1fe0a876496cc33cc43269ef0f21aef1a5732091a265abdd271b8a8d7c2d320",
+      "bytes": 79999,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S02/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S02/X03/eye_brow.png",
+      "sha256": "fdba4eafdf276a522e99fe882ebf86c15138d10699d5ba7467039c22172e9593",
+      "bytes": 79852,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S02/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S03/G01/eye_brow.png",
+      "sha256": "ca160403bd70539e0ee6900a9b56c9bcc8407370b65f4e3dfffaaff67094e017",
+      "bytes": 57622,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S03/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S03/G02/eye_brow.png",
+      "sha256": "ac53181db3ddbb257da384cf7a2b5c0a377ed70c5426863f1c270775defa3447",
+      "bytes": 51692,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S03/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S03/G03/eye_brow.png",
+      "sha256": "87ee077b0c2620d54d56f5e0df9efe982aa49aa4a9e23fd036efc66bdc94ccf0",
+      "bytes": 59440,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S03/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S03/G04/eye_brow.png",
+      "sha256": "e52d53c12a86d5c5c2e6a41e9b85e7b9c14bc60f0f973a80a8e3d3692b91ba22",
+      "bytes": 67728,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S03/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E06/S03/N00/eye_brow.png",
       "sha256": "f6720768467867923a70b41346bd938327df9ac3dbba40d99cedbd544bb71cc8",
       "bytes": 1064558,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S03/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S03/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S03/X01/eye_brow.png",
+      "sha256": "4a131df025aada7a5484be52660497d1a8b115eed5bda60318451937207e5461",
+      "bytes": 69755,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S03/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S03/X02/eye_brow.png",
+      "sha256": "9ccaaf07ad22d824e517770b22b24ce1338a7e86107eb2bb3557a4846033fe17",
+      "bytes": 70649,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S03/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S03/X03/eye_brow.png",
+      "sha256": "4df6b3179389d20c345bd564f49039033f39545d1813334d7f82eb79a42f8c76",
+      "bytes": 81724,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S03/X03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S04/G01/eye_brow.png",
+      "sha256": "7b27f8885900779521eaf0c0a095ea21124f1a5353503d6a209ae32a1534dc7f",
+      "bytes": 55734,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S04/G01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S04/G02/eye_brow.png",
+      "sha256": "83ecb2685b1d7f46080607f7a188ec20f53339ea43222464b202dab92bb544d1",
+      "bytes": 50290,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S04/G02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S04/G03/eye_brow.png",
+      "sha256": "495bf5f2808a8e1708ffffa232df63e1e0a5000a60a96c02a2f5ab7bd25dd01f",
+      "bytes": 51991,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S04/G03/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S04/G04/eye_brow.png",
+      "sha256": "9cc6c93e36cb3812d3df519cd47401d0f6599a212915f78108823a57664e408d",
+      "bytes": 61389,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S04/G04/eye_brow.png"
     },
     {
       "release_path": "assets/female/E/E06/S04/N00/eye_brow.png",
       "sha256": "90289f059ee432d2aeb5697f4317110f7cbe50f4be402e9f95ed2aa973aa6fb6",
       "bytes": 1062903,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S04/N00/eye_brow.png"
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S04/N00/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S04/X01/eye_brow.png",
+      "sha256": "419e061c50023928b6e28bdb38b67b384ca66c32f8a042c48c593f80940bf2bb",
+      "bytes": 65346,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S04/X01/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S04/X02/eye_brow.png",
+      "sha256": "68c357b4c8eb2a19e333e48fee3806ae9d102bb8afb2ab305676d6d481c9d0f0",
+      "bytes": 66955,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S04/X02/eye_brow.png"
+    },
+    {
+      "release_path": "assets/female/E/E06/S04/X03/eye_brow.png",
+      "sha256": "b389c85b95b9c4b0844295dad530c87f41a3a19843f7f6387740b34aaa8e9e85",
+      "bytes": 78202,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/E/E06/current/approved/r20260902_complete_recovery_v01/S04/X03/eye_brow.png"
     },
     {
       "release_path": "assets/female/M/M01/S01/G01/mouth.png",
@@ -859,385 +1594,1120 @@
       "sha256": "f5f4ad385553721bda99cb92ea322ccd174191a5fbfe0b023be0b8e8ed798fc6",
       "bytes": 18625,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S01/G01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M02/S01/G02/mouth.png",
       "sha256": "9baf551b0133dc63d1f7ebb004ad28ef6a65d0b152a68068f222100ef2124d83",
       "bytes": 16907,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S01/G02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M02/S01/G03/mouth.png",
       "sha256": "b59019672ea61d54a6fb252243c00219761fd6fc31662a2a55fc0716e139d476",
       "bytes": 18383,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S01/G03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M02/S01/G04/mouth.png",
       "sha256": "d042adf0d0a0971c51c2c4774f77c0b82e0cb941877ad37c61d6b0c19c6bc55a",
       "bytes": 20868,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G04/mouth.png"
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S01/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M02/S01/N00/mouth.png",
       "sha256": "c212e694abf626a1dfd7241282b88ad018de3356937ac6d66771e558dfa85913",
       "bytes": 15448,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S01/N00/mouth.png"
     },
     {
       "release_path": "assets/female/M/M02/S01/X01/mouth.png",
       "sha256": "97d52a4a794d3b2b41a42ce2833a38101ea41db9c8ea00d3796dbecfa72c4af6",
       "bytes": 32995,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S01/X01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M02/S01/X02/mouth.png",
       "sha256": "1ef9d5825f39d120ae30df7a3e79090cda209e67fa49a7b1ae05e45880964cec",
       "bytes": 41483,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S01/X02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M02/S01/X03/mouth.png",
       "sha256": "81bef8e66ac22e31b326560e0a0dba6afbbc394e23b960ae07692d2310eabb52",
       "bytes": 34320,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S01/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S02/G01/mouth.png",
+      "sha256": "8566a6926c74bc815af5bbb9d3f288387f7222bd62bc5fe8dd3ea732e8db5ef3",
+      "bytes": 18329,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S02/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S02/G02/mouth.png",
+      "sha256": "57ff5838063d8e487d1c3e4c2b636dc7d67026fa416c8da2facad9f3df05ca76",
+      "bytes": 16816,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S02/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S02/G03/mouth.png",
+      "sha256": "9a920120ef10f30b53f5b383b98e4658ecfc0a62eff6e2a1cc50f92a88add078",
+      "bytes": 19398,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S02/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S02/G04/mouth.png",
+      "sha256": "1324fee2cbda011e8aac97f5c693a54e19d3db68a3ddf6248b528b831fd3c599",
+      "bytes": 21283,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S02/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M02/S02/N00/mouth.png",
       "sha256": "8cb319e5bef807269cbf974d636081d338204f10b8552b37362c99aea3b94623",
       "bytes": 15306,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S02/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S02/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S02/X01/mouth.png",
+      "sha256": "85d8185bdb551dff8149ace1fba52ee39898dcbed9da0e2a351c2fdb9ed33b53",
+      "bytes": 35339,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S02/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S02/X02/mouth.png",
+      "sha256": "aff44f052f8d2baccdcc847edb94b4e8e91c00a63678bac336d45a232b2f18df",
+      "bytes": 38555,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S02/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S02/X03/mouth.png",
+      "sha256": "8e093309681f2995087a5d54561cf121ea0ee273b33e9d4958135f6362fd3c0a",
+      "bytes": 34729,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S02/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S03/G01/mouth.png",
+      "sha256": "7cd2718cb5ebdf751b40cca761ec10127c1ac9c414aaa9e63dbbe83c2c358db5",
+      "bytes": 18501,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S03/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S03/G02/mouth.png",
+      "sha256": "f8f58f529764f22ad21ed227cbb58dfe58d84be3454df246758dc3735e5809df",
+      "bytes": 18770,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S03/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S03/G03/mouth.png",
+      "sha256": "26516b6926f24fcc71d3dbdaa4fd3927dbffc188ac1075fdc6394ab66138834d",
+      "bytes": 19170,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S03/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S03/G04/mouth.png",
+      "sha256": "bf3149c384ab66850e08b9df250d30b9e30dd3cbb543f817b440c7eb894d88ab",
+      "bytes": 20590,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S03/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M02/S03/N00/mouth.png",
       "sha256": "bee074c1266532670c6865e11c4d846d49eb88a420ee17f829e42970c6196697",
       "bytes": 15461,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S03/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S03/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S03/X01/mouth.png",
+      "sha256": "6e7ca9e169e36abd64a47b2be99e02cca960c32c7be67d80d3be1532dca5959a",
+      "bytes": 32354,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S03/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S03/X02/mouth.png",
+      "sha256": "8952100d8648026861d30071a93e9dbecac1859b545392ef79483280b0c815ce",
+      "bytes": 39336,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S03/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S03/X03/mouth.png",
+      "sha256": "90683eabea34f297753f7db3002af8649d5059574482de4470896ce05dfe493f",
+      "bytes": 34072,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S03/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S04/G01/mouth.png",
+      "sha256": "7685d7c296c2595ebbc563f9eaf980697e45ba2e15dd04a6eae104ab2fa1bb74",
+      "bytes": 18985,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S04/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S04/G02/mouth.png",
+      "sha256": "83d26273f554d6465faab870f113301175e39e26ce966c775816bbc99c4b0a0a",
+      "bytes": 17643,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S04/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S04/G03/mouth.png",
+      "sha256": "3451c432c65abc6a6a190c1930cf30bfcfadb5fef894e6a129a9377458540d0f",
+      "bytes": 19191,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S04/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S04/G04/mouth.png",
+      "sha256": "c8f0e416bd8f21873776864caa8b0e3b924d3b5cb8875ba596a770eaa90a6385",
+      "bytes": 21568,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S04/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M02/S04/N00/mouth.png",
       "sha256": "fb179101f299165b7540d0e5cbb252e39c32f017eba122eb6eff8a518dfa27f9",
       "bytes": 15990,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S04/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S04/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S04/X01/mouth.png",
+      "sha256": "1390c7968f29b500502ae5b16fe81bd37e23decf2b2355e18d342d9c3347bf9f",
+      "bytes": 37665,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S04/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S04/X02/mouth.png",
+      "sha256": "42c597e2f5c75da60a3b1cc2fe45c74e0be0760ae6c82a8ae524b9bcdbd3e78f",
+      "bytes": 39594,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S04/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M02/S04/X03/mouth.png",
+      "sha256": "ce9ad75bd55eb422f5edbc19dc1064ed9a702e31ba0c2a27a2f28928a08cb5c8",
+      "bytes": 34475,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M02/current/approved/r20260902_complete_recovery_v01/S04/X03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M03/S01/G01/mouth.png",
       "sha256": "70ea8e174cafed364eae5fa9a3022054c3b726a3a122acf005e66264cfdd3071",
       "bytes": 31035,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S01/G01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M03/S01/G02/mouth.png",
       "sha256": "762f122b70f226dbe2177f8c36ba09327eb57d5c8175fbc620be6e7f540d44d9",
       "bytes": 32503,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S01/G02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M03/S01/G03/mouth.png",
       "sha256": "0955c5defa5be64afde8b2a9ac8810faede87d55b52863793c7d70dee16765dc",
       "bytes": 31851,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S01/G03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M03/S01/G04/mouth.png",
       "sha256": "8b8e9aae68ee5f89ab402dc5a4d400427b7938e2d3ff3a271e789e5e5a3777de",
       "bytes": 28700,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G04/mouth.png"
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S01/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M03/S01/N00/mouth.png",
       "sha256": "7caef3b9b5f62dae8edb50d87d068366d41dd5c360e3d192c763860757483198",
       "bytes": 88481,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S01/N00/mouth.png"
     },
     {
       "release_path": "assets/female/M/M03/S01/X01/mouth.png",
       "sha256": "78d7592de8a3cce522f53d52b3bb23144c473a3cef9e8e41e4cb283504e97859",
       "bytes": 34536,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S01/X01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M03/S01/X02/mouth.png",
       "sha256": "3f29cde2aaa141b9269597d7713e2cd4b82ab63c9761ed09b4ee611a64681d5f",
       "bytes": 45741,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S01/X02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M03/S01/X03/mouth.png",
       "sha256": "717a9467977d38205a4b0048a59409bc241f9e8ecd4cdcde1d32ea148e1ddddf",
       "bytes": 50292,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S01/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S02/G01/mouth.png",
+      "sha256": "daa01b512a46b61191825b03a7b6377b8a52a5da1170d2d7d12b987a06c551f5",
+      "bytes": 31610,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S02/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S02/G02/mouth.png",
+      "sha256": "361084901c32980ddd23578132d72de95e342f74e2be459a2d70d818a60ec72a",
+      "bytes": 33223,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S02/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S02/G03/mouth.png",
+      "sha256": "3afaef60a2491e691e5a7b1ba8c01e6155a677e4e89b7e8ce2fe87aeb7d59ccc",
+      "bytes": 33023,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S02/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S02/G04/mouth.png",
+      "sha256": "25007e2aa31458cf320888a8f9b7b7987128ab17a5468ab12c2001c12437ee52",
+      "bytes": 29697,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S02/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M03/S02/N00/mouth.png",
       "sha256": "26ba81cb055313e9fa403de73d8956935824a300e34ae11e9f833da7bf213b2a",
       "bytes": 1033935,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S02/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S02/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S02/X01/mouth.png",
+      "sha256": "05fb36f4bc7987d3f30a2f139153c6164ed2363d0271612de213e36227f4fd0c",
+      "bytes": 35849,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S02/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S02/X02/mouth.png",
+      "sha256": "c5d956f29dda910227db59e3e3dd33d11d4f75852f15b3b287305dcff4917bf6",
+      "bytes": 45744,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S02/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S02/X03/mouth.png",
+      "sha256": "2ce47b7d13f539ff211fa5d706fd9d43f6c102abdfb98a4fad5048e0cd2fd095",
+      "bytes": 54590,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S02/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S03/G01/mouth.png",
+      "sha256": "f31b8ca24b49b8399512c26052cfc1793c2e4f312fee650f8aafebe6cd310a92",
+      "bytes": 31288,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S03/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S03/G02/mouth.png",
+      "sha256": "b1ae36e7ec60aad0c9fc8e84eebb55da71912543ffb97bd7b2b33a51db9c0e4a",
+      "bytes": 32418,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S03/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S03/G03/mouth.png",
+      "sha256": "956deb9724be483b80ae5a1ca7c4a6c8a09062ef51dcc9328263746a34d0d43d",
+      "bytes": 33165,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S03/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S03/G04/mouth.png",
+      "sha256": "abd1dd77a44818516f15c06e508238b4cf1414f9c0c4553b624bfeab5cb16986",
+      "bytes": 28359,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S03/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M03/S03/N00/mouth.png",
       "sha256": "b9dc3ce5c67626ab1122305bf7f79db551baa055054ac6ff72e72d1e26707436",
       "bytes": 1041652,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S03/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S03/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S03/X01/mouth.png",
+      "sha256": "60c2fe971a106f2c40ed3fcb55982391d7ef5cde6ca7dba12595213b134a887f",
+      "bytes": 36999,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S03/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S03/X02/mouth.png",
+      "sha256": "65ebd3d09806961e24c84868bc0cf64608595e0ee0a5023b957aa8689748265f",
+      "bytes": 47855,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S03/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S03/X03/mouth.png",
+      "sha256": "655c83771c682e25f800eaa461e4bfbeb9fde0e65e6181da8e9008dcffa72a98",
+      "bytes": 52721,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S03/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S04/G01/mouth.png",
+      "sha256": "47016510123dd92757e3afe0825314acac54eaa93e77ce81ad96e3b5efe79e54",
+      "bytes": 30980,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S04/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S04/G02/mouth.png",
+      "sha256": "b00bb3021606f481682fa5906f2840215d98771a53acda5cc80f000fd4c31f77",
+      "bytes": 33076,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S04/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S04/G03/mouth.png",
+      "sha256": "4e2eb822acf49f215d7d02e7315c2db7b8c0293b0793564a83945965b86fc160",
+      "bytes": 32475,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S04/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S04/G04/mouth.png",
+      "sha256": "24718170193a1f83718689649940c8ec615cc06e7f4d704b6988e574d58cba1b",
+      "bytes": 28475,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S04/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M03/S04/N00/mouth.png",
       "sha256": "61b8c88c5e0499eac0b8425ec9173fb3949f0f9baf3eebe4dd3d1205198f678f",
       "bytes": 1069065,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S04/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S04/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S04/X01/mouth.png",
+      "sha256": "d09da00a482fbb07dc1b5500371277a94242b3afbf31e2a229e650eaf06d8f6a",
+      "bytes": 35968,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S04/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S04/X02/mouth.png",
+      "sha256": "6689bb58d8337220c025f74ff48156e51986e4ff10e6cbf71ac0bf9cc9bccbb1",
+      "bytes": 46501,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S04/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M03/S04/X03/mouth.png",
+      "sha256": "bdacefb2b8d3210e23ab35ac45450cef6e2cfd01e3742dab2334c6b007180b68",
+      "bytes": 53430,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M03/current/approved/r20260902_complete_recovery_v01/S04/X03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M04/S01/G01/mouth.png",
       "sha256": "d70de84f60c223a79fbead0bfe61f5c24278e8870c25245ab49c588db04ce2bc",
       "bytes": 44487,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S01/G01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M04/S01/G02/mouth.png",
       "sha256": "b2afa6060f4fd80cd78f655e61ba73fe4f2399362c8abc39590df1d4110f251e",
       "bytes": 39653,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S01/G02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M04/S01/G03/mouth.png",
       "sha256": "0d9682e61ae17c618796a6508e7d08b3c2d2ccff7bd43bf2dd9d48e305850c9f",
       "bytes": 45588,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S01/G03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M04/S01/G04/mouth.png",
       "sha256": "b3f4abf6fda8e5dfca0262fb730d88961b862979298baee8cb8bd474a4b942b9",
       "bytes": 45685,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G04/mouth.png"
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S01/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M04/S01/N00/mouth.png",
       "sha256": "adb0e1fb7cb05f1165cadeae76c383e00d99f09d588679aacdc720daf187ab72",
       "bytes": 115189,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S01/N00/mouth.png"
     },
     {
       "release_path": "assets/female/M/M04/S01/X01/mouth.png",
       "sha256": "53c0817f71b581f16896d477e102823f5ba175c0b5fee6b5a4544f37f5dad380",
       "bytes": 46012,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S01/X01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M04/S01/X02/mouth.png",
       "sha256": "a6aeab267bc4da4870c825a6bcd5bee73ad59e96e38432ec7ec0da59a6c6dc59",
       "bytes": 58132,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S01/X02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M04/S01/X03/mouth.png",
       "sha256": "7b4ec63c673f5d484d97c828425ae5efef19f9fe3791e703649aa511072e2651",
       "bytes": 77179,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S01/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S02/G01/mouth.png",
+      "sha256": "bd3c6f47e67697716d05ee1ff9b268d7bb9867c16c90a7efa06f808090442840",
+      "bytes": 45232,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S02/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S02/G02/mouth.png",
+      "sha256": "59a6a6a678a8c7c1a5a87c719e1b23b5ba6711348b2a12d2f36416b57723899f",
+      "bytes": 41491,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S02/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S02/G03/mouth.png",
+      "sha256": "0d41d45faf9f0297c7c0b57dcbd40eb150a78268be8e51c08dd6c267c03e4417",
+      "bytes": 47262,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S02/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S02/G04/mouth.png",
+      "sha256": "951abfa0edb078bf6c8a302cc3aedf02fd14b09b6c904364700bec652cb18500",
+      "bytes": 46130,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S02/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M04/S02/N00/mouth.png",
       "sha256": "1526bd6b28e1c899409018e18c033f3419e42039b8e2cab80b4b4358fabc8976",
       "bytes": 1149222,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S02/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S02/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S02/X01/mouth.png",
+      "sha256": "a61224cf032342d6d7d16b0e2cebf780d38ae985e405a506d2b03ec509a4314a",
+      "bytes": 77442,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S02/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S02/X02/mouth.png",
+      "sha256": "ed9e282f1c1475f85d53856373874d06d5159f94fbb72affcf1de4404761a2db",
+      "bytes": 82592,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S02/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S02/X03/mouth.png",
+      "sha256": "76d2b6dadba1bc861fd1c740f3f55a997893708290879bd0c094e5e168bf6674",
+      "bytes": 102148,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S02/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S03/G01/mouth.png",
+      "sha256": "cbaa16c8d086822031a055f8eb7466371222e2869966aa3c27b9ee52167b366c",
+      "bytes": 45426,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S03/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S03/G02/mouth.png",
+      "sha256": "7ad26f82466b4445c6b4479c3581497ef3529c5db093c2a507bcfe3637902463",
+      "bytes": 39975,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S03/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S03/G03/mouth.png",
+      "sha256": "a32ed5fc85fd4b7e872c09085fecb04391c032045329f7aabca92c3b98e0e3aa",
+      "bytes": 43024,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S03/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S03/G04/mouth.png",
+      "sha256": "7c1bc1e123c23e5187d8da8fceeee1de99ca201f2bb4851b0e71d4ea8020261a",
+      "bytes": 46697,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S03/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M04/S03/N00/mouth.png",
       "sha256": "71d96dbfa01460f87ccfe4ebede344346b374322fa248aaaeebff0bdecea8682",
       "bytes": 1191473,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S03/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S03/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S03/X01/mouth.png",
+      "sha256": "6ada119a4ed4e8eeb5ebf750249dbfe085dbc22981f56e92ad77af85d2d857ad",
+      "bytes": 75133,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S03/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S03/X02/mouth.png",
+      "sha256": "57f723dc29a2323f2893f999bf22953d19f194f5cda4c486eb54ba833970e578",
+      "bytes": 62055,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S03/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S03/X03/mouth.png",
+      "sha256": "b8a996083eb2fa4df88eb7703c9ad389946a44f6a535ead34b4db78093a8011f",
+      "bytes": 82264,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S03/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S04/G01/mouth.png",
+      "sha256": "67e085d3ad4eef4a66fb790acc4805cf1541dcd41b7558d67157fe6feaa6ab37",
+      "bytes": 44063,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S04/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S04/G02/mouth.png",
+      "sha256": "4b707fb2dbdcc26a37e3ae9dc4fe18ebb0767cf835c05bacb9250f95c772cd4c",
+      "bytes": 42507,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S04/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S04/G03/mouth.png",
+      "sha256": "f8289ccd25791463a7487104a55fa828570f493b0b3e33284f3c93f9c8150d3a",
+      "bytes": 45361,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S04/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S04/G04/mouth.png",
+      "sha256": "6e39339ff76ccbdcb4f8a104df00e44f7d7b818f4a27a7767be8fe1f90335e83",
+      "bytes": 45404,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S04/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M04/S04/N00/mouth.png",
       "sha256": "fa9b26bcfd21e9ca3737e7e101822a717bdb7e1a2d512e7477ca15bfd8d28faa",
       "bytes": 1174905,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S04/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S04/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S04/X01/mouth.png",
+      "sha256": "924277ae9d8c2217e5573933dad61a6fbc0db1e69220ba516616664c2c2ffecf",
+      "bytes": 52185,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S04/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S04/X02/mouth.png",
+      "sha256": "53db420f41d1db9c8f1479c5f13c2d1da8aa6ab428e608bdf79caa7b5ebe0f8b",
+      "bytes": 60324,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S04/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M04/S04/X03/mouth.png",
+      "sha256": "6494346b19804fc3d33d6edad2fa7762c39d4205b57d386469001f63eae1e19d",
+      "bytes": 83067,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M04/current/approved/r20260902_complete_recovery_v01/S04/X03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M05/S01/G01/mouth.png",
       "sha256": "6479510f1aed6f52441805ebd05c5abed75a39c84e24daab904ed271f451fccc",
       "bytes": 9876,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S01/G01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M05/S01/G02/mouth.png",
       "sha256": "55963cfafd476a6d7e29058db9c92b1a844154205b9b8e7106bda09643fa7057",
       "bytes": 9135,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S01/G02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M05/S01/G03/mouth.png",
       "sha256": "ab8329e25d421c2538961b96d2b8d31caa0917fe98c076e8dc3ef6e400c15b72",
       "bytes": 10610,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S01/G03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M05/S01/G04/mouth.png",
       "sha256": "d3ed7f3477ac803dd97be5959f8d93cd7a6ea11acb377b82a401d20c2dbf2dcb",
       "bytes": 11891,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G04/mouth.png"
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S01/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M05/S01/N00/mouth.png",
       "sha256": "d0f81987b062ec652e909eed03a2d5263971afbbfdd02f03b0659ebaccfa9023",
       "bytes": 988889,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S01/N00/mouth.png"
     },
     {
       "release_path": "assets/female/M/M05/S01/X01/mouth.png",
       "sha256": "9108f470714c894e521c25762a8617e5392882f4fb4fa87526bd16700d5fefd0",
       "bytes": 30784,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S01/X01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M05/S01/X02/mouth.png",
       "sha256": "dfdf787dfc3efe0d31d2a5ca68aa44eee20ea3a90599a258903b39957836ca1b",
       "bytes": 41332,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S01/X02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M05/S01/X03/mouth.png",
       "sha256": "96103483857b5cf10ac803b2f9d2002488f942b5525304f186458e7777f39e35",
       "bytes": 37358,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S01/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S02/G01/mouth.png",
+      "sha256": "6790c2f1f89dd484912330852114db562d8c91347eaf618d03ba19813c45d9bd",
+      "bytes": 10271,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S02/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S02/G02/mouth.png",
+      "sha256": "57ed679322ca57b68ce3142ce054d04386685e45147a52ad64bbe31882e35005",
+      "bytes": 9488,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S02/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S02/G03/mouth.png",
+      "sha256": "3d5befe10a9ef84fa1cf36cbdadc71fd9f9224753a38b1ef906101e9b17b7429",
+      "bytes": 10643,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S02/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S02/G04/mouth.png",
+      "sha256": "5d95d665ba3475bea2c354f3f25c2ec751ab1ebd191f96b89f1b1f80e27c9ed4",
+      "bytes": 11746,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S02/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M05/S02/N00/mouth.png",
       "sha256": "8c303058fecdccefc55f47ef31ed0e2649de74810cd760f62a9632632556e7eb",
       "bytes": 1042438,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S02/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S02/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S02/X01/mouth.png",
+      "sha256": "72e17aec38ebfc2f36c2f070d074c53b715f8c34e6437151339c3515ba527217",
+      "bytes": 26739,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S02/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S02/X02/mouth.png",
+      "sha256": "f5044780d574c534580e82f056b9f5e4c517e843442580ff269e865da98fb7e0",
+      "bytes": 39933,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S02/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S02/X03/mouth.png",
+      "sha256": "fdc2cb5c93970d72ccec98b3fe4681cb4cbe8b0d715a40666cf13a2e627bd1a2",
+      "bytes": 37903,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S02/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S03/G01/mouth.png",
+      "sha256": "3fb05f48a3fc8fb2a00866f2cedae6cb70cf1ec69d6bc90fd347af21c693e749",
+      "bytes": 10442,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S03/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S03/G02/mouth.png",
+      "sha256": "f5471c736b9446f54efee3b34738776b313653ae2b04675e34d4aa956774bb5e",
+      "bytes": 8892,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S03/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S03/G03/mouth.png",
+      "sha256": "e2f4cd4257feecf837bea305dcec2b64e524cd5eed4033ac0b9af9c19e434348",
+      "bytes": 11507,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S03/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S03/G04/mouth.png",
+      "sha256": "328b3b328653d755d03a6c740a374017125fe83ca1916d1426fd55a8be2bb479",
+      "bytes": 11119,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S03/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M05/S03/N00/mouth.png",
       "sha256": "befb6d512675a4b5adb544e549c2c83b19e6c3e2a89467d6fbb1b331d6d1dc96",
       "bytes": 1052957,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S03/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S03/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S03/X01/mouth.png",
+      "sha256": "e8dc982f9508a42fc9fc3b49a1466e541440e25724bd56da06625cb4ccc93ccd",
+      "bytes": 31637,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S03/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S03/X02/mouth.png",
+      "sha256": "32046f6ccbc48ddc992146c549a12cd8a2879418ce54a09efa2769ee2fcaf9ee",
+      "bytes": 41142,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S03/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S03/X03/mouth.png",
+      "sha256": "39e29db03cbdaa5e9d4c398574ec81aa5879b619a07e0412c7b21a1ad7f9082d",
+      "bytes": 38942,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S03/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S04/G01/mouth.png",
+      "sha256": "05fc0013e33ddc0730a646d75565329ada7ab994b17ff3714434094f4a993734",
+      "bytes": 11039,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S04/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S04/G02/mouth.png",
+      "sha256": "caa837daed9526871cccb77d6ac7421a7e9b8eb1e63c107fdb8621e1e79a1b40",
+      "bytes": 9531,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S04/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S04/G03/mouth.png",
+      "sha256": "4838842ef2778f9b408c43f6e85ff35031206643a62ab9fd1899c0af8e95459e",
+      "bytes": 10167,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S04/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S04/G04/mouth.png",
+      "sha256": "d4c2683e952992a4c8e3c5277e27876e6cd7a86a2850cbdd90ccc4b150abaa3a",
+      "bytes": 11448,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S04/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M05/S04/N00/mouth.png",
       "sha256": "daef459cf815fcff628f036a4f9e45e50bf9dc67bb422089bd8e65911c88c19c",
       "bytes": 1052153,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S04/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S04/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S04/X01/mouth.png",
+      "sha256": "823a02a0893dcd79afb52005f5a59fd72e724a2893599bc2cbdaa27cda058f1a",
+      "bytes": 27864,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S04/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S04/X02/mouth.png",
+      "sha256": "cec499bd685a94513ebc355455fe43261dfb1700e3c86ec4bae3f8e64b98d7d1",
+      "bytes": 38232,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S04/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M05/S04/X03/mouth.png",
+      "sha256": "57aaad10dc67ba4f0885115b879f8aeadc5a5f59849876fc87ad21553c3e69f9",
+      "bytes": 37732,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M05/current/approved/r20260902_complete_recovery_v01/S04/X03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M06/S01/G01/mouth.png",
       "sha256": "706b01583b1444779a4a9acffb50213c8b997013b9fed63491287e36dd3fb43a",
       "bytes": 29944,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S01/G01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M06/S01/G02/mouth.png",
       "sha256": "f1c74a7318c3505aa0d79fc1e87fdcf5548118748fad772f2442e3ab3218612b",
       "bytes": 22525,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S01/G02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M06/S01/G03/mouth.png",
       "sha256": "34098fd34ae60a6859a40fde02ec68eaeb9f4d76d7b07c757833b516bfa7ed9b",
       "bytes": 28952,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S01/G03/mouth.png"
     },
     {
       "release_path": "assets/female/M/M06/S01/G04/mouth.png",
       "sha256": "a8744267ad5451d77d857138bb31c09a98c04219493bdf90599e578ccaff611c",
       "bytes": 30100,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/G04/mouth.png"
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S01/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M06/S01/N00/mouth.png",
       "sha256": "de5758d7dbac518ca67a97a2b8f41f67a2f497880a2083311085ffcb2658f969",
       "bytes": 88759,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S01/N00/mouth.png"
     },
     {
       "release_path": "assets/female/M/M06/S01/X01/mouth.png",
       "sha256": "3bd73488881960c3abbc4250759989ef2ec20f5fdc101b7d3122e7b8afca3e59",
       "bytes": 32237,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X01/mouth.png"
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S01/X01/mouth.png"
     },
     {
       "release_path": "assets/female/M/M06/S01/X02/mouth.png",
       "sha256": "3df500d82dcce100a5e6a089979200ff653b7fad4d4fba977b8aae68a5cbd630",
       "bytes": 46623,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X02/mouth.png"
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S01/X02/mouth.png"
     },
     {
       "release_path": "assets/female/M/M06/S01/X03/mouth.png",
       "sha256": "dbfac6da1aaef40aa87c8acf51e2e0c0f7603719820559fdf5516f12cbb39e95",
       "bytes": 43139,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S01/X03/mouth.png"
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S01/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S02/G01/mouth.png",
+      "sha256": "fb95db51df67945d542de0b00dbd9c0b7f3cd8b3a4c7d9417580bd35b73c0bca",
+      "bytes": 30998,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S02/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S02/G02/mouth.png",
+      "sha256": "17371104d83bc517a6cc13cf40ca827d0011ef2c70db9f6430362ab451cbb16e",
+      "bytes": 22967,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S02/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S02/G03/mouth.png",
+      "sha256": "9c8e61ac0ae27e97ef29f1d6740db039b6296c5f84c2ec830595e496c3e07df4",
+      "bytes": 29740,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S02/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S02/G04/mouth.png",
+      "sha256": "9b2e987cef1e5347ee7176d1669bf82a75518bde635f95bd0c255d55111b25f6",
+      "bytes": 31693,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S02/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M06/S02/N00/mouth.png",
       "sha256": "f1cfce186ff6b17725fa54f5058e42ab4d81e22c14b028a3219689dadab27645",
       "bytes": 1020455,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S02/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S02/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S02/X01/mouth.png",
+      "sha256": "bdddd66fd587f0cfe63a1cd945a82dee229191961bc5655d951ff872b1b65476",
+      "bytes": 33454,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S02/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S02/X02/mouth.png",
+      "sha256": "2e35bc512dffb9674625b2713c8e77f04d86746fe481e311be5f84d7924d868d",
+      "bytes": 47108,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S02/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S02/X03/mouth.png",
+      "sha256": "936279c0f1b80f42aa59943bc7d892c810d152249aca4bea42ccf3cb61f06667",
+      "bytes": 43162,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S02/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S03/G01/mouth.png",
+      "sha256": "a9a298f3a756c9b73c656fed430156b9ef7a9d30c79d6577e3a2e29ac58a0133",
+      "bytes": 31415,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S03/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S03/G02/mouth.png",
+      "sha256": "6eab9cf0622d9e83c6b137471f671946fa073398ab37bb715f09b21864a19e28",
+      "bytes": 21977,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S03/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S03/G03/mouth.png",
+      "sha256": "86e299d080be97833db61bbecf4109ed30670c9ac5a80602263258556d4c7886",
+      "bytes": 29193,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S03/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S03/G04/mouth.png",
+      "sha256": "e108462db9f6200816583978a338373ddb7149a35eb25ef871ea94e6efbdfd58",
+      "bytes": 31481,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S03/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M06/S03/N00/mouth.png",
       "sha256": "cc78f6d82c1f0ca4cd45eadd2519a2b37b163d8d5bb69f06aa6ab9f11679854b",
       "bytes": 1062896,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S03/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S03/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S03/X01/mouth.png",
+      "sha256": "f34705bb70ec4ed3eeb7447b388f2c7849cd625dd137f0235dfe19497ece6d75",
+      "bytes": 33460,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S03/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S03/X02/mouth.png",
+      "sha256": "e361cb1ab176794f757c4caceb33d6bc4dc3c4683a1eee938ee9c959d4fe6be9",
+      "bytes": 48299,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S03/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S03/X03/mouth.png",
+      "sha256": "8dde72c937464378fb17660386a4d509d0907a75b07fad6720bc2f5b88021a0b",
+      "bytes": 43315,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S03/X03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S04/G01/mouth.png",
+      "sha256": "d352f5320393ff0639c05c8354ac66d150d735e9b149aa844789fd12e511372b",
+      "bytes": 30750,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S04/G01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S04/G02/mouth.png",
+      "sha256": "eaf732521e76557c8615b1400cd0798178915b7531bbd2faa952ec23c6fcb363",
+      "bytes": 22090,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S04/G02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S04/G03/mouth.png",
+      "sha256": "6d01b4bb65d57e2785c3bebc2dd9339031247fc6912614bde58d5fb2f3747a0b",
+      "bytes": 27503,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S04/G03/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S04/G04/mouth.png",
+      "sha256": "c21e181a57de89760662141b555676cdedd8d7da91e8eed3fd8affef831364d1",
+      "bytes": 29978,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S04/G04/mouth.png"
     },
     {
       "release_path": "assets/female/M/M06/S04/N00/mouth.png",
       "sha256": "f47b8937cb99e0346174cd6cd1e82e22b5aeb2b3314b3f9d0b76f5fb5b26ae5a",
       "bytes": 1060268,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260826_s01_em_inspyrenet1024_user_accepted_v01/S04/N00/mouth.png"
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S04/N00/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S04/X01/mouth.png",
+      "sha256": "0a91997b2d50e5d8087fe6f1b4517e5b64cca042d2e22ce679294c880ba6f4f1",
+      "bytes": 33478,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S04/X01/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S04/X02/mouth.png",
+      "sha256": "7954657bf759496d9d13dca08ee0e68e89b070b2a491a0d5e473f2a35398e47a",
+      "bytes": 58681,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S04/X02/mouth.png"
+    },
+    {
+      "release_path": "assets/female/M/M06/S04/X03/mouth.png",
+      "sha256": "c329b6694841083671f6e34848f0619d50805949695300239f201d7590d63898",
+      "bytes": 44805,
+      "source_authority": "female",
+      "source_ref": "female/component_library_v1/M/M06/current/approved/r20260902_complete_recovery_v01/S04/X03/mouth.png"
     },
     {
       "release_path": "assets/female/base/F01/S01/F01_S01_earless_head_body_rgba.png",
