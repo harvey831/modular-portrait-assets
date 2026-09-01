@@ -293,7 +293,7 @@ export function randomSelection(index, seed, { extended = false } = {}) {
 - [ ] **Step 5：執行 GREEN 與 full JS tests**
 
 ```text
-node --test site/tests
+node --test site/tests/*.test.mjs
 git diff --check
 ```
 
@@ -404,7 +404,7 @@ export class PortraitCompositor {
 - [ ] **Step 5：執行 GREEN 與回歸**
 
 ```text
-node --test site/tests
+node --test site/tests/*.test.mjs
 C:\ComfyUI_windows_portable\python_embeded\python.exe -m unittest discover -s tests -v
 ```
 
@@ -538,7 +538,7 @@ HTML 必須使用真實 `label for`、`fieldset/legend`、`button`、`aria-live`
 - [ ] **Step 5：執行 GREEN、HTML/static validation**
 
 ```text
-node --test site/tests
+node --test site/tests/*.test.mjs
 C:\ComfyUI_windows_portable\python_embeded\python.exe -m unittest tests.test_pages_site -v
 git diff --check
 ```
@@ -629,7 +629,7 @@ export function reduceAppState(state, event, index) {
 - [ ] **Step 5：執行 GREEN 與 full local tests**
 
 ```text
-node --test site/tests
+node --test site/tests/*.test.mjs
 C:\ComfyUI_windows_portable\python_embeded\python.exe -m unittest discover -s tests -v
 git diff --check
 ```
@@ -664,7 +664,7 @@ def test_pages_workflow_resolves_lfs_and_runs_every_gate(self) -> None:
     for required in (
         "lfs: true",
         "validate_release.py .",
-        "node --test site/tests",
+        "node --test site/tests/*.test.mjs",
         "python -m unittest discover -s tests -v",
         "build_pages_site.py . .pages-dist",
         "actions/upload-pages-artifact@v4",
@@ -716,7 +716,7 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install -r requirements.txt
       - run: python skill/modular-portrait-assets/scripts/validate_release.py .
-      - run: node --test site/tests
+      - run: node --test site/tests/*.test.mjs
       - run: python -m unittest discover -s tests -v
       - run: python tools/build_pages_site.py . .pages-dist
       - uses: actions/configure-pages@v5
@@ -744,7 +744,7 @@ README 開頭加入 `Live Portrait Mixer` 連結、功能清單、1254×1254 與
 - [ ] **Step 5：執行全部新鮮驗證**
 
 ```text
-node --test site/tests
+node --test site/tests/*.test.mjs
 C:\ComfyUI_windows_portable\python_embeded\python.exe -m unittest discover -s tests -v
 C:\ComfyUI_windows_portable\python_embeded\python.exe skill\modular-portrait-assets\scripts\validate_release.py .
 C:\ComfyUI_windows_portable\python_embeded\python.exe tools\build_pages_site.py . .pages-dist
