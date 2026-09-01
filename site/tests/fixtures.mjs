@@ -123,6 +123,7 @@ export const FIXTURE_CATALOG = Object.freeze({
   schema: 'modular-portrait-web-catalog-v1',
   license: 'CC0-1.0',
   source_manifest_sha256: 'f'.repeat(64),
+  catalog_sha256: 'e'.repeat(64),
   canvas: [1254, 1254, 'RGBA'],
   asset_count: assets.length,
   total_bytes: assets.length * 100,

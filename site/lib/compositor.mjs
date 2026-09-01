@@ -302,25 +302,38 @@ export class BrowserImageLoader {
     fetchImpl = globalThis.fetch?.bind(globalThis),
     bitmapFactory = globalThis.createImageBitmap?.bind(globalThis),
     canvasFactory = () => document.createElement('canvas'),
+    maxEntries = 32,
   } = {}) {
     if (!fetchImpl || !bitmapFactory) throw new CompositorError('Browser image APIs are unavailable');
+    if (!Number.isInteger(maxEntries) || maxEntries < 1) {
+      throw new CompositorError('Image cache size must be a positive integer');
+    }
     this.fetchImpl = fetchImpl;
     this.bitmapFactory = bitmapFactory;
     this.canvasFactory = canvasFactory;
+    this.maxEntries = maxEntries;
   }
 
   load(path) {
     if (!/^assets\/[A-Za-z0-9_./-]+$/.test(path) || path.includes('..')) {
       return Promise.reject(new CompositorError(`Unsafe asset URL: ${path}`));
     }
-    if (!this.#cache.has(path)) {
-      const promise = this.#decode(path).catch((error) => {
-        this.#cache.delete(path);
-        throw error;
-      });
-      this.#cache.set(path, promise);
+    if (this.#cache.has(path)) {
+      const cached = this.#cache.get(path);
+      this.#cache.delete(path);
+      this.#cache.set(path, cached);
+      return cached;
     }
-    return this.#cache.get(path);
+    let promise = this.#decode(path);
+    promise = promise.catch((error) => {
+      if (this.#cache.get(path) === promise) this.#cache.delete(path);
+      throw error;
+    });
+    this.#cache.set(path, promise);
+    if (this.#cache.size > this.maxEntries) {
+      this.#cache.delete(this.#cache.keys().next().value);
+    }
+    return promise;
   }
 
   async #decode(path) {

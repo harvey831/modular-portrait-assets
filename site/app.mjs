@@ -1,4 +1,4 @@
-import { createAppState, reduceAppState } from './lib/app-state.mjs';
+import { createAppState, localizeStatus, reduceAppState } from './lib/app-state.mjs';
 import { createCatalogIndex } from './lib/catalog.mjs';
 import { PortraitCompositor } from './lib/compositor.mjs';
 import { createTranslator, MESSAGES } from './lib/i18n.mjs';
@@ -81,23 +81,31 @@ export async function bootstrap() {
   let currentRecipe = null;
   let renderAbort = null;
   let scheduledFrame = null;
+  let statusMessage = {
+    key: 'status.loadingCatalog',
+    variables: {},
+    tone: 'working',
+  };
 
   function setStatus(key, variables = {}, tone = 'working') {
+    statusMessage = { key, variables: { ...variables }, tone };
     statusText.dataset.i18n = key;
-    statusText.textContent = translate(key, variables);
+    statusText.textContent = localizeStatus(statusMessage, translate);
     status.dataset.tone = tone;
   }
 
   function applyTranslations() {
     document.documentElement.lang = language;
     document.title = translate('app.title');
-    document.querySelectorAll('[data-i18n]').forEach((element) => {
+    document.querySelectorAll('[data-i18n]:not(#status-text)').forEach((element) => {
       element.textContent = translate(element.dataset.i18n);
     });
     document.querySelectorAll('[data-i18n-aria-label]').forEach((element) => {
       element.setAttribute('aria-label', translate(element.dataset.i18nAriaLabel));
     });
     languageControl.value = language;
+    statusText.textContent = localizeStatus(statusMessage, translate);
+    status.dataset.tone = statusMessage.tone;
   }
 
   function renderOptions() {

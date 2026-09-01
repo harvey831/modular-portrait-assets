@@ -55,6 +55,9 @@ function validateCatalog(catalog) {
   if (!/^[0-9a-f]{64}$/.test(catalog.source_manifest_sha256 ?? '')) {
     throw new CatalogError('Catalog source manifest hash is invalid');
   }
+  if (!/^[0-9a-f]{64}$/.test(catalog.catalog_sha256 ?? '')) {
+    throw new CatalogError('Catalog digest is invalid');
+  }
 }
 
 

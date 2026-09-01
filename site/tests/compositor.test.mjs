@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import {
+  BrowserImageLoader,
   PortraitCompositor,
   buildLuminanceLut,
   composeFrame,
@@ -114,4 +115,36 @@ test('stale async render never replaces the latest committed frame', async () =>
   assert.deepEqual(await oldRender, { committed: false });
   assert.deepEqual(commits, [22]);
   assert.equal(compositor.committedRecipe.recordId, 'new');
+});
+
+
+test('browser image cache is bounded and evicts the least-recently-used asset', async () => {
+  const fetched = [];
+  const loader = new BrowserImageLoader({
+    maxEntries: 2,
+    fetchImpl: async (path) => {
+      fetched.push(path);
+      return { ok: true, status: 200, blob: async () => ({ path }) };
+    },
+    bitmapFactory: async () => ({ width: 1254, height: 1254, close() {} }),
+    canvasFactory: () => ({
+      getContext: () => ({
+        drawImage() {},
+        getImageData: () => ({ data: new Uint8ClampedArray(4) }),
+      }),
+    }),
+  });
+
+  await loader.load('assets/a.png');
+  await loader.load('assets/b.png');
+  await loader.load('assets/a.png');
+  await loader.load('assets/c.png');
+  await loader.load('assets/b.png');
+
+  assert.deepEqual(fetched, [
+    './assets/a.png',
+    './assets/b.png',
+    './assets/c.png',
+    './assets/b.png',
+  ]);
 });

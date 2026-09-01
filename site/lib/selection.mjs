@@ -104,7 +104,7 @@ export function buildRecipe(index, selection, seed) {
   const layers = resolveLayerBindings(index, normalized.selection).map((layer) => ({ ...layer }));
   return Object.freeze({
     schema: 'modular-portrait-recipe-v1',
-    catalogSha256: index.catalog.source_manifest_sha256,
+    catalogSha256: index.catalog.catalog_sha256,
     canvas: [...index.catalog.canvas],
     seed: seed >>> 0,
     selection: { ...normalized.selection },

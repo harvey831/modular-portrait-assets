@@ -10,6 +10,14 @@ import {
 const OPTION_AXES = Object.freeze(['gender', 'S', 'expression', 'F', 'E', 'M', 'H', 'C', 'ear']);
 
 
+export function localizeStatus(message, translate) {
+  if (!message || typeof message.key !== 'string' || typeof translate !== 'function') {
+    throw new SelectionError('Status localization requires a message and translator');
+  }
+  return translate(message.key, message.variables ?? {});
+}
+
+
 function deriveOptions(index, selection, extended) {
   const options = {};
   for (const axis of OPTION_AXES) {

@@ -55,7 +55,7 @@ test('recipe contains only public ordered paths and reproducibility metadata', (
   const selection = defaultSelection(index);
   const recipe = buildRecipe(index, selection, 7);
   assert.equal(recipe.schema, 'modular-portrait-recipe-v1');
-  assert.equal(recipe.catalogSha256, 'f'.repeat(64));
+  assert.equal(recipe.catalogSha256, 'e'.repeat(64));
   assert.deepEqual(recipe.canvas, [1254, 1254, 'RGBA']);
   assert.equal(recipe.seed, 7);
   assert.equal(recipe.layers[0].order, 0);

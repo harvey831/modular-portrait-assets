@@ -109,6 +109,10 @@ class PagesCatalogTests(unittest.TestCase):
         self.assertEqual(catalog["canvas"], [1254, 1254, "RGBA"])
         self.assertEqual(catalog["asset_count"], 974)
         self.assertEqual(catalog["total_bytes"], 172106675)
+        self.assertRegex(catalog["catalog_sha256"], r"^[0-9a-f]{64}$")
+        self.assertNotEqual(
+            catalog["catalog_sha256"], catalog["source_manifest_sha256"]
+        )
         encoded = json.dumps(catalog)
         self.assertNotIn("source_ref", encoded)
         self.assertNotIn("source_authority", encoded)
@@ -182,6 +186,10 @@ class PagesArtifactTests(unittest.TestCase):
         second = build_pages_site.build_site(fixture.root, fixture.output_b)
 
         self.assertEqual(first["catalog_sha256"], second["catalog_sha256"])
+        published_catalog = json.loads(
+            (fixture.output_a / "catalog.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(first["catalog_sha256"], published_catalog["catalog_sha256"])
         self.assertEqual(first["asset_count"], 1)
         self.assertEqual(first["lfs_pointer_count"], 0)
         copied = (fixture.output_a / fixture.asset_path).read_bytes()
@@ -200,6 +208,14 @@ class PagesArtifactTests(unittest.TestCase):
         fixture = self.make_fixture()
         with self.assertRaises(build_pages_site.PagesBuildError):
             build_pages_site.build_site(fixture.root, fixture.root)
+
+    def test_build_excludes_site_test_sources_from_public_artifact(self) -> None:
+        fixture = self.make_fixture()
+        test_source = fixture.root / "site" / "tests" / "dev-only.test.mjs"
+        test_source.parent.mkdir()
+        test_source.write_text("throw new Error('not public')", encoding="utf-8")
+        build_pages_site.build_site(fixture.root, fixture.output_a)
+        self.assertFalse((fixture.output_a / "tests").exists())
 
 
 class HtmlProbe(HTMLParser):
@@ -293,6 +309,9 @@ class PagesShellTests(unittest.TestCase):
         styles = self.styles_path.read_text(encoding="utf-8")
         self.assertIn('type="module" src="./app.mjs"', html)
         self.assertIn('rel="stylesheet" href="./styles.css"', html)
+        self.assertIn('rel="icon" href="data:image/svg+xml,', html)
+        self.assertIn('http-equiv="Content-Security-Policy"', html)
+        self.assertIn("object-src 'none'", html)
         self.assertNotRegex(html, r"https://(?:fonts|cdn|www\.google-analytics)")
         self.assertNotIn("@import", styles)
         self.assertIn("@media (max-width: 860px)", styles)

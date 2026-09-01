@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import { createCatalogIndex } from '../lib/catalog.mjs';
-import { createAppState, reduceAppState } from '../lib/app-state.mjs';
+import { createAppState, localizeStatus, reduceAppState } from '../lib/app-state.mjs';
+import { createTranslator } from '../lib/i18n.mjs';
 import { FIXTURE_CATALOG } from './fixtures.mjs';
 
 
@@ -74,4 +75,21 @@ test('reset returns to the explicit defaults and keeps language-independent stat
   });
   assert.equal(reset.extended, false);
   assert.equal(reset.seed, 0);
+});
+
+
+test('status variables survive a language change', () => {
+  const message = {
+    key: 'status.adjusted',
+    variables: { from: 'X01', to: 'N00' },
+    tone: 'ready',
+  };
+  assert.equal(
+    localizeStatus(message, createTranslator('en')),
+    'Adjusted incompatible module X01 to N00.',
+  );
+  assert.equal(
+    localizeStatus(message, createTranslator('zh-Hant')),
+    '不相容模組已由 X01 調整為 N00。',
+  );
 });

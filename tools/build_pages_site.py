@@ -61,6 +61,19 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def _canonical_json(payload: object) -> str:
+    return json.dumps(
+        payload,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ) + "\n"
+
+
+def _canonical_digest(payload: object) -> str:
+    return hashlib.sha256(_canonical_json(payload).encode("utf-8")).hexdigest()
+
+
 def _parsed(
     *,
     gender: str,
@@ -253,7 +266,7 @@ def build_catalog(repo_root: Path) -> dict[str, Any]:
     if manifest.get("total_bytes") != total_bytes:
         raise PagesBuildError("release manifest total_bytes does not match assets")
 
-    return {
+    catalog = {
         "schema": "modular-portrait-web-catalog-v1",
         "license": "CC0-1.0",
         "source_manifest_sha256": sha256(manifest_path),
@@ -262,6 +275,8 @@ def build_catalog(repo_root: Path) -> dict[str, Any]:
         "total_bytes": total_bytes,
         "assets": records,
     }
+    catalog["catalog_sha256"] = _canonical_digest(catalog)
+    return catalog
 
 
 def _safe_join(root: Path, relative: str) -> Path:
@@ -315,6 +330,8 @@ def _copy_site_source(site_dir: Path, output_dir: Path) -> None:
         if not source.is_file():
             continue
         relative = source.relative_to(site_dir)
+        if relative.parts[0] == "tests":
+            continue
         destination = output_dir / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, destination)
@@ -322,13 +339,7 @@ def _copy_site_source(site_dir: Path, output_dir: Path) -> None:
 
 def _write_canonical_json(path: Path, payload: object) -> None:
     path.write_text(
-        json.dumps(
-            payload,
-            ensure_ascii=False,
-            sort_keys=True,
-            separators=(",", ":"),
-        )
-        + "\n",
+        _canonical_json(payload),
         encoding="utf-8",
         newline="\n",
     )
@@ -358,7 +369,7 @@ def build_site(repo_root: Path, output_dir: Path) -> dict[str, Any]:
 
     summary = {
         "schema": "modular-portrait-pages-build-v1",
-        "catalog_sha256": sha256(catalog_path),
+        "catalog_sha256": catalog["catalog_sha256"],
         "asset_count": catalog["asset_count"],
         "total_bytes": catalog["total_bytes"],
         "lfs_pointer_count": 0,

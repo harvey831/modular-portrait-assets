@@ -5,6 +5,19 @@ shared components. The release contains hash-pinned current assets only; it
 does not contain private work history, rejected candidates, QC scratch files,
 model weights, or generation-service credentials.
 
+## Live portrait mixer
+
+Open the **[Modular Portrait Mixer](https://harvey831.github.io/modular-portrait-assets/)**
+to assemble a portrait without installing anything. The page supports English
+and Traditional Chinese, compatible-only module selectors, deterministic
+random mixes, extended-expression opt-in, hair hue control, recipe JSON, and
+native 1254×1254 PNG download.
+
+The mixer has no backend, account, analytics, external fonts, or generation
+API. It downloads only the selected public layers and composes them locally in
+the browser. The same hash-bound catalog and layer-ownership rules used by the
+offline validator are enforced during the Pages build.
+
 Available component axes include face/body bases (`F`), skin tones (`S`),
 eye+brow modules (`E`), mouth modules (`M`), hair (`H`), clothing (`C`),
 human/elf ears, blush, and sweat layers. Exact available cells are listed in
