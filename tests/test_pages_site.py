@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 from dataclasses import dataclass
+from html.parser import HTMLParser
 from pathlib import Path
 
 
@@ -199,6 +200,105 @@ class PagesArtifactTests(unittest.TestCase):
         fixture = self.make_fixture()
         with self.assertRaises(build_pages_site.PagesBuildError):
             build_pages_site.build_site(fixture.root, fixture.root)
+
+
+class HtmlProbe(HTMLParser):
+    def __init__(self, html: str) -> None:
+        super().__init__()
+        self.elements: list[tuple[str, dict[str, str | None]]] = []
+        self.feed(html)
+
+    def handle_starttag(
+        self,
+        tag: str,
+        attrs: list[tuple[str, str | None]],
+    ) -> None:
+        self.elements.append((tag, dict(attrs)))
+
+    def by_id(self, element_id: str) -> tuple[str, dict[str, str | None]]:
+        try:
+            return next(
+                item for item in self.elements if item[1].get("id") == element_id
+            )
+        except StopIteration as exc:
+            raise AssertionError(f"missing element #{element_id}") from exc
+
+    def canvas_size(self, element_id: str) -> tuple[int, int]:
+        tag, attrs = self.by_id(element_id)
+        if tag != "canvas":
+            raise AssertionError(f"{element_id} is not a canvas")
+        return int(attrs["width"]), int(attrs["height"])
+
+    def has_live_region(self, element_id: str) -> bool:
+        return self.by_id(element_id)[1].get("aria-live") in {
+            "polite",
+            "assertive",
+        }
+
+    def interactive_ids(self) -> set[str]:
+        interactive = {"button", "input", "select", "textarea"}
+        return {
+            attrs["id"]
+            for tag, attrs in self.elements
+            if tag in interactive and attrs.get("id")
+        }
+
+    def label_targets(self) -> set[str]:
+        return {
+            attrs["for"]
+            for tag, attrs in self.elements
+            if tag == "label" and attrs.get("for")
+        }
+
+
+class PagesShellTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.html_path = REPO_ROOT / "site" / "index.html"
+        self.styles_path = REPO_ROOT / "site" / "styles.css"
+
+    def test_site_shell_has_required_accessible_controls(self) -> None:
+        document = HtmlProbe(self.html_path.read_text(encoding="utf-8"))
+        self.assertEqual(document.canvas_size("portrait-canvas"), (1254, 1254))
+        self.assertTrue(document.has_live_region("status"))
+        required = {
+            "language",
+            "gender",
+            "face",
+            "skin",
+            "ear",
+            "expression",
+            "eyes",
+            "mouth",
+            "extended",
+            "hair",
+            "hair-hue",
+            "clothing",
+            "randomize",
+            "reset",
+            "download",
+            "copy-recipe",
+        }
+        self.assertTrue(
+            required.issubset(document.interactive_ids()),
+            required - document.interactive_ids(),
+        )
+        labelled = required - {"randomize", "reset", "download", "copy-recipe"}
+        self.assertTrue(
+            labelled.issubset(document.label_targets()),
+            labelled - document.label_targets(),
+        )
+
+    def test_site_shell_uses_local_assets_and_module_bootstrap(self) -> None:
+        html = self.html_path.read_text(encoding="utf-8")
+        styles = self.styles_path.read_text(encoding="utf-8")
+        self.assertIn('type="module" src="./app.mjs"', html)
+        self.assertIn('rel="stylesheet" href="./styles.css"', html)
+        self.assertNotRegex(html, r"https://(?:fonts|cdn|www\.google-analytics)")
+        self.assertNotIn("@import", styles)
+        self.assertIn("@media (max-width: 860px)", styles)
+        self.assertIn("prefers-reduced-motion: reduce", styles)
+        self.assertIn(":focus-visible", styles)
+        self.assertNotRegex(html, r"\son[a-z]+=")
 
 
 if __name__ == "__main__":

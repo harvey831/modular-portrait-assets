@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="A local, deterministic mixer for CC0 modular portrait assets.">
+    <title>Modular Portrait Mixer</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#controls">Skip to controls</a>
+    <header class="masthead">
+      <div>
+        <p class="kicker" data-i18n="app.kicker">CC0 modular portrait laboratory</p>
+        <h1 data-i18n="app.title">Modular Portrait Mixer</h1>
+        <p class="subtitle" data-i18n="app.subtitle">
+          Combine compatible public layers directly in your browser.
+        </p>
+      </div>
+      <div class="language-control">
+        <label for="language" data-i18n="language.label">Language</label>
+        <select id="language" name="language">
+          <option value="en">English</option>
+          <option value="zh-Hant">繁體中文</option>
+        </select>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="preview-panel" aria-labelledby="preview-heading">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">1254 × 1254 · RGBA</p>
+            <h2 id="preview-heading" data-i18n="a11y.preview">Generated modular portrait preview</h2>
+          </div>
+          <span class="local-badge">LOCAL CANVAS</span>
+        </div>
+        <div class="canvas-frame">
+          <canvas id="portrait-canvas" width="1254" height="1254">
+            <span data-i18n="canvas.fallback">Your browser needs Canvas 2D to use this mixer.</span>
+          </canvas>
+          <div class="canvas-grid" aria-hidden="true"></div>
+        </div>
+        <div id="status" class="status" role="status" aria-live="polite">
+          <span class="status-light" aria-hidden="true"></span>
+          <span data-i18n="status.loadingCatalog">Loading the public catalog…</span>
+        </div>
+        <article class="recipe-card" aria-labelledby="recipe-heading">
+          <div>
+            <p class="eyebrow" data-i18n="recipe.title">Current recipe</p>
+            <h3 id="recipe-heading" data-i18n="recipe.waiting">
+              Waiting for the first validated render.
+            </h3>
+          </div>
+          <dl id="recipe-summary"></dl>
+        </article>
+        <textarea id="recipe-fallback" class="recipe-fallback" readonly hidden></textarea>
+      </section>
+
+      <form id="controls" class="control-panel" aria-label="Portrait module controls">
+        <fieldset>
+          <legend data-i18n="section.identity">Identity</legend>
+          <div class="control-grid">
+            <div class="field span-2">
+              <label for="gender" data-i18n="field.gender">Gender set</label>
+              <select id="gender" name="gender"></select>
+            </div>
+            <div class="field">
+              <label for="face" data-i18n="field.face">Face F</label>
+              <select id="face" name="F"></select>
+            </div>
+            <div class="field">
+              <label for="skin" data-i18n="field.skin">Skin S</label>
+              <select id="skin" name="S"></select>
+            </div>
+            <div class="field span-2">
+              <label for="ear" data-i18n="field.ear">Ear type</label>
+              <select id="ear" name="ear"></select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend data-i18n="section.expression">Expression</legend>
+          <div class="control-grid">
+            <div class="field span-2">
+              <label for="expression" data-i18n="field.expression">Expression</label>
+              <select id="expression" name="expression"></select>
+            </div>
+            <div class="field">
+              <label for="eyes" data-i18n="field.eyes">Eyes E</label>
+              <select id="eyes" name="E"></select>
+            </div>
+            <div class="field">
+              <label for="mouth" data-i18n="field.mouth">Mouth M</label>
+              <select id="mouth" name="M"></select>
+            </div>
+            <div class="toggle-field span-2">
+              <input id="extended" name="extended" type="checkbox">
+              <div>
+                <label for="extended" data-i18n="field.extended">Extended expressions</label>
+                <p data-i18n="extended.help">
+                  Unlock X01–X03. They stay out of random mixes until enabled.
+                </p>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend data-i18n="section.style">Style</legend>
+          <div class="control-grid">
+            <div class="field">
+              <label for="hair" data-i18n="field.hair">Hair H</label>
+              <select id="hair" name="H"></select>
+            </div>
+            <div class="field">
+              <label for="clothing" data-i18n="field.clothing">Clothing C</label>
+              <select id="clothing" name="C"></select>
+            </div>
+            <div class="field range-field span-2">
+              <div class="range-label">
+                <label for="hair-hue" data-i18n="field.hairHue">Hair hue</label>
+                <output id="hair-hue-value" for="hair-hue">210°</output>
+              </div>
+              <input id="hair-hue" name="hairHue" type="range" min="0" max="359" value="210">
+              <p data-i18n="hairHue.help">
+                Changes only pixels owned by the hairstyle tint mask.
+              </p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="action-fieldset">
+          <legend data-i18n="section.actions">Create &amp; export</legend>
+          <div class="button-grid">
+            <button id="randomize" class="button primary" type="button" data-i18n="action.randomize">
+              Randomize
+            </button>
+            <button id="reset" class="button secondary" type="button" data-i18n="action.reset">
+              Reset
+            </button>
+            <button id="download" class="button secondary" type="button" disabled data-i18n="action.download">
+              Download PNG
+            </button>
+            <button id="copy-recipe" class="button ghost" type="button" disabled data-i18n="action.copyRecipe">
+              Copy recipe JSON
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+
+    <footer>
+      <p data-i18n="license.note">
+        Source modules are released under CC0 1.0. Composition happens locally.
+      </p>
+      <nav aria-label="Project links">
+        <a href="https://github.com/harvey831/modular-portrait-assets" data-i18n="footer.repo">Repository</a>
+        <a href="./LICENSE" data-i18n="footer.license">License</a>
+        <a href="https://github.com/harvey831/modular-portrait-assets/tree/main/provenance" data-i18n="footer.provenance">Provenance</a>
+        <a href="https://github.com/harvey831/modular-portrait-assets/blob/main/skill/modular-portrait-assets/scripts/validate_release.py" data-i18n="footer.validator">Offline validator</a>
+      </nav>
+    </footer>
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>
