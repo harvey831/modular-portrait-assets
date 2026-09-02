@@ -18,6 +18,10 @@ API. It downloads only the selected public layers and composes them locally in
 the browser. The same hash-bound catalog and layer-ownership rules used by the
 offline validator are enforced during the Pages build.
 
+Cross-skin expression effects use registered paired differences, with reduced
+blush strength on darker skin and unchanged sweat highlights. Source PNGs stay
+immutable; see the [cross-skin rendering and QC notes](docs/cross-s-effects.md).
+
 ### itch.io wrapper
 
 itch.io accepts HTML5 ZIP uploads but rejects archives containing more than

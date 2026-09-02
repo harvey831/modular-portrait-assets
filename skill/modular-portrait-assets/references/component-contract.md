@@ -25,6 +25,11 @@ Matching numeric suffixes describe identity families; they do not require
   that owner layer.
 - A composite is QC evidence, not a reusable source module.
 
+For missing same-S expression faces/effects, follow
+[`cross-s-effects.md`](cross-s-effects.md). Reuse is restricted to matching
+gender/F/expression sources; E/M remain target-S-native. Renderer-only reuse
+does not select a new component revision.
+
 ## Rejection conditions
 
 Reject a new module when any of these is observed:

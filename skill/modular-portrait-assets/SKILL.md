@@ -17,11 +17,16 @@ Stop if validation fails. Never select a file by revision number, timestamp,
 
 ## Private V5 versioning route
 
-For any private V5, E/M, different-S, modular QC, recovery, candidate,
-promotion, old-version, or cleanup task, first read
+For private component inventory, E/M generation or repair, recovery, candidate
+lifecycle, promotion, old-version, or cleanup tasks, first read
 [`references/version-management.md`](references/version-management.md) and use
 `scripts/portrait_version_manager.py`. The female and male E/M contracts are
 different: female includes X01-X03; male does not.
+
+For cross-skin assembly using unchanged approved files, read
+[`references/cross-s-effects.md`](references/cross-s-effects.md) instead.
+Renderer/QC acceptance does not create a component revision or require moving
+source files through the E/M promotion workflow.
 
 `different_s_em_status_version_manager_v01.py` is only a timed-worker
 transaction ledger. It never selects components, promotes a revision, or
@@ -64,7 +69,10 @@ hair_back -> clothing_back -> face_expression_base -> clothing_main
 -> clothing_front
 ```
 
-Use ordinary alpha source-over compositing. Hair back remains a complete uncut
+Use ordinary alpha source-over for native layers; the registered cross-skin
+face/blush operations are defined in
+[`references/cross-s-effects.md`](references/cross-s-effects.md).
+Hair back remains a complete uncut
 rear-hair owner; do not subtract `hair_front` alpha from it. Ears normally sit
 above `hair_front`, with the optional hairstyle-owned ear-cover layer above the
 ear. Clothing crossing the chin or face belongs in `clothing_front`.
@@ -99,7 +107,14 @@ Every new module requires:
 
 ## Publication gate
 
-Run the export tool only against the private V5 source authority:
+For a renderer/skill-only update, keep the asset manifest and original bytes
+unchanged, bind visual acceptance to the exact renderer/QC hashes, and run the
+renderer tests, release validator and Pages build. Commit/push/deployment needs
+the user's authorization; a bare visual acceptance does not grant it. Verify
+the resulting Pages commit and public itch.io iframe after deployment.
+
+When exporting new or changed source assets, run the export tool only against
+the private V5 source authority:
 
 ```text
 python skill/modular-portrait-assets/scripts/export_release.py <private-v5-root> <clean-release-root>

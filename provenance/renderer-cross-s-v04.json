@@ -1,0 +1,69 @@
+{
+  "schema": "portrait-renderer-acceptance-receipt-v1",
+  "renderer_revision": "cross-s-effects-v04",
+  "decision": "accepted_user_confirmed",
+  "acceptance_date": "2026-09-02",
+  "scope": "Cross-skin renderer blush calibration and effect reuse; no new component payloads.",
+  "source_manifest_sha256": "0f80fc585cd4151016480139fe2fd6d5dd13c534e612c227f589ec0b0bdb1ddd",
+  "qc_manifest_sha256": "94d8c1e0fde2efde3c3a9f7b70da85a9d7f2aa9916a1ba9f8d68ac3566905b99",
+  "demonstrated_output": {
+    "selection": {
+      "gender": "female",
+      "F": "F03",
+      "S": "S04",
+      "expression": "X03",
+      "E": "E02",
+      "M": "M04",
+      "H": "H01",
+      "C": "C01",
+      "ear": "elf",
+      "hairHue": 36
+    },
+    "sha256": "e76dd706b4b6313003186c8ffda3ad28a02bbdec94d47953482a851b75df4385"
+  },
+  "accepted_qc_generator": {
+    "historical_path": "tools/render_cross_skin_qc_v01.mjs",
+    "sha256": "0505d5bd33989c6cec28d5700181a0eed146ba4b8bc6ec556019b1da905c8ba7",
+    "status": "retained_as_immutable_local_evidence_not_published_as_active_tool"
+  },
+  "renderer_tools": [
+    {
+      "path": "site/lib/catalog.mjs",
+      "sha256": "213c685fb74e6a39e969ef9d75247f23a560470896692d57bbf038acdf720e8e"
+    },
+    {
+      "path": "site/lib/compositor.mjs",
+      "sha256": "98cce2027296501550b1f313de9b8e606345c98a5e687762914bf32b7683c355"
+    }
+  ],
+  "reproduction_verification": {
+    "qc_tool": {
+      "path": "tools/render_cross_skin_qc_v02.mjs",
+      "sha256": "52814b7001ead627a381690d06b98cdee9b5e26c66bfbe6dcbd3bc8d9a005fc6"
+    },
+    "font_helper": {
+      "path": "tools/render_examples.py",
+      "sha256": "599d73a3b99bd803c2a8f9939faf343f51fc940bad30da614b062731381c90ef"
+    },
+    "qc_manifest_sha256": "a9f9b0d348304e835dfced121889d76ed7a8323e650d0a365fecdf5ef7d76220",
+    "identical_accepted_portraits": 52,
+    "identical_isolated_layers": 29,
+    "identical_native_S01": 13,
+    "identical_source_inputs": 260,
+    "note": "Tool v02 changes only output path containment and board font fallback; accepted v04 renderer and full-size PNG bytes are unchanged."
+  },
+  "shared_blush_strength": {
+    "S02": 0.65,
+    "S03": 0.45,
+    "S04": 0.25
+  },
+  "qc_coverage": {
+    "binding_checks": 520,
+    "portraits": 52,
+    "native_S01_unchanged": 13
+  },
+  "publication_authorized_by_user": true,
+  "component_authority_changed": false,
+  "original_assets_changed": false,
+  "note": "A renderer acceptance receipt only; asset-manifest.json remains the public asset authority. Private QC binaries, work history and previous rejected trials are not exported."
+}
