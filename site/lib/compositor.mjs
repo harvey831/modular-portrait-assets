@@ -159,6 +159,76 @@ function assertImage(image, width = null, height = null) {
 }
 
 
+// Extract signed, alpha-weighted RGB changes, not a skin-coloured RGBA cutout.
+// No target skin participates. Do not inverse-solve a minimum-alpha foreground:
+// near-white dry pixels amplify tiny positive differences into chalky patches.
+export function extractPairedEffect(source, dry, { donor = false } = {}) {
+  assertRgba(source);
+  assertRgba(dry);
+  if (source.length !== dry.length) throw new CompositorError('Paired effect length mismatch');
+  const output = new Float32Array(source.length);
+  for (let offset = 0; offset < source.length; offset += 4) {
+    if (donor && source[offset + 3] !== dry[offset + 3]) {
+      throw new CompositorError('Paired face geometry mismatch');
+    }
+    if (source[offset + 3] === 0 || dry[offset + 3] === 0) continue;
+    const weight = donor ? 1 : source[offset + 3] / 255;
+    let changed = false;
+    for (let channel = 0; channel < 3; channel += 1) {
+      const delta = weight * (source[offset + channel] - dry[offset + channel]);
+      output[offset + channel] = delta;
+      if (delta !== 0) changed = true;
+    }
+    if (changed) output[offset + 3] = source[offset + 3];
+  }
+  return output;
+}
+
+
+export function bindingAssetPaths(bindings) {
+  const paths = new Set();
+  for (const binding of bindings) {
+    paths.add(binding.path);
+    if (binding.tintMask) paths.add(binding.tintMask.path);
+    if (binding.pairedDelta) {
+      paths.add(binding.pairedDelta.dry.path);
+      if (binding.pairedDelta.donor) paths.add(binding.pairedDelta.donor.path);
+    }
+  }
+  return [...paths];
+}
+
+
+function pairedEffect(binding, sources, width, height) {
+  const pair = binding.pairedDelta;
+  if (pair.algorithm !== 'signed-rgb-delta-v1') throw new CompositorError('Unknown paired effect algorithm');
+  const dry = sources.get(pair.dry.path);
+  assertImage(dry, width, height);
+  const donor = sources.get(pair.donor?.path ?? binding.path);
+  assertImage(donor, width, height);
+  const target = sources.get(binding.path).data;
+  if (pair.donor) for (let offset = 3; offset < target.length; offset += 4) {
+    if (target[offset] !== dry.data[offset]) {
+      throw new CompositorError('Cross-S face geometry mismatch');
+    }
+  }
+  return extractPairedEffect(donor.data, dry.data, { donor: Boolean(pair.donor) });
+}
+
+
+function applyPairedEffect(destination, effect, strength = 1) {
+  if (!Number.isFinite(strength) || strength < 0 || strength > 1) {
+    throw new CompositorError('Paired effect strength must be between zero and one');
+  }
+  for (let offset = 0; offset < destination.length; offset += 4) {
+    if (destination[offset + 3] === 0 || effect[offset + 3] === 0) continue;
+    for (let channel = 0; channel < 3; channel += 1) {
+      destination[offset + channel] += effect[offset + channel] * strength;
+    }
+  }
+}
+
+
 function alphaCompositeInto(destination, source) {
   for (let offset = 0; offset < destination.length; offset += 4) {
     const sourceAlphaByte = source[offset + 3];
@@ -278,7 +348,16 @@ export function composeFrame(selection, bindings, sources) {
   let faceCheckpoint = null;
   for (const binding of [...bindings].sort((left, right) => left.order - right.order)) {
     const sourceImage = sources.get(binding.path);
-    const source = tinted.get(binding.path) ?? sourceImage.data;
+    let source = tinted.get(binding.path) ?? sourceImage.data;
+    if (binding.pairedDelta) {
+      const effect = pairedEffect(binding, sources, width, height);
+      if (!binding.pairedDelta.donor) {
+        applyPairedEffect(result, effect, binding.pairedDelta.strength);
+        continue;
+      }
+      source = new Uint8ClampedArray(source);
+      applyPairedEffect(source, effect, binding.pairedDelta.strength);
+    }
     if (binding.operation === 'ownership-reset') {
       if (!faceCheckpoint) throw new CompositorError('Ownership reset occurs before face checkpoint');
       for (let pixel = 0; pixel < width * height; pixel += 1) {
@@ -382,11 +461,7 @@ export class PortraitCompositor {
 
   async render(selection, bindings, signal = null) {
     const version = ++this.#version;
-    const paths = new Set();
-    for (const binding of bindings) {
-      paths.add(binding.path);
-      if (binding.tintMask) paths.add(binding.tintMask.path);
-    }
+    const paths = bindingAssetPaths(bindings);
     const decoded = await Promise.all(
       [...paths].map(async (path) => [path, await this.imageLoader.load(path)]),
     );

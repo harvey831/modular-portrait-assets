@@ -8,6 +8,7 @@ import unittest
 from pathlib import Path
 
 from PIL import Image
+import numpy as np
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -26,6 +27,50 @@ def sha256(path: Path) -> str:
 
 
 class RenderExamplesTests(unittest.TestCase):
+    def test_offline_cross_skin_binding_cannot_drop_expression_or_effects(self) -> None:
+        catalog = render_examples.AssetCatalog(REPO_ROOT)
+        for gender in ("female", "male"):
+            record = dict(gender=gender, F="F03", S="S04", expression="G02",
+                          E="E01", M="M01", H="H01", C="C01", ear="elf")
+            layers = render_examples._resolve_layers(catalog, record)
+            face = next(layer for layer in layers if layer["role"] == "face_expression_base")
+            self.assertIn("paired_delta", face)
+            self.assertIn("/S04/", face["path"])
+            self.assertIn("F03_S01_G02", face["paired_delta"]["donor"]["path"])
+            for role in ("blush", "sweat", "ear_blush", "ear_sweat"):
+                effect = next((layer for layer in layers if layer["role"] == role), None)
+                self.assertIsNotNone(effect, role)
+                if "blush" in role:
+                    self.assertIn("paired_delta", effect)
+                    self.assertEqual(effect["paired_delta"]["strength"], 0.25)
+                    if role == "ear_blush":
+                        self.assertIn("shared/ears/elf/F01/S01", effect["paired_delta"]["dry"]["path"])
+                else:
+                    self.assertNotIn("paired_delta", effect)
+
+    def test_blush_strength_is_independent_of_face_alpha(self) -> None:
+        target = Image.fromarray(np.array([[[80, 60, 40, 255]]], dtype=np.uint8))
+        dry = Image.fromarray(np.array([[[200, 150, 100, 255]]], dtype=np.uint8))
+        overlay = Image.fromarray(np.array([[[200, 75, 50, 128]]], dtype=np.uint8))
+        result = render_examples._apply_paired_effect(target, overlay, dry, strength=0.25)
+        self.assertEqual(result.getpixel((0, 0)), (80, 51, 34, 255))
+        self.assertEqual(target.getpixel((0, 0)), (80, 60, 40, 255))
+        for invalid in (-0.1, 1.1, float("nan"), float("inf"), "0.25"):
+            with self.assertRaisesRegex(render_examples.ExampleRenderError, "strength"):
+                render_examples._apply_paired_effect(target, overlay, dry, strength=invalid)
+
+    def test_paired_delta_keeps_alpha_and_does_not_amplify_small_light_skin_noise(self) -> None:
+        self.assertTrue(hasattr(render_examples, "_apply_paired_effect"))
+        target = Image.fromarray(np.array([[[70, 50, 30, 123]]], dtype=np.uint8))
+        dry = Image.fromarray(np.array([[[253, 251, 249, 123]]], dtype=np.uint8))
+        donor = Image.fromarray(np.array([[[254, 252, 250, 123]]], dtype=np.uint8))
+        result = render_examples._apply_paired_effect(target, donor, dry, donor=True)
+        self.assertEqual(result.getpixel((0, 0)), (71, 51, 31, 123))
+        self.assertEqual(target.getpixel((0, 0)), (70, 50, 30, 123))
+        donor.putpixel((0, 0), (254, 252, 250, 255))
+        with self.assertRaisesRegex(render_examples.ExampleRenderError, "geometry"):
+            render_examples._apply_paired_effect(target, donor, dry, donor=True)
+
     def test_default_plan_is_balanced_unique_and_covers_current_lanes(self) -> None:
         plan = render_examples.build_plan(REPO_ROOT)
         records = plan["mixed_qc"]["records"]

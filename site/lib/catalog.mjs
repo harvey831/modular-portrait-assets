@@ -1,5 +1,8 @@
 const CORE_AXES = Object.freeze(['gender', 'S', 'expression', 'F', 'E', 'M']);
 const ALL_AXES = Object.freeze([...CORE_AXES, 'H', 'C', 'ear']);
+// Full S01 redness overwhelms darker bases. Only shared blush is attenuated;
+// native assets, expression creases, eyes, mouths and liquid highlights are not.
+const SHARED_BLUSH_STRENGTH = Object.freeze({ S02: 0.65, S03: 0.45, S04: 0.25 });
 const REQUIRED_STYLE_ROLES = Object.freeze({
   hair: Object.freeze(['hair_back', 'hair_front', 'hair_tint_mask']),
   clothing: Object.freeze(['clothing_back', 'clothing_main', 'clothing_front']),
@@ -83,7 +86,40 @@ function oneRecord(index, criteria, { optional = false } = {}) {
 }
 
 
+function neutralFacePair(index, { gender, F, S }) {
+  const base = oneRecord(index, {
+    gender, family: 'base', face: F, skin: S, role: 'earless_head_body',
+  }, { optional: true });
+  const head = oneRecord(index, {
+    gender, family: 'base', face: F, skin: S, role: 'earless_head',
+  }, { optional: true });
+  if (Boolean(base) !== Boolean(head)) {
+    throw new CatalogError(`Incomplete neutral face pair: ${gender}/${F}/${S}`);
+  }
+  return base ? { base, head, expressionOwned: false } : null;
+}
+
+
+function assetRef(asset) {
+  return Object.freeze({ path: asset.path, sha256: asset.sha256 });
+}
+
+
+function pairedDelta(dry, donor = null) {
+  if (!dry) throw new CatalogError('Missing paired dry source');
+  return Object.freeze({
+    algorithm: 'signed-rgb-delta-v1', dry: assetRef(dry),
+    ...(donor ? { donor: assetRef(donor) } : {}),
+  });
+}
+
+
 function resolveFacePair(index, { gender, F, S, expression }) {
+  const neutral = neutralFacePair(index, { gender, F, S });
+  if (!neutral) return null;
+  const ownsExpression = expression === 'G02'
+    || (gender === 'female' && ['X01', 'X02', 'X03'].includes(expression));
+  if (!ownsExpression) return neutral;
   const expressionBase = oneRecord(index, {
     gender, family: 'expression', face: F, skin: S, expression,
     role: 'face_expression_base',
@@ -99,16 +135,16 @@ function resolveFacePair(index, { gender, F, S, expression }) {
     return { base: expressionBase, head: expressionHead, expressionOwned: true };
   }
 
-  const base = oneRecord(index, {
-    gender, family: 'base', face: F, skin: S, role: 'earless_head_body',
-  }, { optional: true });
-  const head = oneRecord(index, {
-    gender, family: 'base', face: F, skin: S, role: 'earless_head',
-  }, { optional: true });
-  if (Boolean(base) !== Boolean(head)) {
-    throw new CatalogError(`Incomplete neutral face pair: ${gender}/${F}/${S}`);
+  if (S === 'S01') {
+    throw new CatalogError(`Missing required expression face: ${gender}/${F}/${S}/${expression}`);
   }
-  return base ? { base, head, expressionOwned: false } : null;
+  const source = resolveFacePair(index, { gender, F, S: 'S01', expression });
+  const sourceNeutral = neutralFacePair(index, { gender, F, S: 'S01' });
+  if (!source || !sourceNeutral) throw new CatalogError('Missing shared expression source pair');
+  return {
+    ...neutral, expressionOwned: true,
+    pairedDelta: pairedDelta(sourceNeutral.base, source.base),
+  };
 }
 
 
@@ -207,7 +243,9 @@ export function availableValues(index, selection, axis, { extended = false } = {
 }
 
 
-function binding(role, asset, { operation = 'alpha-composite', tintMask = null } = {}) {
+function binding(role, asset, {
+  operation = 'alpha-composite', tintMask = null, pairedDelta: delta = null,
+} = {}) {
   const result = {
     role,
     operation,
@@ -217,7 +255,43 @@ function binding(role, asset, { operation = 'alpha-composite', tintMask = null }
   if (tintMask) {
     result.tintMask = { path: tintMask.path, sha256: tintMask.sha256 };
   }
+  if (delta) result.pairedDelta = delta;
   return result;
+}
+
+
+function resolveEffects(index, { gender, F, S, expression, ear }) {
+  const query = (skin) => [
+    ['blush', 'blush'], ['sweat', 'sweat'],
+    ['blush', `ear_blush_${ear}`], ['sweat', `ear_sweat_${ear}`],
+  ].map(([family, role]) => oneRecord(index, {
+    gender, family, face: F, skin, expression, role,
+  }, { optional: true }));
+  let skin = S;
+  let records = query(skin);
+  if (records.every((record) => !record) && S !== 'S01') {
+    skin = 'S01';
+    records = query(skin);
+  }
+  if (records.every((record) => !record) && gender === 'male' && expression === 'N00') {
+    return null;
+  }
+  if (records.some((record) => !record)) {
+    throw new CatalogError(`Incomplete expression effects: ${gender}/${F}/${skin}/${expression}/${ear}`);
+  }
+  const [blush, sweat, earBlush, earSweat] = records;
+  if (skin === S) return { blush, sweat, earBlush, earSweat };
+  const strength = SHARED_BLUSH_STRENGTH[S];
+  if (strength === undefined) throw new CatalogError(`Unreviewed shared blush skin: ${S}`);
+  const sourceFace = resolveFacePair(index, { gender, F, S: skin, expression });
+  const sourceEar = oneRecord(index, {
+    gender: 'shared', family: 'ears', skin, role: 'ear_pair', ear,
+  });
+  return {
+    blush, sweat, earBlush, earSweat,
+    pairedDelta: Object.freeze({ ...pairedDelta(sourceFace?.base), strength }),
+    earPairedDelta: Object.freeze({ ...pairedDelta(sourceEar), strength }),
+  };
 }
 
 
@@ -253,38 +327,29 @@ export function resolveLayerBindings(index, selection) {
   const layers = [
     binding('hair_back', hair('hair_back'), { tintMask: hairMask }),
     binding('clothing_back', clothes('clothing_back')),
-    binding(facePair.base.role, facePair.base),
+    binding(facePair.expressionOwned ? 'face_expression_base' : facePair.base.role,
+      facePair.base, { pairedDelta: facePair.pairedDelta }),
     binding('clothing_main', clothes('clothing_main')),
     binding(facePair.head.role, facePair.head, { operation: 'ownership-reset' }),
   ];
 
-  const blush = oneRecord(index, {
-    gender, family: 'blush', face: F, skin: S, expression, role: 'blush',
-  }, { optional: true });
-  const sweat = oneRecord(index, {
-    gender, family: 'sweat', face: F, skin: S, expression, role: 'sweat',
-  }, { optional: true });
-  if (Boolean(blush) !== Boolean(sweat)) {
-    throw new CatalogError(`Incomplete expression effects: ${gender}/${F}/${S}/${expression}`);
-  }
-  if (blush) layers.push(binding('blush', blush));
+  const effects = resolveEffects(index, { gender, F, S, expression, ear });
+  const effectBinding = (role, asset) => binding(role, asset, {
+    pairedDelta: role === 'blush' ? effects.pairedDelta
+      : role === 'ear_blush' ? effects.earPairedDelta : null,
+  });
+  if (effects) layers.push(effectBinding('blush', effects.blush));
   layers.push(binding('eye_brow', eye), binding('mouth', mouth));
-  if (sweat) layers.push(binding('sweat', sweat));
+  if (effects) layers.push(effectBinding('sweat', effects.sweat));
   layers.push(
     binding('hair_front', hair('hair_front'), { tintMask: hairMask }),
     binding('ear_pair', earPair),
   );
 
-  if (blush) {
+  if (effects) {
     layers.push(
-      binding('ear_blush', oneRecord(index, {
-        gender, family: 'blush', face: F, skin: S, expression,
-        role: `ear_blush_${ear}`,
-      })),
-      binding('ear_sweat', oneRecord(index, {
-        gender, family: 'sweat', face: F, skin: S, expression,
-        role: `ear_sweat_${ear}`,
-      })),
+      effectBinding('ear_blush', effects.earBlush),
+      effectBinding('ear_sweat', effects.earSweat),
     );
   }
 

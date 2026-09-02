@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Render deterministic public QC examples from the release manifest.
 
-No generative model is called. Every portrait is ordinary alpha composition
-of hash-bound files already present in ``assets/``.
+No generative model is called. Every portrait uses hash-bound files already
+present in ``assets/``, alpha composition, and explicit cross-skin paired effects.
 """
 
 from __future__ import annotations
@@ -389,6 +389,39 @@ def _binding(catalog: AssetCatalog, role: str, relative: str, tint_mask: str | N
     return payload
 
 
+def _neutral_pair(catalog: AssetCatalog, gender: str, face: str, skin: str) -> tuple[str, str]:
+    parent = Path("assets") / gender / "base" / face / skin
+    prefix, suffix = (f"{face}_{skin}_", "_rgba") if gender == "female" else ("", "")
+    return (catalog.find(parent, f"{prefix}earless_head_body{suffix}"),
+            catalog.find(parent, f"{prefix}earless_head{suffix}"))
+
+
+def _paired_delta(catalog: AssetCatalog, dry: str, donor: str | None = None) -> dict[str, Any]:
+    result = {"algorithm": "signed-rgb-delta-v1", "dry": {"path": dry, "sha256": catalog.hashes[dry]}}
+    if donor:
+        result["donor"] = {"path": donor, "sha256": catalog.hashes[donor]}
+    return result
+
+
+def _face_pair(catalog: AssetCatalog, gender: str, face: str, skin: str, expression: str):
+    neutral_base, neutral_head = _neutral_pair(catalog, gender, face, skin)
+    owns_expression = expression == "G02" or (gender == "female" and expression in ("X01", "X02", "X03"))
+    if not owns_expression:
+        return neutral_base, neutral_head, None
+    parent = Path("assets") / gender / "expression" / f"{face}_{skin}_{expression}"
+    base = catalog.find(parent, "face_expression_base", optional=True)
+    head = catalog.find(parent, "face_expression_head", optional=True)
+    if (base is None) != (head is None):
+        raise ExampleRenderError(f"incomplete expression face pair: {parent}")
+    if base:
+        return base, head, None
+    if skin == "S01":
+        raise ExampleRenderError(f"missing required expression face: {parent}")
+    donor, _, _ = _face_pair(catalog, gender, face, "S01", expression)
+    dry, _ = _neutral_pair(catalog, gender, face, "S01")
+    return neutral_base, neutral_head, _paired_delta(catalog, dry, donor)
+
+
 def _resolve_layers(catalog: AssetCatalog, record: dict[str, Any]) -> list[dict[str, Any]]:
     gender = str(record["gender"])
     face, skin, expression = str(record["F"]), str(record["S"]), str(record["expression"])
@@ -404,19 +437,7 @@ def _resolve_layers(catalog: AssetCatalog, record: dict[str, Any]) -> list[dict[
     clothing_main = catalog.find(clothing_parent, "clothing_main")
     clothing_front = catalog.find(clothing_parent, "clothing_front")
 
-    expression_parent = Path("assets") / gender / "expression" / f"{face}_{skin}_{expression}"
-    face_base = catalog.find(expression_parent, "face_expression_base", optional=True)
-    face_head = catalog.find(expression_parent, "face_expression_head", optional=True)
-    if (face_base is None) != (face_head is None):
-        raise ExampleRenderError(f"incomplete expression face pair: {expression_parent}")
-    if face_base is None:
-        base_parent = Path("assets") / gender / "base" / face / skin
-        if gender == "female":
-            face_base = catalog.find(base_parent, f"{face}_{skin}_earless_head_body_rgba")
-            face_head = catalog.find(base_parent, f"{face}_{skin}_earless_head_rgba")
-        else:
-            face_base = catalog.find(base_parent, "earless_head_body")
-            face_head = catalog.find(base_parent, "earless_head")
+    face_base, face_head, face_delta = _face_pair(catalog, gender, face, skin, expression)
 
     eye_path = catalog.find(Path("assets") / gender / "E" / eye / skin / expression, "eye_brow")
     mouth_path = catalog.find(Path("assets") / gender / "M" / mouth / skin / expression, "mouth")
@@ -428,31 +449,57 @@ def _resolve_layers(catalog: AssetCatalog, record: dict[str, Any]) -> list[dict[
         _binding(catalog, "clothing_main", clothing_main),
         _binding(catalog, "face_expression_head", face_head),
     ]
-    effect_key = f"{face}_{skin}_{expression}"
-    blush_parent = Path("assets") / gender / "effects" / "blush" / effect_key
-    sweat_parent = Path("assets") / gender / "effects" / "sweat" / effect_key
-    blush = catalog.find(blush_parent, "blush", optional=True)
-    sweat = catalog.find(sweat_parent, "sweat", optional=True)
-    if (blush is None) != (sweat is None):
-        raise ExampleRenderError(f"incomplete effect pair: {effect_key}")
+    if face_delta:
+        layers[2]["paired_delta"] = face_delta
+
+    def effects_for(tone: str):
+        key = f"{face}_{tone}_{expression}"
+        return [catalog.find(Path("assets") / gender / "effects" / family / key, role, optional=True)
+                for family, role in (("blush", "blush"), ("sweat", "sweat"),
+                                     ("blush", f"ear_blush_{ear}"), ("sweat", f"ear_sweat_{ear}"))]
+
+    effect_skin = skin
+    effects = effects_for(effect_skin)
+    if not any(effects) and skin != "S01":
+        effect_skin = "S01"
+        effects = effects_for(effect_skin)
+    empty_neutral = not any(effects) and gender == "male" and expression == "N00"
+    if not empty_neutral and not all(effects):
+        raise ExampleRenderError(f"incomplete effect pair: {gender}/{face}/{effect_skin}/{expression}/{ear}")
+    blush, sweat, ear_blush, ear_sweat = effects
+    effect_delta = None
+    ear_delta = None
+    if blush and effect_skin != skin:
+        strength = {"S02": 0.65, "S03": 0.45, "S04": 0.25}.get(skin)
+        if strength is None:
+            raise ExampleRenderError(f"unreviewed shared blush skin: {skin}")
+        dry, _, _ = _face_pair(catalog, gender, face, effect_skin, expression)
+        effect_delta = {**_paired_delta(catalog, dry), "strength": strength}
+        dry_ear = catalog.only_file(Path("assets") / "shared" / "ears" / ear / "F01" / effect_skin)
+        ear_delta = {**_paired_delta(catalog, dry_ear), "strength": strength}
+
+    def effect_binding(role: str, relative: str):
+        result = _binding(catalog, role, relative)
+        if effect_delta and "blush" in role:
+            result["paired_delta"] = ear_delta if role == "ear_blush" else effect_delta
+        return result
+
     if blush:
-        layers.append(_binding(catalog, "blush", blush))
+        layers.append(effect_binding("blush", blush))
     layers.extend([
         _binding(catalog, "eye_brow", eye_path),
         _binding(catalog, "mouth", mouth_path),
     ])
     if sweat:
-        layers.append(_binding(catalog, "sweat", sweat))
+        layers.append(effect_binding("sweat", sweat))
     layers.extend([
         _binding(catalog, "hair_front", hair_front, hair_mask),
         _binding(catalog, "ear_pair", ear_path),
     ])
     if blush and sweat:
-        ear_blush = catalog.find(blush_parent, f"ear_blush_{ear}")
-        ear_sweat = catalog.find(sweat_parent, f"ear_sweat_{ear}")
         layers.extend([
-            _binding(catalog, "ear_blush", ear_blush),
-            _binding(catalog, "ear_sweat", ear_sweat),
+            effect_binding("ear_blush", ear_blush),
+            effect_binding("ear_sweat", ear_sweat),
         ])
     ear_cover = catalog.find(hair_parent, "hair_ear_cover", optional=True)
     if ear_cover:
@@ -540,6 +587,25 @@ def _tint_hair(source: Image.Image, mask: Image.Image, lut: np.ndarray, tone_map
     return Image.fromarray(source_pixels, "RGBA")
 
 
+def _apply_paired_effect(target: Image.Image, source: Image.Image, dry: Image.Image, *,
+                         donor: bool = False, strength: float = 1.0) -> Image.Image:
+    if type(strength) not in (int, float) or not np.isfinite(strength) or not 0 <= strength <= 1:
+        raise ExampleRenderError("paired effect strength must be between zero and one")
+    if target.size != source.size or source.size != dry.size:
+        raise ExampleRenderError("paired image dimensions differ")
+    out = np.asarray(target, dtype=np.uint8).copy()
+    src = np.asarray(source, dtype=np.uint8)
+    base = np.asarray(dry, dtype=np.uint8)
+    if donor and (np.any(src[:, :, 3] != base[:, :, 3]) or np.any(out[:, :, 3] != base[:, :, 3])):
+        raise ExampleRenderError("paired face geometry mismatch")
+    weight = 1.0 if donor else src[:, :, 3:4].astype(np.float64) / 255.0
+    delta = ((src[:, :, :3].astype(np.float64) - base[:, :, :3]) * weight).astype(np.float32)
+    active = (src[:, :, 3] > 0) & (base[:, :, 3] > 0) & (out[:, :, 3] > 0)
+    rgb = np.clip(np.rint(out[:, :, :3].astype(np.float64) + delta.astype(np.float64) * strength), 0, 255).astype(np.uint8)
+    out[active, :3] = rgb[active]
+    return Image.fromarray(out)
+
+
 def _compose(catalog: AssetCatalog, record: dict[str, Any]) -> tuple[Image.Image, list[dict[str, Any]]]:
     layers = _resolve_layers(catalog, record)
     hair_bindings = [binding for binding in layers if binding["role"] in HAIR_ROLES]
@@ -561,6 +627,17 @@ def _compose(catalog: AssetCatalog, record: dict[str, Any]) -> tuple[Image.Image
         source = tinted.get(binding["path"])
         if source is None:
             source = catalog.load(binding["path"])
+        pair = binding.get("paired_delta")
+        if pair:
+            if pair["algorithm"] != "signed-rgb-delta-v1":
+                raise ExampleRenderError("unknown paired effect algorithm")
+            dry = catalog.load(pair["dry"]["path"])
+            if "donor" in pair:
+                source = _apply_paired_effect(source, catalog.load(pair["donor"]["path"]), dry,
+                                              donor=True, strength=pair.get("strength", 1.0))
+            else:
+                result = _apply_paired_effect(result, source, dry, strength=pair.get("strength", 1.0))
+                continue
         if role == "face_expression_base":
             result = Image.alpha_composite(result, source)
             face_checkpoint = result.copy()
