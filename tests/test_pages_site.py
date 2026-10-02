@@ -92,6 +92,41 @@ class PagesCatalogTests(unittest.TestCase):
             },
         )
 
+    def test_parses_all_current_hair_ids_roles_genders_and_formats(self) -> None:
+        for gender in ("female", "male"):
+            for number in range(1, 21):
+                component = f"H{number:02d}"
+                for role in ("hair_back", "hair_front", "hair_ear_cover", "hair_tint_mask"):
+                    for suffix in ("png", "webp"):
+                        path = f"assets/{gender}/hair/{component}/{role}.{suffix}"
+                        with self.subTest(path=path):
+                            self.assertEqual(
+                                build_pages_site.parse_release_path(path),
+                                {
+                                    "gender": gender,
+                                    "family": "hair",
+                                    "component": component,
+                                    "face": None,
+                                    "skin": None,
+                                    "expression": None,
+                                    "role": role,
+                                    "ear": None,
+                                },
+                            )
+
+    def test_parser_rejects_out_of_range_hair_ids_and_unknown_hair_roles(self) -> None:
+        for path in (
+            "assets/female/hair/H00/hair_back.png",
+            "assets/male/hair/H21/hair_front.webp",
+            "assets/female/hair/H1/hair_back.png",
+            "assets/male/hair/H100/hair_front.webp",
+            "assets/female/hair/H06/extra-layer.png",
+            "assets/male/hair/H20/hair_front_copy.webp",
+        ):
+            with self.subTest(path=path):
+                with self.assertRaises(build_pages_site.PagesBuildError):
+                    build_pages_site.parse_release_path(path)
+
     def test_parser_rejects_unknown_filename_and_unsafe_path(self) -> None:
         for path in (
             "assets/female/E/E01/S01/N00/not-an-eye.png",
@@ -104,11 +139,24 @@ class PagesCatalogTests(unittest.TestCase):
                     build_pages_site.parse_release_path(path)
 
     def test_actual_catalog_contains_all_hash_bound_assets(self) -> None:
+        manifest_path = REPO_ROOT / "provenance" / "asset-manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         catalog = build_pages_site.build_catalog(REPO_ROOT)
-        self.assertEqual(len(catalog["assets"]), 1184)
+        self.assertEqual(len(catalog["assets"]), len(manifest["assets"]))
         self.assertEqual(catalog["canvas"], [1254, 1254, "RGBA"])
-        self.assertEqual(catalog["asset_count"], 1184)
-        self.assertEqual(catalog["total_bytes"], 183516516)
+        self.assertEqual(catalog["asset_count"], manifest["asset_count"])
+        self.assertEqual(catalog["total_bytes"], manifest["total_bytes"])
+        self.assertEqual(
+            catalog["total_bytes"], sum(asset["bytes"] for asset in manifest["assets"])
+        )
+        self.assertEqual(
+            [(asset["path"], asset["sha256"], asset["bytes"]) for asset in catalog["assets"]],
+            sorted(
+                (asset["release_path"], asset["sha256"], asset["bytes"])
+                for asset in manifest["assets"]
+            ),
+        )
+        self.assertEqual(catalog["source_manifest_sha256"], sha256(manifest_path.read_bytes()))
         self.assertRegex(catalog["catalog_sha256"], r"^[0-9a-f]{64}$")
         self.assertNotEqual(
             catalog["catalog_sha256"], catalog["source_manifest_sha256"]

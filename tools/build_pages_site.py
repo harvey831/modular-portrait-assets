@@ -30,7 +30,7 @@ EXPRESSION_PATH = re.compile(
     rf"(?P<role>face_expression_base|face_expression_head)\.(?:png|webp)$"
 )
 HAIR_PATH = re.compile(
-    r"^assets/(?P<gender>female|male)/hair/(?P<component>H0[1-5])/"
+    r"^assets/(?P<gender>female|male)/hair/(?P<component>H(?:0[1-9]|1[0-9]|20))/"
     r"(?P<role>hair_back|hair_front|hair_ear_cover|hair_tint_mask)\.(?:png|webp)$"
 )
 CLOTHING_PATH = re.compile(
