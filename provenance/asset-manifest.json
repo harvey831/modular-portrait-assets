@@ -3,14 +3,14 @@
   "license": "CC0-1.0",
   "source_project": "MODULAR_PORTRAIT_LIBRARY_V5",
   "asset_count": 1278,
-  "total_bytes": 229620229,
+  "total_bytes": 228524730,
   "authority_manifests": [
     {
       "gender": "female",
       "schema": "female_component_library_single_authority",
       "status": "ACTIVE_SINGLE_VERSION_MANAGER",
-      "effective_date": "2026-10-02T10:16:22.948291+00:00",
-      "sha256": "28fbaa20a0ebb33d4811de5a4292986ef96686248740330f902021930eb1b6e9"
+      "effective_date": "2026-10-02T15:03:45.724909+00:00",
+      "sha256": "000a58707d71a1983a4697d24405521b41720d8ccafbe320c6ec87745d0bb661"
     },
     {
       "gender": "male",
@@ -5161,31 +5161,31 @@
     },
     {
       "release_path": "assets/female/hair/H04/hair_back.png",
-      "sha256": "310dd43a46783b133d76fefe4a6ca99f46bac8e4aa0ac8e9f4a1720200a80836",
-      "bytes": 1760894,
+      "sha256": "e27dac0a4f2b14c6937e822f87dfd4de1a060b60d538f3c17126a47750808a1c",
+      "bytes": 1432772,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/hair/H04/current/approved/v06_user_confirmed_20260821/hair_back.png"
+      "source_ref": "female/component_library_v1/hair/H04/current/approved/v07_codex_qc_20261002_temple_repair/hair_back.png"
     },
     {
       "release_path": "assets/female/hair/H04/hair_ear_cover.png",
-      "sha256": "ccaa1e1a576b5c4189f9c56d449c442a3fa102b9972f0eae6a3a5683263e038f",
-      "bytes": 374067,
+      "sha256": "73ee425bb089bf7529d15f296a438bada585562a6afd9a316fd496fdf23e6651",
+      "bytes": 34746,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/hair/H04/current/approved/v06_user_confirmed_20260821/hair_ear_cover.png"
+      "source_ref": "female/component_library_v1/hair/H04/current/approved/v07_codex_qc_20261002_temple_repair/hair_ear_cover.png"
     },
     {
       "release_path": "assets/female/hair/H04/hair_front.png",
-      "sha256": "d477c1a768714e9a6011ab6369a8895930967b1faa949b59cc3c03cbe6b3dd2a",
-      "bytes": 1419039,
+      "sha256": "9ce323f7b31df3c881a7a256179fa453619e4cb16131882823402f4066065b6a",
+      "bytes": 1006597,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/hair/H04/current/approved/v06_user_confirmed_20260821/hair_front.png"
+      "source_ref": "female/component_library_v1/hair/H04/current/approved/v07_codex_qc_20261002_temple_repair/hair_front.png"
     },
     {
       "release_path": "assets/female/hair/H04/hair_tint_mask.png",
-      "sha256": "8af97b15a628198967846149cdfc62918a48387f59e4601ade4ff6dc825a6c39",
-      "bytes": 223107,
+      "sha256": "1c96b558ae46d3324919b18b5d4b8ac5598b4ea1f7e5f0c5a435ae0f2dd9a2ec",
+      "bytes": 209404,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/hair/H04/current/approved/v06_user_confirmed_20260821/hair_tint_mask.png"
+      "source_ref": "female/component_library_v1/hair/H04/current/approved/v07_codex_qc_20261002_temple_repair/hair_tint_mask.png"
     },
     {
       "release_path": "assets/female/hair/H05/hair_back.png",
@@ -5462,24 +5462,24 @@
     },
     {
       "release_path": "assets/female/hair/H17/hair_back.png",
-      "sha256": "6365b19b4ee71f8ec41c0da8a2e28cf94e4f170e0a8bfa1b7061f874c5257844",
-      "bytes": 835226,
+      "sha256": "a79b123947c47ec426d545aefd1028501fb6f1b624a74fc1c7c4f8b2812b2441",
+      "bytes": 890843,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/hair/H17/current/approved/v01_codex_qc_20261002_batch03/hair_back.png"
+      "source_ref": "female/component_library_v1/hair/H17/current/approved/v02_codex_qc_20261002_temple_repair/hair_back.png"
     },
     {
       "release_path": "assets/female/hair/H17/hair_front.png",
-      "sha256": "ba7d84eff556f10e64e5a0ba4b1cbbe9316fd3dd95618c2b1ea66c12abd7de98",
-      "bytes": 419366,
+      "sha256": "f8c6c83476e959eb2574883ae87cbcfe8c0575501e8617c7a9365bac59318b1d",
+      "bytes": 378431,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/hair/H17/current/approved/v01_codex_qc_20261002_batch03/hair_front.png"
+      "source_ref": "female/component_library_v1/hair/H17/current/approved/v02_codex_qc_20261002_temple_repair/hair_front.png"
     },
     {
       "release_path": "assets/female/hair/H17/hair_tint_mask.png",
-      "sha256": "25942032fce7947ef101a5a561e825c3a23d039ea6d0d864894ff4e84c3613c5",
-      "bytes": 87525,
+      "sha256": "63cf215532535e8d7008795ceab6a320eace113ae5292cdc1b5c271909edd973",
+      "bytes": 68826,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/hair/H17/current/approved/v01_codex_qc_20261002_batch03/hair_tint_mask.png"
+      "source_ref": "female/component_library_v1/hair/H17/current/approved/v02_codex_qc_20261002_temple_repair/hair_tint_mask.png"
     },
     {
       "release_path": "assets/female/hair/H18/hair_back.png",
@@ -5525,24 +5525,24 @@
     },
     {
       "release_path": "assets/female/hair/H20/hair_back.png",
-      "sha256": "ec5aae570bfa3f223ee0cb483235f469acd5ba5d60b5f589eb5a1dfc3bb9b687",
-      "bytes": 577479,
+      "sha256": "54aacd68d8c50fa797a2fa454fa3b38287b4b490a891869983e2f18f33e1cb40",
+      "bytes": 637626,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/hair/H20/current/approved/v01_codex_qc_20261002_batch03/hair_back.png"
+      "source_ref": "female/component_library_v1/hair/H20/current/approved/v02_codex_qc_20261002_temple_repair/hair_back.png"
     },
     {
       "release_path": "assets/female/hair/H20/hair_front.png",
-      "sha256": "998a2b4240a09b43cb57345ec29b2adf90a39cb0ad8167f27d0b352c1aecbf93",
-      "bytes": 409537,
+      "sha256": "95e6a7f804addb2297e73a3c855759178d364fd7fc67bd6a33daab0c909a4aec",
+      "bytes": 350238,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/hair/H20/current/approved/v01_codex_qc_20261002_batch03/hair_front.png"
+      "source_ref": "female/component_library_v1/hair/H20/current/approved/v02_codex_qc_20261002_temple_repair/hair_front.png"
     },
     {
       "release_path": "assets/female/hair/H20/hair_tint_mask.png",
-      "sha256": "542aade7c6b9095937ddaa2373d18eb5ddb22cfc196a2a548e6efe54971e4f66",
-      "bytes": 52968,
+      "sha256": "08e59358241751142b4ebe5660f2f4c2ddc0b34fb91df485eddd4ab4fbaa428e",
+      "bytes": 54226,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/hair/H20/current/approved/v01_codex_qc_20261002_batch03/hair_tint_mask.png"
+      "source_ref": "female/component_library_v1/hair/H20/current/approved/v02_codex_qc_20261002_temple_repair/hair_tint_mask.png"
     },
     {
       "release_path": "assets/male/E/E01/S01/G01/eye_brow.webp",
