@@ -3,14 +3,14 @@
   "license": "CC0-1.0",
   "source_project": "MODULAR_PORTRAIT_LIBRARY_V5",
   "asset_count": 1246,
-  "total_bytes": 216001528,
+  "total_bytes": 215887983,
   "authority_manifests": [
     {
       "gender": "female",
       "schema": "female_component_library_single_authority",
       "status": "ACTIVE_SINGLE_VERSION_MANAGER",
-      "effective_date": "2026-10-02T06:25:15.704609+00:00",
-      "sha256": "123daaed6eefa3503802d153bd7883202dbe45aafb45d368d333fe390bd1624b"
+      "effective_date": "2026-10-02T07:55:34.024947+00:00",
+      "sha256": "a62fc06334675e10f022e75f0d3f2394089814ef6f3ab159d55dc80bc2519278"
     },
     {
       "gender": "male",
@@ -5402,21 +5402,21 @@
       "sha256": "339fd8efc93a4340adbf6e072b46c9c97d772b94c58ee8fa16eda276a5ebdd98",
       "bytes": 1185602,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/hair/H14/current/approved/v01_codex_qc_20261002_batch02/hair_back.png"
+      "source_ref": "female/component_library_v1/hair/H14/current/approved/v03_codex_qc_20261002_rear_side_lock/hair_back.png"
     },
     {
       "release_path": "assets/female/hair/H14/hair_front.png",
-      "sha256": "bd3d660981ac3c45c5ec5465bceae50f3f2cfd652bef66258e91a5fcbd783db2",
-      "bytes": 652043,
+      "sha256": "3a5cc43880f6843cc1f57a45bd044853ca95c9383bd915cb6f0b2b90d59c5683",
+      "bytes": 537707,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/hair/H14/current/approved/v01_codex_qc_20261002_batch02/hair_front.png"
+      "source_ref": "female/component_library_v1/hair/H14/current/approved/v03_codex_qc_20261002_rear_side_lock/hair_front.png"
     },
     {
       "release_path": "assets/female/hair/H14/hair_tint_mask.png",
-      "sha256": "7095fe23e1eba904e1f5fc26989f8bd44d6f16e6c9131ea06f48b523f3407db9",
-      "bytes": 105761,
+      "sha256": "24173cf55e56fb5a54028c887091c77189908e7cb13bc544f60a1ec2b6cc4cf9",
+      "bytes": 106552,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/hair/H14/current/approved/v01_codex_qc_20261002_batch02/hair_tint_mask.png"
+      "source_ref": "female/component_library_v1/hair/H14/current/approved/v03_codex_qc_20261002_rear_side_lock/hair_tint_mask.png"
     },
     {
       "release_path": "assets/female/hair/H15/hair_back.png",
