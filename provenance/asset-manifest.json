@@ -3,21 +3,21 @@
   "license": "CC0-1.0",
   "source_project": "MODULAR_PORTRAIT_LIBRARY_V5",
   "asset_count": 1278,
-  "total_bytes": 228524730,
+  "total_bytes": 228585998,
   "authority_manifests": [
     {
       "gender": "female",
       "schema": "female_component_library_single_authority",
       "status": "ACTIVE_SINGLE_VERSION_MANAGER",
-      "effective_date": "2026-10-02T15:03:45.724909+00:00",
-      "sha256": "000a58707d71a1983a4697d24405521b41720d8ccafbe320c6ec87745d0bb661"
+      "effective_date": "2026-10-02T17:55:13.354901+00:00",
+      "sha256": "86cdf564dd17ceaa59c2f86ae916599b27aaf1c160c9d2b0006c326df5a8acd4"
     },
     {
       "gender": "male",
       "schema": "male_component_library_single_authority",
       "status": "ACTIVE_SINGLE_VERSION_MANAGER",
-      "effective_date": "2026-10-02T16:31:07+08:00",
-      "sha256": "2504ce77f8afc047884d100c2302d8eeff95b586c83f06b7b95ffca938dce302"
+      "effective_date": "2026-10-02T17:55:13.354901+00:00",
+      "sha256": "a9d8cad0c69f39ba0e5494b5805ac27ffc2679af61355258a8ae42a0b3bac016"
     }
   ],
   "assets": [
@@ -8941,31 +8941,31 @@
     },
     {
       "release_path": "assets/shared/ears/human/F01/S01/F01_S01_human_ear_module.png",
-      "sha256": "bef333709a5525a83fd4f0b6e27455e815d332d474c6b5a43121917c063b1684",
-      "bytes": 55378,
+      "sha256": "3dce5c3a2270da45843fdc45110e152850d5e1070e3d010ce3b55fd1163102f5",
+      "bytes": 72962,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/ears/human/current/approved/v1_tone_native/F01/S01/F01_S01_human_ear_module_candidate_v1.png"
+      "source_ref": "female/component_library_v1/ears/human/current/approved/v04_20261003_native_gpt_rgba/F01/S01/F01_S01_human_ear_module.png"
     },
     {
       "release_path": "assets/shared/ears/human/F01/S02/F01_S02_human_ear_module.png",
-      "sha256": "d8bc49cf648e89f7bf321b63aa2af84be7bef99a9d94e303506bd6032f83c5fc",
-      "bytes": 54890,
+      "sha256": "4df4c48c995ee18565b38cde955eeb32341ca2ad0957ed558f0066631e148c1d",
+      "bytes": 69644,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/ears/human/current/approved/v1_tone_native/F01/S02/F01_S02_human_ear_module_candidate_v1.png"
+      "source_ref": "female/component_library_v1/ears/human/current/approved/v04_20261003_native_gpt_rgba/F01/S02/F01_S02_human_ear_module.png"
     },
     {
       "release_path": "assets/shared/ears/human/F01/S03/F01_S03_human_ear_module.png",
-      "sha256": "9d08346408a6cda2cf264732524f62cd990d3bdfbdb6c4752996402748e5d36b",
-      "bytes": 55681,
+      "sha256": "62b812599091b1305384969ef432079f09ddce13c87415f8ee51e6b669f7913f",
+      "bytes": 74132,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/ears/human/current/approved/v1_tone_native/F01/S03/F01_S03_human_ear_module_candidate_v1.png"
+      "source_ref": "female/component_library_v1/ears/human/current/approved/v04_20261003_native_gpt_rgba/F01/S03/F01_S03_human_ear_module.png"
     },
     {
       "release_path": "assets/shared/ears/human/F01/S04/F01_S04_human_ear_module.png",
-      "sha256": "4520871fd90f3f74412e0f3c0f20e77a414a59fbd0c78264bffce6d08a7c963c",
-      "bytes": 54834,
+      "sha256": "fd2257ee56cd7e633f727f4d390441d05c42f95f2b28aaa64cf02c127cb3ad99",
+      "bytes": 65313,
       "source_authority": "female",
-      "source_ref": "female/component_library_v1/ears/human/current/approved/v1_tone_native/F01/S04/F01_S04_human_ear_module_candidate_v1.png"
+      "source_ref": "female/component_library_v1/ears/human/current/approved/v04_20261003_native_gpt_rgba/F01/S04/F01_S04_human_ear_module.png"
     }
   ]
 }

@@ -6,15 +6,15 @@
       "gender": "female",
       "schema": "female_component_library_single_authority",
       "status": "ACTIVE_SINGLE_VERSION_MANAGER",
-      "effective_date": "2026-10-02T15:03:45.724909+00:00",
-      "sha256": "000a58707d71a1983a4697d24405521b41720d8ccafbe320c6ec87745d0bb661"
+      "effective_date": "2026-10-02T17:55:13.354901+00:00",
+      "sha256": "86cdf564dd17ceaa59c2f86ae916599b27aaf1c160c9d2b0006c326df5a8acd4"
     },
     {
       "gender": "male",
       "schema": "male_component_library_single_authority",
       "status": "ACTIVE_SINGLE_VERSION_MANAGER",
-      "effective_date": "2026-10-02T16:31:07+08:00",
-      "sha256": "2504ce77f8afc047884d100c2302d8eeff95b586c83f06b7b95ffca938dce302"
+      "effective_date": "2026-10-02T17:55:13.354901+00:00",
+      "sha256": "a9d8cad0c69f39ba0e5494b5805ac27ffc2679af61355258a8ae42a0b3bac016"
     }
   ]
 }
