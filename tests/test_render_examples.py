@@ -5,6 +5,7 @@ import json
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 from PIL import Image
@@ -156,6 +157,107 @@ class RenderExamplesTests(unittest.TestCase):
             self.assertEqual(manifest["generation_backend"], "deterministic-alpha-composition")
             self.assertEqual(manifest["outputs"]["mixed-character-qc-48.webp"]["sha256"], sha256(mixed))
             self.assertEqual(manifest["outputs"]["expression-showcase.png"]["sha256"], sha256(expressions))
+
+
+
+class ForegroundOrderTests(unittest.TestCase):
+    """Exercise the real manifest resolver and compose_record on four pixels."""
+
+    def test_full_garment_preserves_braid_collar_and_ear_ownership(self) -> None:
+        clear = (0, 0, 0, 0)
+        cloth = (20, 80, 180, 255)
+
+        def image(role: str) -> Image.Image:
+            pixels = [clear] * 4
+            if role == "hair_front":
+                pixels = [(100, 100, 100, 255), (200, 200, 200, 128), clear, (150, 150, 150, 255)]
+            elif role == "hair_tint_mask":
+                pixels = [(255, 255, 255, 255)] * 4
+            elif role == "clothing_front":
+                pixels = [cloth] * 4
+            elif role in ("earless_head_body", "face_expression_base"):
+                pixels[2] = (220, 150, 110, 255)
+            elif role in ("earless_head", "face_expression_head", "clothing_main", "eye_brow", "mouth"):
+                pixels[2] = (240, 20, 30, 255)
+            elif role == "ear_pair":
+                pixels[3] = (230, 150, 90, 255)
+            elif role == "ear_sweat_human":
+                pixels[3] = (30, 210, 80, 255)
+            elif role == "hair_ear_cover":
+                pixels[3] = (230, 230, 230, 255)
+            result = Image.new("RGBA", (4, 1))
+            result.putdata(pixels)
+            return result
+
+        with tempfile.TemporaryDirectory() as temporary, mock.patch.object(render_examples, "CANVAS", (4, 1)):
+            repo = Path(temporary)
+            assets = []
+
+            def asset(relative: str, role: str) -> None:
+                path = repo / relative
+                path.parent.mkdir(parents=True, exist_ok=True)
+                image(role).save(path)
+                assets.append({"release_path": relative, "sha256": sha256(path)})
+
+            for gender in ("female", "male"):
+                prefix, suffix = ("F01_S01_", "_rgba") if gender == "female" else ("", "")
+                for role in ("earless_head_body", "earless_head"):
+                    asset(f"assets/{gender}/base/F01/S01/{prefix}{role}{suffix}.png", role)
+                hair = "H02" if gender == "female" else "H01"
+                for role in ("hair_back", "hair_front", "hair_tint_mask"):
+                    asset(f"assets/{gender}/hair/{hair}/{role}.png", role)
+                if gender == "female":
+                    asset(f"assets/{gender}/hair/{hair}/hair_ear_cover.png", "hair_ear_cover")
+                for role in ("clothing_back", "clothing_main", "clothing_front"):
+                    asset(f"assets/{gender}/clothing/C01/{role}.png", role)
+                for expression in ("N00", "G02"):
+                    asset(f"assets/{gender}/E/E01/S01/{expression}/eye_brow.png", "eye_brow")
+                    asset(f"assets/{gender}/M/M01/S01/{expression}/mouth.png", "mouth")
+                    if expression == "G02":
+                        for role in ("face_expression_base", "face_expression_head"):
+                            asset(f"assets/{gender}/expression/F01_S01_{expression}/{role}.png", role)
+                    if gender == "female" or expression == "G02":
+                        for family, role in (("blush", "blush"), ("sweat", "sweat"),
+                                             ("blush", "ear_blush_human"), ("sweat", "ear_sweat_human")):
+                            asset(f"assets/{gender}/effects/{family}/F01_S01_{expression}/{role}.png", role)
+            asset("assets/shared/ears/human/F01/S01/ear_pair.png", "ear_pair")
+            manifest = repo / "provenance/asset-manifest.json"
+            manifest.parent.mkdir()
+            manifest.write_text(json.dumps({"assets": assets}), encoding="utf-8")
+
+            for gender in ("female", "male"):
+                for expression in ("N00", "G02"):
+                    record = dict(gender=gender, F="F01", S="S01", expression=expression,
+                                  E="E01", M="M01", H="H02" if gender == "female" else "H01",
+                                  C="C01", ear="human",
+                                  palette=render_examples.derive_palette(3186449067, gender, "foreground-fixture"))
+                    result, layers = render_examples.compose_record(repo, record)
+                    catalog = render_examples.AssetCatalog(repo)
+                    hair_layers = [layer for layer in layers if layer["role"] in render_examples.HAIR_ROLES]
+                    mask = catalog.load(hair_layers[0]["tint_mask"]["path"])
+                    sources = [catalog.load(layer["path"]) for layer in hair_layers]
+                    tone = render_examples._build_tone_map(sources, mask)
+                    lut = render_examples._build_luminance_lut(record["palette"])
+                    tinted = {layer["role"]: render_examples._tint_hair(source, mask, lut, tone)
+                              for layer, source in zip(hair_layers, sources, strict=True)}
+                    expected_front = Image.alpha_composite(image("clothing_front"), tinted["hair_front"])
+                    expected_ear = (tinted["hair_ear_cover"].getpixel((3, 0)) if gender == "female"
+                                    else (30, 210, 80, 255) if expression == "G02" else (230, 150, 90, 255))
+                    expected = [expected_front.getpixel((0, 0)), expected_front.getpixel((1, 0)), cloth, expected_ear]
+                    for x, point in enumerate(("opaque braid", "soft braid", "bare high collar", "ear root")):
+                        with self.subTest(gender=gender, expression=expression, point=point):
+                            self.assertEqual(result.getpixel((x, 0)), expected[x])
+                    self.assertEqual([tinted["hair_front"].getpixel((x, 0))[3] for x in (0, 1)], [255, 128])
+                    roles = [layer["role"] for layer in layers]
+                    with self.subTest(gender=gender, expression=expression, point="resolved order"):
+                        self.assertLess(roles.index("mouth"), roles.index("clothing_front"))
+                        self.assertLess(roles.index("clothing_front"), roles.index("hair_front"))
+                        self.assertLess(roles.index("hair_front"), roles.index("ear_pair"))
+                        self.assertEqual("hair_ear_cover" in roles, gender == "female")
+                        if gender == "female" or expression == "G02":
+                            self.assertLess(roles.index("ear_pair"), roles.index("ear_sweat"))
+                        if gender == "female":
+                            self.assertLess(roles.index("ear_sweat"), roles.index("hair_ear_cover"))
 
 
 if __name__ == "__main__":

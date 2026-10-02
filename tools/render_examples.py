@@ -493,6 +493,7 @@ def _resolve_layers(catalog: AssetCatalog, record: dict[str, Any]) -> list[dict[
     if sweat:
         layers.append(effect_binding("sweat", sweat))
     layers.extend([
+        _binding(catalog, "clothing_front", clothing_front),
         _binding(catalog, "hair_front", hair_front, hair_mask),
         _binding(catalog, "ear_pair", ear_path),
     ])
@@ -504,7 +505,6 @@ def _resolve_layers(catalog: AssetCatalog, record: dict[str, Any]) -> list[dict[
     ear_cover = catalog.find(hair_parent, "hair_ear_cover", optional=True)
     if ear_cover:
         layers.append(_binding(catalog, "hair_ear_cover", ear_cover, hair_mask))
-    layers.append(_binding(catalog, "clothing_front", clothing_front))
     return layers
 
 

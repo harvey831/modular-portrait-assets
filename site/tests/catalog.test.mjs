@@ -7,6 +7,7 @@ import {
   createCatalogIndex,
   resolveLayerBindings,
 } from '../lib/catalog.mjs';
+import { composeFrame } from '../lib/compositor.mjs';
 import { FIXTURE_CATALOG } from './fixtures.mjs';
 
 
@@ -48,8 +49,7 @@ test('resolver emits the formal expression ownership order and optional layers',
   assert.deepEqual(bindings.map(({ role }) => role), [
     'hair_back', 'clothing_back', 'face_expression_base', 'clothing_main',
     'face_expression_head', 'blush', 'eye_brow', 'mouth', 'sweat',
-    'hair_front', 'ear_pair', 'ear_blush', 'ear_sweat', 'hair_ear_cover',
-    'clothing_front',
+    'clothing_front', 'hair_front', 'ear_pair', 'ear_blush', 'ear_sweat', 'hair_ear_cover',
   ]);
   assert.equal(bindings[0].tintMask.path.endsWith('/hair_tint_mask.png'), true);
   assert.equal(bindings[4].operation, 'ownership-reset');
@@ -130,3 +130,73 @@ test('missing expression source or required effect pairs fail instead of silentl
     }, CatalogError);
   }
 });
+
+
+// Four spatially independent pixels: opaque braid, soft braid, bare high
+// collar, and ear root. The garment spans the entire fixture, including the
+// lower braid; using only a cropped collar would miss the original defect.
+function foregroundImage(role) {
+  const clear = [0, 0, 0, 0];
+  let pixels = [clear, clear, clear, clear];
+  if (role === 'hair_front') pixels = [
+    [100, 100, 100, 255], [200, 200, 200, 128], clear, [150, 150, 150, 255],
+  ];
+  if (role === 'hair_tint_mask') pixels = Array(4).fill([255, 255, 255, 255]);
+  if (role === 'clothing_front') pixels = Array(4).fill([20, 80, 180, 255]);
+  if (['earless_head_body', 'face_expression_base'].includes(role)) {
+    pixels = [clear, clear, [220, 150, 110, 255], clear];
+  }
+  if (['earless_head', 'face_expression_head', 'clothing_main', 'eye_brow', 'mouth'].includes(role)) {
+    pixels = [clear, clear, [240, 20, 30, 255], clear];
+  }
+  if (role === 'ear_pair') pixels = [clear, clear, clear, [230, 150, 90, 255]];
+  if (role.startsWith('ear_sweat_')) pixels = [clear, clear, clear, [30, 210, 80, 255]];
+  if (role === 'hair_ear_cover') pixels = [clear, clear, clear, [230, 230, 230, 255]];
+  return { width: 4, height: 1, data: new Uint8ClampedArray(pixels.flat()) };
+}
+
+for (const gender of ['female', 'male']) {
+  for (const expression of ['N00', 'G02']) {
+    test(`resolved ${gender}/${expression} preserves foreground hair over full garment`, () => {
+      const selection = {
+        gender, F: 'F01', S: 'S01', expression, E: 'E01', M: 'M01',
+        H: gender === 'female' ? 'H02' : 'H01', C: 'C01', ear: 'human', hairHue: 210,
+      };
+      const index = createCatalogIndex(FIXTURE_CATALOG);
+      const bindings = resolveLayerBindings(index, selection);
+      const sources = new Map(FIXTURE_CATALOG.assets.map((asset) => [
+        asset.path, foregroundImage(asset.role),
+      ]));
+      // This baseline runs the real tint/composition consumer on the same
+      // resolved hair owners, without face or clothing layers.
+      const hair = composeFrame(selection, bindings.filter(({ tintMask }) => tintMask), sources);
+      const frame = composeFrame(selection, bindings, sources);
+      const pixel = (image, x) => [...image.data.slice(x * 4, x * 4 + 4)];
+      const cloth = [20, 80, 180, 255];
+      const soft = pixel(hair, 1);
+      const softOverCloth = [
+        ...soft.slice(0, 3).map((channel, index) => Math.round(
+          (channel * soft[3] + cloth[index] * (255 - soft[3])) / 255,
+        )), 255,
+      ];
+      const hasEarEffects = gender === 'female' || expression === 'G02';
+      assert.deepEqual({
+        opaqueBraid: pixel(frame, 0), softBraid: pixel(frame, 1),
+        bareHighCollar: pixel(frame, 2), earRoot: pixel(frame, 3),
+      }, {
+        opaqueBraid: pixel(hair, 0), softBraid: softOverCloth,
+        bareHighCollar: cloth,
+        earRoot: gender === 'female' ? pixel(hair, 3)
+          : hasEarEffects ? [30, 210, 80, 255] : [230, 150, 90, 255],
+      });
+      assert.deepEqual([pixel(hair, 0)[3], soft[3]], [255, 128]);
+      assert.equal(bindings.some(({ role }) => role === 'hair_ear_cover'), gender === 'female');
+      const order = (role) => bindings.find((binding) => binding.role === role).order;
+      assert.ok(order('mouth') < order('clothing_front'));
+      assert.ok(order('clothing_front') < order('hair_front'));
+      assert.ok(order('hair_front') < order('ear_pair'));
+      if (hasEarEffects) assert.ok(order('ear_pair') < order('ear_sweat'));
+      if (gender === 'female') assert.ok(order('ear_sweat') < order('hair_ear_cover'));
+    });
+  }
+}

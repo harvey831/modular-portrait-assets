@@ -342,6 +342,7 @@ export function resolveLayerBindings(index, selection) {
   layers.push(binding('eye_brow', eye), binding('mouth', mouth));
   if (effects) layers.push(effectBinding('sweat', effects.sweat));
   layers.push(
+    binding('clothing_front', clothes('clothing_front')),
     binding('hair_front', hair('hair_front'), { tintMask: hairMask }),
     binding('ear_pair', earPair),
   );
@@ -357,6 +358,5 @@ export function resolveLayerBindings(index, selection) {
     gender, family: 'hair', component: H, role: 'hair_ear_cover',
   }, { optional: true });
   if (earCover) layers.push(binding('hair_ear_cover', earCover, { tintMask: hairMask }));
-  layers.push(binding('clothing_front', clothes('clothing_front')));
   return layers.map((layer, order) => Object.freeze({ order, ...layer }));
 }

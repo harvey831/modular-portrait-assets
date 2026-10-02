@@ -56,17 +56,17 @@ Neutral order:
 
 ```text
 hair_back -> clothing_back -> earless_head_body -> clothing_main
--> earless_head -> eye_brow -> mouth -> hair_front -> ear_pair
--> hair_ear_cover (optional) -> clothing_front
+-> earless_head -> eye_brow -> mouth -> clothing_front -> hair_front
+-> ear_pair -> hair_ear_cover (optional)
 ```
 
 Expression/effect order:
 
 ```text
 hair_back -> clothing_back -> face_expression_base -> clothing_main
--> face_expression_head -> blush -> eye_brow -> mouth -> sweat -> hair_front
--> ear_pair -> selected ear blush/sweat -> hair_ear_cover (optional)
--> clothing_front
+-> face_expression_head -> blush -> eye_brow -> mouth -> sweat
+-> clothing_front -> hair_front -> ear_pair -> selected ear blush/sweat
+-> hair_ear_cover (optional)
 ```
 
 Use ordinary alpha source-over for native layers; the registered cross-skin
@@ -76,6 +76,10 @@ Hair back remains a complete uncut
 rear-hair owner; do not subtract `hair_front` alpha from it. Ears normally sit
 above `hair_front`, with the optional hairstyle-owned ear-cover layer above the
 ear. Clothing crossing the chin or face belongs in `clothing_front`.
+Composite it after face features and before `hair_front`, so high collars
+cover the head while complete shoulder-front locks, braids, and ponytails
+remain above the garment. Where no foreground hair is present, the clothing
+front remains visible.
 
 For component meaning and compatibility checks, read
 [`references/component-contract.md`](references/component-contract.md).

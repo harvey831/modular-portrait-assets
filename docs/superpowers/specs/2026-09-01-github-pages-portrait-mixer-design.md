@@ -163,8 +163,8 @@ Neutral layer order：
 
 ```text
 hair_back → clothing_back → earless_head_body → clothing_main
-→ earless_head ownership reset → eye_brow → mouth → hair_front → ear_pair
-→ hair_ear_cover（optional）→ clothing_front
+→ earless_head ownership reset → eye_brow → mouth → clothing_front
+→ hair_front → ear_pair → hair_ear_cover（optional）
 ```
 
 Expression/effect layer order：
@@ -172,13 +172,18 @@ Expression/effect layer order：
 ```text
 hair_back → clothing_back → face_expression_base → clothing_main
 → face_expression_head ownership reset → blush → eye_brow → mouth → sweat
-→ hair_front → ear_pair → ear blush/sweat → hair_ear_cover（optional）
-→ clothing_front
+→ clothing_front → hair_front → ear_pair → ear blush/sweat
+→ hair_ear_cover（optional）
 ```
 
 `face_expression_head`／`earless_head` 是 ownership mask：其 alpha 擁有的像素
 需要回復到 `clothing_main` 之前保存的 face checkpoint，不是普通 source-over
 圖層。這必須與現有 public offline renderer 一致，防止服裝 main layer 遮住臉。
+
+`clothing_front` 在五官／face effects 完成後、`hair_front` 之前合成：高領仍可
+遮住 head，而肩前完整長髮、辮子與馬尾保留在衣物上方；沒有 foreground hair
+的區域仍顯示 clothing front。耳朵、ear effects 與 optional hair ear cover 的
+相對次序保持不變。
 
 髮色使用所有選定 hairstyle owner layers 的共用 luminance tone map，以及由
 所選 hue 生成的 OKLCH 四段 palette。只可在 `hair_tint_mask` 擁有且 source
