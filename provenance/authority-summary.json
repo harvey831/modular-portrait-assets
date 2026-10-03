@@ -13,8 +13,8 @@
       "gender": "male",
       "schema": "male_component_library_single_authority",
       "status": "ACTIVE_SINGLE_VERSION_MANAGER",
-      "effective_date": "2026-10-02T21:54:23.522704+00:00",
-      "sha256": "17fe4289909fd04572cda9af0126ffda3cb1eef5396fe49efebf2b30bc0aa7f8"
+      "effective_date": "2026-10-03T03:41:54.023012+00:00",
+      "sha256": "ac64edf54ecfbe04bba8c8334c2f645758c475f855d27a52c9f381a70626c32d"
     }
   ]
 }

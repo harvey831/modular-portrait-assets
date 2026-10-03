@@ -3,7 +3,7 @@
   "license": "CC0-1.0",
   "source_project": "MODULAR_PORTRAIT_LIBRARY_V5",
   "asset_count": 1277,
-  "total_bytes": 227530442,
+  "total_bytes": 227432054,
   "authority_manifests": [
     {
       "gender": "female",
@@ -16,8 +16,8 @@
       "gender": "male",
       "schema": "male_component_library_single_authority",
       "status": "ACTIVE_SINGLE_VERSION_MANAGER",
-      "effective_date": "2026-10-02T21:54:23.522704+00:00",
-      "sha256": "17fe4289909fd04572cda9af0126ffda3cb1eef5396fe49efebf2b30bc0aa7f8"
+      "effective_date": "2026-10-03T03:41:54.023012+00:00",
+      "sha256": "ac64edf54ecfbe04bba8c8334c2f645758c475f855d27a52c9f381a70626c32d"
     }
   ],
   "assets": [
@@ -8818,21 +8818,21 @@
       "sha256": "f359863029ad666c54d786b0cf13fb70f376029b2d587e0bda77b41bec0566e6",
       "bytes": 1185734,
       "source_authority": "male",
-      "source_ref": "male/component_library_v1/hair/H17/current/approved/r20261002_correct_bald_restart_v02/hair_back.webp"
+      "source_ref": "male/component_library_v1/hair/H17/current/approved/r20261003_front_back_owner_v01/hair_back.webp"
     },
     {
       "release_path": "assets/male/hair/H17/hair_front.webp",
-      "sha256": "267b8e5d2d0c62c10b53455cdd406447e2f2b1cdd55c7f5a1da5dff51ae9f087",
-      "bytes": 708850,
+      "sha256": "f1e0b797469b139d9f6461d2d360ab82de8930505e11aee1a8e73136c81e7c42",
+      "bytes": 619176,
       "source_authority": "male",
-      "source_ref": "male/component_library_v1/hair/H17/current/approved/r20261002_correct_bald_restart_v02/hair_front.webp"
+      "source_ref": "male/component_library_v1/hair/H17/current/approved/r20261003_front_back_owner_v01/hair_front.webp"
     },
     {
       "release_path": "assets/male/hair/H17/hair_tint_mask.webp",
-      "sha256": "186b16ce5759e55614c86ec11f47b8255d6fb24063b06611de2879e7cc1aa893",
-      "bytes": 60448,
+      "sha256": "dd913da3af1a2c43e23ec76c400642da2eeef12e1b5c8aa6c9020e07f0b83c59",
+      "bytes": 51734,
       "source_authority": "male",
-      "source_ref": "male/component_library_v1/hair/H17/current/approved/r20261002_correct_bald_restart_v02/hair_tint_mask.webp"
+      "source_ref": "male/component_library_v1/hair/H17/current/approved/r20261003_front_back_owner_v01/hair_tint_mask.webp"
     },
     {
       "release_path": "assets/male/hair/H18/hair_back.webp",
